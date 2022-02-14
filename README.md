@@ -347,7 +347,7 @@ A hyperlink is present in the text displayed and highlighted in orange in order 
 
 ---
 ## **Testing**
-The testing phases have been carried out using the **W3C CSS Validator** and **W3C Markup Validator** in all pages. No errors have been identified from the Validators as can be seen in the screenshot below: 
+The testing phases have been carried out using the **W3C Javascript Validator**, **W3C CSS Validator** and **W3C Markup Validator**(in all pages). No errors have been identified from the Validators as can be seen in the screenshot below: 
 
 - **JavaScript**
 
