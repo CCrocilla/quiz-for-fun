@@ -36,10 +36,6 @@ h1 {
     text-transform: uppercase;
     text-decoration: none;
     flex: 60%;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: flex-start;
     margin: 20px;
     padding: 20px;
 }
