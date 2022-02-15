@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300&display=swap');
+
+/* Remove any default margin, padding and border */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: #070707;
+    color: #C84B31; 
+    font-weight: 400;
+}
+
+.flex-containers {
+    display: flex;
+    flex: auto;
+    width: 100vw;
+    max-width: 100%;
+}
+
+/* Logo and Headers */
+h1 {
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    color: #C84B31; 
+}
+
+.logos { 
+    font-size: 150%;
+    text-transform: uppercase;
+    text-decoration: none;
+    flex: 60%;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 20px;
+    padding: 20px;
+}
+
+.navbar {
+    font-size: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.navbar li {
+    text-decoration: none;
+    list-style: none;
+    display: inline-flex;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid #C84B31;
+    border-radius: 5px;
+}
+
+.navbar > ul > li > a {
+    color: #C84B31;
+    text-decoration: none;
+}
+
+.game-img {
+    width: 100vw;
+    height: 100%;
+    background: url('../images/background-homepage.jpg') no-repeat center center/cover;
+}
