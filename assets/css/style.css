@@ -7,6 +7,7 @@
     border: none;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    /*transition: all 0.5s;*/
 }
 
 body {
@@ -20,7 +21,9 @@ body {
 
 .flex-containers {
     display: flex;
-    flex: auto;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     max-width: 100%;
 }
@@ -35,17 +38,17 @@ h1 {
     font-size: 150%;
     text-transform: uppercase;
     text-decoration: none;
-    flex: 60%;
-    margin: 20px;
-    padding: 20px;
+    flex: 33%;
+    margin-left: 40px;
+    padding: 15px;
 }
 
 .navbar {
     font-size: 120%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    align-content: center;
+    margin-right: 40px;
+    padding: 15px;
 }
 
 .navbar li {
@@ -56,15 +59,48 @@ h1 {
     padding: 5px;
     border: 2px solid #C84B31;
     border-radius: 5px;
+    width: 175px;
+    justify-content: center;
 }
 
 .navbar > ul > li > a {
     color: #C84B31;
     text-decoration: none;
-}
+    text-transform: uppercase;
+  }
+
 
 .game-img {
     width: 100vw;
-    height: 100%;
+    max-width: 100%;
+    height: 100vh;
     background: url('../images/background-homepage.jpg') no-repeat center center/cover;
+}
+
+.game-area {
+    background-color: #C84B31;
+    color: #070707;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 65vw;
+    height: 50vh;
+    border-radius: 10px;
+    box-shadow: 10px 10px #ECDBBA;
+}
+
+.btn {
+    font-family: 'Press Start 2P', cursive, sans-serif;;
+    font-size: 2rem;
+    width: 175px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 10px #070707;
+}
+
+.hide {
+    display: none;
 }

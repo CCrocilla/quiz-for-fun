@@ -33,12 +33,35 @@
             </nav>
         </header>
 
-        <section id="game-area-section" class="game-img game-area flex-containers">
-            <div id="" class="">
+        <section id="game-area-section" class="game-img flex-containers">
+            <!-- Start -->
+            <div id="games" class="game-area">
+                <div id="start-view" class="start-area">
+                    <h2>Game Area</h2>
+                    <p>Welcome in the Game</p>
+                    <p>Amazing challenges are waiting for you! 
+                    What are you waiting for? Start the quiz, have fun and enjoy! 
+                    </p>
+                </div>
+                
                 <div>
-                    <h1>Game Area</h1>
+                    <button id="start-btn" class="btn" data-type="start">Start</button>
+                </div>
+
+                <!-- Quiz -->
+                <div id="quiz-view" class="quiz hide">
+                    <div id="questions-view" class="question">
+                        <h2>Question Area</h2>
+                        <p>Welcome to the Question Area</p>
+                    </div>
+                </div>
+
+                <div>
+                    <button id="reset-btn" class="btn" data-type="reset">Reset</button>
                 </div>
             </div>
+
+            
         </section>
 
         <footer id="footer" class="flex-containers">
@@ -60,6 +83,7 @@
             </ul>
         </footer>
         
+        <script src="assets/js/script.js"></script>
         <!-- Font Awesome Script -->
         <script src="https://kit.fontawesome.com/0644654b1f.js" crossorigin="anonymous"></script>
     </body>
