@@ -7,7 +7,7 @@
     border: none;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    /*transition: all 0.5s;*/
+    transition: all 0.3s;
 }
 
 body {
@@ -24,8 +24,6 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    max-width: 100%;
 }
 
 /* Logo and Headers */
@@ -69,12 +67,19 @@ h1 {
     text-transform: uppercase;
   }
 
-
 .game-img {
     width: 100vw;
     max-width: 100%;
     height: 100vh;
     background: url('../images/background-homepage.jpg') no-repeat center center/cover;
+}
+
+.start-area {
+    font-size: 1.6rem;
+    text-align: center;
+    text-justify: auto;
+    margin: 25px;
+    padding: 25px;
 }
 
 .game-area {
@@ -85,14 +90,17 @@ h1 {
     justify-content: center;
     align-items: center;
     align-content: center;
-    width: 65vw;
-    height: 50vh;
+    width: 60vw;
+    height: 45vh;
+    min-height: fit-content;
     border-radius: 10px;
     box-shadow: 10px 10px #ECDBBA;
 }
 
 .btn {
-    font-family: 'Press Start 2P', cursive, sans-serif;;
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    background-color: #ECDBBA;
+    color: #070707;
     font-size: 2rem;
     width: 175px;
     margin: 10px;
@@ -101,6 +109,87 @@ h1 {
     box-shadow: 5px 10px #070707;
 }
 
+.btn:hover {
+    color:#C84B31;
+    background-color: #070707;
+}
+
 .hide {
     display: none;
+}
+
+.text-center {
+    text-align: center;
+    text-align: justify;
+    justify-content: center;
+}
+
+
+/* Modal Experiment */
+.popup-instruction {
+    position: fixed;
+    display: none;
+    overflow: auto;
+  }
+  
+  /* Modal Content/Box */
+  .content-popup {
+    background-color: #C84B31;
+    color: #070707;
+    width: 65vw;
+    height: 50vh;
+    border-radius: 10px;
+    box-shadow: 10px 10px #ECDBBA;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #070707;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #070707;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+/* Footer Section */
+footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.social-network li {
+    display: inline;
+    margin-left: 30px;  
+}
+
+.social-network li i {
+    font-size: 60px;
+    text-decoration: none;
+    list-style-type: none;
+    margin-right: 40px;
+    color: #C84B31;
+}
+
+.social-network li i:hover {
+    color: #ECDBBA;
+}
+/* End Footer Section */
+
+/* Instruction */
+.popup-instruction li {
+text-align: justify;
+text-decoration: none;
+margin-left: 50px;
+padding-left: 50px;
+list-style: none;
+margin-bottom: 10px;
 }
