@@ -13,7 +13,7 @@
         <title>Quiz For Fun</title>
     </head>
     <body>
-        <header id="" class="flex-containers">
+        <header id="" class="flex-containers flex-center">
             <a href="index.html" id="logo" class="logos flex-items" aria-label="Go to the Home Page">
                 <h1>Quiz For Fun</h1>
             </a>
@@ -33,10 +33,10 @@
             </nav>
         </header>
 
-        <section id="game-area-section" class="flex-containers game-img">
+        <section id="game-area-section" class="flex-containers flex-center game-img">
             <!-- Start -->
-            <div id="start-games" class="flex-containers game-area">
-                <div id="start-view" class="start-area">
+            <div id="start-games" class="flex-containers flex-center game-area hide">
+                <div id="start-view" class="start-area text-center">
                     <h2 class="text-center">Welcome to Quiz For Fun!</h2>
                     <p class="text-center">Amazing challenges are waiting for you!</p>
                     <p class="text-center">What are you waiting for? Start the quiz, have fun and enjoy!</p>
@@ -48,7 +48,7 @@
             </div>
 
             <!-- Login Quiz -->
-            <div id="quiz-view" class="flex-containers pre-quiz hide">
+            <div id="quiz-view" class="flex-containers flex-center pre-quiz hide">
                 <form method="GET" action="">
                     <div id="pre-quiz" class="pre-quiz-content">   
                         <div class="text-center">
@@ -84,12 +84,47 @@
             </div>
 
             <!-- Question Section -->
-            <div id="question-view" class="start-area hide">
-
+            <div id="question-view" class="flex-containers flex-center start-area quiz">
+                <div id="questions" class="text-center">
+                    <!-- This Section is dedicated to the Information displayed -->
+                    <!-- Used Brian Design for references but code adjusted by myself-->
+                    <div id="info-questions-area">
+                        <div id="questions-progress">
+                            <p class="questions-score-text">Progress Bar</p>
+                            <div id="progress" class="progress-bar">
+                                <div id="progress-full" class="progress-bar-full"></div>
+                            </div>
+                        </div>
+                        <div id="questions-score">
+                            <p class="questions-score-text">Score</p>
+                            <p id="score" class="score-number">0</p>
+                        </div>
+                    </div>
+                    <!--Here will be displayed the questions and anserws -->
+                    <div id="questions-area">
+                        <h2>Question?</h2>
+                        <div class="answer-container flex-center btn">
+                                <p class="answer-index">A</p>
+                                <p class="answer-text" data-number="1">Answer 1</p>
+                        </div>
+                        <div class="answer-container flex-center">
+                                <p class="answer-index">B</p>
+                                <p class="answer-text" data-number="2">Answer 2</p>
+                        </div>
+                        <div class="answer-container flex-center">
+                                <p class="answer-index">C</p>
+                                <p class="answer-text" data-number="3">Answer 3</p>
+                        </div>
+                        <div class="answer-container flex-center">
+                                <p class="answer-index">D</p>
+                                <p class="answer-text" data-number="4">Answer 4</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Instruction Modal -->
-            <div id="modal-instruction" class="flex-containers popup-instruction start-area">
+            <div id="modal-instruction" class="flex-containers flex-center popup-instruction start-area">
                 <!-- Instruction Content -->
                 <div class="content-popup">
                     <h2>Instructions</h2>
@@ -107,7 +142,7 @@
             </div>
             
             <!-- Contact Us Modal -->
-            <div id="modal-contact-us" class="flex-containers popup-contact-us hide">
+            <div id="modal-contact-us" class="flex-containers flex-center popup-contact-us hide">
                 <!-- Contact Us Content -->
                 <div class="content-popup">
                     <form method="GET" action="https://ccrocilla.github.io/quizforfun/thankyou.html">
@@ -121,7 +156,7 @@
                         </div>
             
                         <!-- Form Area for the User -->
-                        <div id="form-contact-us" class="flex-container-form hide">    
+                        <div id="form-contact-us" class="flex-container hide">    
                             <div id="form-user-contact-us" class="forms-users">
                                 <label for="first-name">First Name *</label>
                                 <input type="text" id="first-name" class="input-forms" name="first_name" required placeholder="Insert your first name here!">
@@ -155,7 +190,7 @@
             </div>   
         </section>
 
-        <footer id="footer" class="flex-containers">
+        <footer id="footer" class="flex-containers flex-center">
             <ul id="social" class="social-network text-center">
                 <li>
                     <a href="https://facebook.com" target="_blank" rel="noopener" 

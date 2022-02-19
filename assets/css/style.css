@@ -7,14 +7,13 @@
     border: none;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    overflow: auto;
     /*transition: all 0.3s;*/
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
     width: 100vw;
     height: 100vh;
+    font-family: 'Roboto', sans-serif;
     background-color: #070707;
     color: #C84B31; 
     font-weight: 400;
@@ -23,6 +22,9 @@ body {
 .flex-containers {
     display: flex;
     flex-flow: row wrap;
+}
+
+.flex-center {
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -67,6 +69,7 @@ h1 {
     color: #C84B31;
     text-decoration: none;
     text-transform: uppercase;
+    cursor: pointer;
   }
 
 .game-img {
@@ -78,13 +81,12 @@ h1 {
 
 .start-area {
     font-size: 1.5rem;
-    text-align: center;
     margin: 10px;
     padding: 10px;
 }
 
 /* This is used for both Start and Instructions */
-.game-area, .content-popup, .pre-quiz {
+.game-area, .content-popup, .pre-quiz, .quiz {
     /*background-image: linear-gradient(to right top, #070707, #003b58, #007a8c, #00b978, #a8eb12);*/
     background-color: #C84B31;
     color: #070707;
@@ -119,7 +121,6 @@ h1 {
 
 .text-center {
     text-align: center;
-    justify-content: center;
 }
 
 .pre-questions {
@@ -159,9 +160,6 @@ h1 {
 footer {
     height: 120px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
 }
 
 .social-network li {
@@ -244,10 +242,54 @@ footer {
     background-color: #070707;
 }
 
+/*Disable the button - W3School References*/
+.btn-games[:disabled]:hover {
+    cursor: not-allowed;
+}
+
+
+/* Questions Area */
+.answer-container {
+    display: flex;
+    width: 25vw;
+    margin: 10px;
+    padding: 10px;
+    font-size: 2rem;
+    background-color: #070707;
+    color: #ECDBBA;
+    cursor: pointer;
+}
+
+.answer-index {
+    padding: 10px;
+}
+
+.info-questions-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-bar {
+    border: 2px solid #070707;
+    border-radius: 10px;
+    padding: 10px;
+    flex: 20%;
+}
+
+
+.correct-answer {
+    background-color: green;
+}
+
+.wrong-answer {
+    background-color: red;
+}
+
 
 /* Instruction */
-.popup-instruction .content-popup{
+.popup-instruction .content-popup, .quiz {
     height: fit-content;
     margin: 30px;
     padding: 30px;
 }
+
