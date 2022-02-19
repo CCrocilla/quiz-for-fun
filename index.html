@@ -33,88 +33,81 @@
             </nav>
         </header>
 
-        <section id="game-area-section" class="game-img flex-containers">
+        <section id="game-area-section" class="flex-containers game-img">
             <!-- Start -->
-            <div id="games" class="game-area">
+            <div id="start-games" class="flex-containers game-area">
                 <div id="start-view" class="start-area">
-                    <h2 class="text-center">Welcome to the Quiz For Fun Website!</h2>
-                    <p>Amazing challenges are waiting for you!</p>
-                    <p>What are you waiting for? Start the quiz, have fun and enjoy!</p>
+                    <h2 class="text-center">Welcome to Quiz For Fun!</h2>
+                    <p class="text-center">Amazing challenges are waiting for you!</p>
+                    <p class="text-center">What are you waiting for? Start the quiz, have fun and enjoy!</p>
                 </div>
                 
                 <div>
-                    <button id="start-btn" class="btn" data-type="start">Start</button>
-                </div>
-
-                <!-- Login Quiz -->
-                <div id="quiz-view" class="quiz start-area hide">
-                    <form method="GET" action="https://ccrocilla.github.io/sweet_and_sour/thankyou.html">
-                        <div id="questions-view" class="question">
-                            <h2>Hi! Almost time to start! Set username, speed difficulty, select a category and start to play!</h2>
-                        </div>
-                        <!-- Username Section -->
-                        <div>
-                            <label for="username">* First Name</label>
-                            <input type="text" id="username" class="input-forms" name="user_name" required placeholder="Insert your username here!">
-                        </div>
-                        <!-- Difficulty Selection -->
-                            <h2>Select the difficulty speed here!</h2>
-
-                        <!-- Radio Button Section -->
-                        <div>
-                            <label for="easy" class="radio-label-difficulty">Daily</label>
-                            <input type="radio" id="daily" class="radio-button-difficulty" value="easy" name="level_speed" required>
-                
-                            <label for="weekly" class="radio-label-difficulty">Weekly</label>
-                            <input type="radio" id="weekly" class="radio-button-difficulty" value="medium" name="level_speed" required>
-                
-                            <label for="monthly" class="radio-label-difficulty">Monthly</label>
-                            <input type="radio" id="monthly" class="radio-button-difficulty" value="hard" name="level_speed" required>
-                        </div>
-                        
-                        <div>
-                            <h2>Select the category!</h2>
-                        </div>
-                        
-                        <div>
-                            <button id="movies-btn" class="btn" data-type="data-movies">Movies</button>
-                            <button id="videogames-btn" class="btn" data-type="data-videogames">Videogames</button>
-                        </div>
-                    </form>
-
-                <div>
-                    <button id="reset-btn" class="btn hide" data-type="reset">Reset</button>
+                    <button id="start-btn" class="btn btn-start" data-type="start">Start</button>
                 </div>
             </div>
 
+            <!-- Login Quiz -->
+            <div id="quiz-view" class="flex-containers pre-quiz hide">
+                <form method="GET" action="">
+                    <div id="pre-quiz" class="pre-quiz-content">   
+                        <div class="text-center">
+                            <h2>Hi! Almost time to start! Set username, difficulty, pick a category and start!</h2>
+                        </div>
+                        <!-- Username Section -->
+                        <div>
+                            <label for="username">Username *</label>
+                            <input type="text" id="username" class="input-forms" name="user_name" required placeholder="Insert your username here!">
+                        </div>
+                        <!-- Difficulty Selection -->
+                        <div class="text-center">
+                            <h2>Select the difficulty speed here!</h2>
+                        <!-- Radio Button Difficulty Section -->
+                            <label for="easy" class="radio-label-difficulty">Easy</label>
+                            <input type="radio" id="daily" class="radio-button-difficulty" value="easy" name="level_speed" required>
+                    
+                            <label for="weekly" class="radio-label-difficulty">Medium</label>
+                            <input type="radio" id="weekly" class="radio-button-difficulty" value="medium" name="level_speed" required>
+                    
+                            <label for="monthly" class="radio-label-difficulty">Hard</label>
+                            <input type="radio" id="monthly" class="radio-button-difficulty" value="hard" name="level_speed" required>
+                        </div>
+
+                        <!-- Category Selection -->    
+                        <div class="text-center">
+                            <h2>Select the category!</h2>
+                            <button id="movies-btn" class="btn btn-games" type="submit" data-type="data-movies">Movies</button>
+                            <button id="videogames-btn" class="btn btn-games" type="submit" data-type="data-videogames">Videogames</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Question Section -->
+            <div id="question-view" class="start-area hide">
+
+            </div>
+
             <!-- Instruction Modal -->
-            <div id="modal-instruction" class="popup-instruction start-area flex-containers">
+            <div id="modal-instruction" class="flex-containers popup-instruction start-area">
                 <!-- Instruction Content -->
                 <div class="content-popup">
                     <h2>Instructions</h2>
                     <a href="#modal-instruction" class="close">X</a>
-                    <ul class="list-popup">
-                        <li>
-                            Start entering your username.
-                        </li>
-                        <li>
-                            Score as much point as you can.
-                        </li>
-                        <li>
-                            Can you make more point? Sure! Play again!
-                        </li>
-                        <li>
-                            Select a different difficulty level if you feel confident and start again!
-                        </li>
-                        <li>
-                            Enjoy and have fun!
-                        </li>
-                    </ul>
+                    <p>There is only one rule... Have Fun!</p>
+                    <p>After clicking on the Start Button, just enter your username, select the 
+                        difficulty, choose which category you'd like to play and then? Play!
+                    </p>
+                    <p>Enjoy and have fun with out quiz!</p>
+                    <p>The Fun never ends because you can always score more and more! Play your match, 
+                        share the game in your favourite social media and then challenge your friends!
+                        The Score System will take your best result!
+                    </p>
                 </div>
             </div>
             
             <!-- Contact Us Modal -->
-            <div id="modal-contact-us" class="popup-contact-us flex-containers hide">
+            <div id="modal-contact-us" class="flex-containers popup-contact-us hide">
                 <!-- Contact Us Content -->
                 <div class="content-popup">
                     <form method="GET" action="https://ccrocilla.github.io/quizforfun/thankyou.html">
@@ -130,34 +123,34 @@
                         <!-- Form Area for the User -->
                         <div id="form-contact-us" class="flex-container-form hide">    
                             <div id="form-user-contact-us" class="forms-users">
-                                <label for="first-name">* First Name</label>
+                                <label for="first-name">First Name *</label>
                                 <input type="text" id="first-name" class="input-forms" name="first_name" required placeholder="Insert your first name here!">
-                        
-                                <label for="last-name">* Last Name</label>
+                                
+                                <label for="last-name">Last Name *</label>
                                 <input type="text" id="last-name" class="input-forms" name="last_name" required placeholder="Insert your last name here!">
-                        
-                                <label for="email">* Email Address</label>
+                                
+                                <label for="email">Email Address *</label>
                                 <input type="email" id="email" class="input-forms" name="email_address" required placeholder="Insert your email address here!">
-            
+                    
                                 <!-- Radio Button Section -->
                                 <label for="daily" class="radio-label-contact-share">Daily</label>
                                 <input type="radio" id="daily" class="radio-buttons-contact-share" value="daily" name="newsletter_email" required>
-                            
+                                    
                                 <label for="weekly" class="radio-label-contact-share">Weekly</label>
                                 <input type="radio" id="weekly" class="radio-buttons-contact-share" value="weekly" name="newsletter_email" required>
-                            
+                                    
                                 <label for="monthly" class="radio-label-contact-share">Monthly</label>
                                 <input type="radio" id="monthly" class="radio-buttons-contact-share" value="monthly" name="newsletter_email" required>
                             </div>
-                        
+                                
                             <div id="buttons-area-contact-us">
                                 <input type="submit" value="Sign Up!" class="buttons">
                                 <input type="reset" value="Reset Form" class="buttons">
                             </div>
-                            
+                                    
                         </div>
                     </form>
-                    <a href="#" class="close">X</a>
+                    <a href="#modal-contact-us" class="close">X</a>
                 </div>
             </div>   
         </section>

@@ -1,8 +1,7 @@
  
 let startBtn = document.getElementById('start-btn');
-let startView = document.getElementById('start-view');
+let startView = document.getElementById('start-games');
 let quizView = document.getElementById('quiz-view');
-let resetBtn = document.getElementById('reset-btn');
 // Instruction
 let anchorInstruction = document.getElementById('anchor-instruction')
 let modalInstruction = document.getElementById('modal-instruction');
@@ -11,9 +10,6 @@ let anchorContactUs = document.getElementById('anchor-contact');
 let modalContactUs = document.getElementById('anchor-contact');
 // Close Functionality
 let close = document.getElementsByClassName('close');
-
-//Experiment Hmaburger
-let x = document.getElementById("myLinks");
 
 
 // Wait for the DOM to finish loading before running the game
@@ -35,10 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function startGame() {
     startView.classList.add("hide");
-    startView.classList.remove("game.area");
     startBtn.classList.add("hide");
     quizView.classList.remove("hide");
-    resetBtn.classList.remove("hide");
 }
 
 //W3 School
@@ -52,7 +46,7 @@ close.onclick = function() {
     modalInstruction.style.display = "none";
 }
   
-// When the user clicks anywhere outside of the modal, close the modal
+// When the user clicks outside of the modal, close the modal
 window.onclick = function(event) {
     if (event.target == modalInstruction) {
         modalInstruction.style.display = "none";
