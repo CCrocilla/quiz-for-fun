@@ -19,26 +19,16 @@
             </a>
 
             <nav id="menu" class="navbar flex-items">
-                <ul>
-                    <li>
                         <a href="index.html" id="anchor-home" aria-label="Open the Home Page">Home</a>
-                    </li>
-                    <li>
                         <a href="#modal-instruction" id="anchor-instruction" aria-label="Open the Instructions Area">Instructions</a>
-                    </li>
-                    <li>
                         <a href="#modal-score" id="anchor-score" aria-label="Open the Score Area">Score</a>
-                    </li>
-                    <li>
                         <a href="#modal-contact-us" id="anchor-contact" aria-label="Open the Contact Us Area">Contact Us</a>
-                    </li>
-                </ul>
             </nav>
         </header>
 
         <section id="game-area-section" class="flex-containers flex-center game-img">
             <!-- Start -->
-            <div id="start-games" class="flex-containers flex-center game-area">
+            <div id="start-games" class="flex-containers flex-center game-area hide">
                 <div id="start-view" class="start-area text-center">
                     <h2 class="text-center">Welcome to Quiz For Fun!</h2>
                     <p class="text-center">Amazing challenges are waiting for you!</p>
@@ -51,7 +41,7 @@
             </div>
 
             <!-- Login Quiz -->
-            <div id="quiz-view" class="flex-containers flex-center pre-quiz hide">
+            <div id="quiz-view" class="flex-containers flex-center pre-quiz fit-content hide">
                 <form method="GET" action="">
                     <div id="pre-quiz" class="pre-quiz-content">   
                         <div class="text-center">
@@ -67,13 +57,13 @@
                             <h2>Select the difficulty speed here!</h2>
                         <!-- Radio Button Difficulty Section -->
                             <label for="easy" class="radio-label-difficulty">Easy</label>
-                            <input type="radio" id="daily" class="radio-button-difficulty" value="easy" name="level_speed" required>
+                            <input type="radio" id="daily" class="radio-btn-difficulty" value="easy" name="level_speed" required>
                     
-                            <label for="weekly" class="radio-label-difficulty">Medium</label>
-                            <input type="radio" id="weekly" class="radio-button-difficulty" value="medium" name="level_speed" required>
+                            <label for="medium" class="radio-label-difficulty">Medium</label>
+                            <input type="radio" id="medium" class="radio-btn-difficulty" value="medium" name="level_speed" required>
                     
-                            <label for="monthly" class="radio-label-difficulty">Hard</label>
-                            <input type="radio" id="monthly" class="radio-button-difficulty" value="hard" name="level_speed" required>
+                            <label for="hard" class="radio-label-difficulty">Hard</label>
+                            <input type="radio" id="hard" class="radio-btn-difficulty" value="hard" name="level_speed" required>
                         </div>
 
                         <!-- Category Selection -->    
@@ -86,7 +76,7 @@
                 </form>
             </div>
 
-            <!-- Question Section -->
+            <!-- Question Quiz Area -->
             <div id="question-view" class="flex-containers flex-center start-area quiz">
                 <div id="questions" class="text-center">
                     <!-- This Section is dedicated to the Information displayed -->
@@ -112,7 +102,7 @@
                     </div>
                     <!--Here will be displayed the questions and anserws -->
                     <div id="questions-area">
-                        <h2 id="questions-text">Question?</h2>
+                        <h2 id="question-text">Question?</h2>
                         <div class="answer-container flex-center btn">
                                 <p class="answer-index">A</p>
                                 <p class="answer-text" data-number="1">Answer 1</p>
@@ -168,28 +158,25 @@
                         <!-- Form Area for the User -->
                         <div id="form-contact-us" class="flex-container hide">    
                             <div id="form-user-contact-us" class="forms-users">
-                                <label for="first-name">First Name *</label>
-                                <input type="text" id="first-name" class="input-forms" name="first_name" required placeholder="Insert your first name here!">
-                                
-                                <label for="last-name">Last Name *</label>
-                                <input type="text" id="last-name" class="input-forms" name="last_name" required placeholder="Insert your last name here!">
-                                
+                                <label for="username">Username *</label>
+                                <input type="text" id="username" class="input-forms" name="user_name" required placeholder="Insert your first name here!">
+                                                                
                                 <label for="email">Email Address *</label>
                                 <input type="email" id="email" class="input-forms" name="email_address" required placeholder="Insert your email address here!">
                     
                                 <!-- Radio Button Section -->
-                                <label for="daily" class="radio-label-contact-share">Daily</label>
-                                <input type="radio" id="daily" class="radio-buttons-contact-share" value="daily" name="newsletter_email" required>
+                                <label for="newsletter" class="radio-label-nfb"></label>
+                                <input type="radio" id="newsletter" class="radio-btn-nfb" value="newsletter" name="newsletter_email" required>
                                     
-                                <label for="weekly" class="radio-label-contact-share">Weekly</label>
-                                <input type="radio" id="weekly" class="radio-buttons-contact-share" value="weekly" name="newsletter_email" required>
+                                <label for="feedback" class="radio-label-nfb">Weekly</label>
+                                <input type="radio" id="feedback" class="radio-btn-nfb" value="feedback" name="newsletter_email" required>
                                     
-                                <label for="monthly" class="radio-label-contact-share">Monthly</label>
-                                <input type="radio" id="monthly" class="radio-buttons-contact-share" value="monthly" name="newsletter_email" required>
+                                <label for="report" class="radio-label-nfb">Monthly</label>
+                                <input type="radio" id="report" class="radio-btn-nfb" value="report" name="newsletter_email" required>
                             </div>
                                 
-                            <div id="buttons-area-contact-us">
-                                <input type="submit" value="Sign Up!" class="buttons">
+                            <div id="btn-nfb" class="btn">
+                                <input type="submit" value="Submit!" class="buttons">
                                 <input type="reset" value="Reset Form" class="buttons">
                             </div>
                                     

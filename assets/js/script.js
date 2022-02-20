@@ -1,15 +1,17 @@
  
+// -----------> Home
+//  Variables Home Page
 let startBtn = document.getElementById('start-btn');
 let startView = document.getElementById('start-games');
 let quizView = document.getElementById('quiz-view');
-// Instruction
+//  Variables Instruction
 let anchorInstruction = document.getElementById('anchor-instruction')
 let modalInstruction = document.getElementById('modal-instruction');
-// Contact Us
+//  Variables Contact Us
 let anchorContactUs = document.getElementById('anchor-contact');
 let modalContactUs = document.getElementById('anchor-contact');
-// Close Functionality
-let close = document.getElementsByClassName('close');
+//  Variables Close Functionality
+let close = document.getElementsByClassName('close')[0];
 
 
 // Wait for the DOM to finish loading before running the game
@@ -35,17 +37,21 @@ function startGameBtn() {
     quizView.classList.remove("hide");
 }
 
-//W3 School
+// -----------> Modal Instruction (Reference W3 School)
 //When the user clicks on the button, open the modal
 anchorInstruction.addEventListener('click', openInstruction);
 
 function openInstruction() {
     modalInstruction.style.display = "flex";
+    startView.classList.add("hide");
+    startBtn.classList.add("hide");
 }
 
 // When the user clicks on x, close the modal
 close.onclick = function() {
     modalInstruction.style.display = "none";
+    startView.classList.remove("hide");
+    startBtn.classList.remove("hide");
 }
   
 // When the user clicks outside of the modal, close the modal
@@ -56,13 +62,13 @@ window.onclick = function(event) {
         modalContactUs.style.display = "none";
     }
 } 
-//End Modal
+// -----------> End Modal
 
 
-
-// Full Engine
-let question = document.getElementById('questions-text');
-let answers = Array.from(document.querySelectorAll('answer-text'));
+// -----------> Quiz Engine
+//  Variables Quiz
+let question = document.getElementById('question-text');
+let answers = Array.from(document.querySelectorAll('.answer-text'));
 let progress = document.getElementById('progress');
 let progressFull = document.getElementById('progress-full');
 let scoreText = document.getElementById('score');
@@ -76,9 +82,9 @@ let availableQuestion = [];
 let shuffleQuestion;
 
 const moviesQuestions = document.getElementById('movies-btn')
-const moviesElements = document.getElementById
 
-const questions = [
+// -----------> Questions
+let questions = [
     {
         question: 'What my name?',
         answer1: 'Filippo',
@@ -95,9 +101,10 @@ const questions = [
         answer4: 'Ferus',
         correctAnswer: 3,
     }
-]   
+]  
+// -----------> End Questions
 
-const POINTS = 1;
+const POINTS = 100;
 const MAX_QUESTIONS = 2;
 
 startGame = () => {
@@ -108,6 +115,12 @@ startGame = () => {
 }
 
 getNewQuestion = () => {
+    /*if(availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
+        localStorage.setItem('recentScore', score)
+
+        return window.location.assign('/end-game.html');
+    }*/
+
     questionCounter++;
     progress.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
     progressFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
@@ -119,32 +132,32 @@ getNewQuestion = () => {
 
     //This is required for the possible answers
     answers.forEach(answer => {
-        let number = answer.dataset['number'];
+        const number = answer.dataset['number'];
         answer.innerText = currentQuestion['answer' + number]   
     })
 
-    availableQuestion.splice(questionIndex, 1);
+    availableQuestion.splice(questionsIndex, 1);
 
-    acceptedAnswer = true;
+    trueAnswer = true;
 }
 
 // Run Event for each answer clicked.
 answers.forEach(answer => {
     answer.addEventListener('click', event => {
-        if(!acceptedAnswer) return;
+        if(trueAnswer != true) return;
 
-        acceptedAnswer = false;
         let selectedChoice = event.target;
         let selectedAnswer = selectedChoice.dataset['number'];
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'wrong';
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct-answer' : 'wrong-answer';
 
-        if(classToApply === 'correct') {
-            increment(POINTS);
+        if(classToApply === 'correct-answer') {
+            incrementScore(POINTS);
         }
+
         selectedChoice.parentElement.classList.add(classToApply);
 
-        setTimerOut(() => {
+        setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
         }, 1000);
@@ -157,3 +170,5 @@ incrementScore = num => {
     scoreText.innerText = score;
 }
 
+
+startGame();

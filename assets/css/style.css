@@ -16,7 +16,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #070707;
     color: #C84B31; 
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .flex-containers {
@@ -53,23 +53,23 @@ h1 {
     padding: 15px;
 }
 
-.navbar li {
+.navbar a {
     text-decoration: none;
     list-style: none;
     display: inline-flex;
+    justify-content: center;
+    width: 175px;
     margin: 5px;
     padding: 5px;
+    color: #C84B31;
     border: 2px solid #C84B31;
     border-radius: 5px;
-    width: 175px;
-    justify-content: center;
-}
-
-.navbar > ul > li > a {
-    color: #C84B31;
-    text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.navbar a {
+
   }
 
 .game-img {
@@ -93,6 +93,7 @@ h1 {
     display: flex;
     flex-flow: row wrap;
     width: 30vw;
+    min-width: 350px;
     height: 450px;
     border-radius: 10px;
     box-shadow: 7px 7px #ECDBBA;
@@ -123,14 +124,16 @@ h1 {
     text-align: center;
 }
 
+
 /* Modal Experiment */
 .popup-instruction {
     display: none;
     position: fixed;
+    margin: 0 auto;
     z-index: 1;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(7, 7, 7, 0.7);
+    background-color: rgba(7, 7, 7, 0.8);
 }
 
   /* The Close Button */
@@ -191,6 +194,9 @@ footer {
     margin-left: 20px;
 }
 
+.fit-content {
+    height: fit-content;
+}
 
 .input-forms {
     margin-top: 2px;
