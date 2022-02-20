@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "start") {
-                startGame();
+                startGameBtn();
             } else {
                 alert("Something went wrong");
             }
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
-function startGame() {
+function startGameBtn() {
     startView.classList.add("hide");
     startBtn.classList.add("hide");
     quizView.classList.remove("hide");
@@ -37,10 +37,12 @@ function startGame() {
 
 //W3 School
 //When the user clicks on the button, open the modal
-anchorInstruction.onclick = function() {
+anchorInstruction.addEventListener('click', openInstruction);
+
+function openInstruction() {
     modalInstruction.style.display = "flex";
 }
-  
+
 // When the user clicks on x, close the modal
 close.onclick = function() {
     modalInstruction.style.display = "none";
@@ -54,3 +56,104 @@ window.onclick = function(event) {
         modalContactUs.style.display = "none";
     }
 } 
+//End Modal
+
+
+
+// Full Engine
+let question = document.getElementById('questions-text');
+let answers = Array.from(document.querySelectorAll('answer-text'));
+let progress = document.getElementById('progress');
+let progressFull = document.getElementById('progress-full');
+let scoreText = document.getElementById('score');
+let questionsView = document.getElementById('question-view');
+
+let currentQuestion = {};
+let trueAnswer = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestion = [];
+let shuffleQuestion;
+
+const moviesQuestions = document.getElementById('movies-btn')
+const moviesElements = document.getElementById
+
+const questions = [
+    {
+        question: 'What my name?',
+        answer1: 'Filippo',
+        answer2: 'Claudio',
+        answer3: 'James',
+        answer4: 'Aristotele',
+        correctAnswer: 2,
+    },
+    {
+        question: 'What my surname?',
+        answer1: 'Super',
+        answer2:'Mega',
+        answer3: 'Crocilla',
+        answer4: 'Ferus',
+        correctAnswer: 3,
+    }
+]   
+
+const POINTS = 1;
+const MAX_QUESTIONS = 2;
+
+startGame = () => {
+    questionCounter = 0;
+    score = 0;
+    availableQuestion = [...questions];
+    getNewQuestion();
+}
+
+getNewQuestion = () => {
+    questionCounter++;
+    progress.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
+    progressFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+
+    // This will generate a random value from the questions
+    let questionsIndex = Math.floor(Math.random() * availableQuestion.length);
+    currentQuestion = availableQuestion[questionsIndex];
+    question.innerText = currentQuestion.question
+
+    //This is required for the possible answers
+    answers.forEach(answer => {
+        let number = answer.dataset['number'];
+        answer.innerText = currentQuestion['answer' + number]   
+    })
+
+    availableQuestion.splice(questionIndex, 1);
+
+    acceptedAnswer = true;
+}
+
+// Run Event for each answer clicked.
+answers.forEach(answer => {
+    answer.addEventListener('click', event => {
+        if(!acceptedAnswer) return;
+
+        acceptedAnswer = false;
+        let selectedChoice = event.target;
+        let selectedAnswer = selectedChoice.dataset['number'];
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'wrong';
+
+        if(classToApply === 'correct') {
+            increment(POINTS);
+        }
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        setTimerOut(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion();
+        }, 1000);
+    })
+})
+
+// Increment Score 
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+}
+

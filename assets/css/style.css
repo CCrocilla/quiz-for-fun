@@ -123,11 +123,6 @@ h1 {
     text-align: center;
 }
 
-.pre-questions {
-
-}
-
-
 /* Modal Experiment */
 .popup-instruction {
     display: none;
@@ -243,7 +238,7 @@ footer {
 }
 
 /*Disable the button - W3School References*/
-.btn-games[:disabled]:hover {
+.btn-games[disabled]:hover {
     cursor: not-allowed;
 }
 

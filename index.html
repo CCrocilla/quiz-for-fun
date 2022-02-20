@@ -14,20 +14,23 @@
     </head>
     <body>
         <header id="" class="flex-containers flex-center">
-            <a href="index.html" id="logo" class="logos flex-items" aria-label="Go to the Home Page">
+            <a href="index.html" id="logo" class="logos flex-items" aria-label="Open the Home Page">
                 <h1>Quiz For Fun</h1>
             </a>
 
             <nav id="menu" class="navbar flex-items">
                 <ul>
                     <li>
-                        <a href="index.html" id="anchor-home" aria-label="Go to the Home Page">Home</a>
+                        <a href="index.html" id="anchor-home" aria-label="Open the Home Page">Home</a>
                     </li>
                     <li>
-                        <a href="#modal-instruction" id="anchor-instruction" aria-label="Go to the Instructions Page">Instructions</a>
+                        <a href="#modal-instruction" id="anchor-instruction" aria-label="Open the Instructions Area">Instructions</a>
                     </li>
                     <li>
-                        <a href="#modal-contact-us" id="anchor-contact" aria-label="Go to the Contact Us Page">Contact Us</a>
+                        <a href="#modal-score" id="anchor-score" aria-label="Open the Score Area">Score</a>
+                    </li>
+                    <li>
+                        <a href="#modal-contact-us" id="anchor-contact" aria-label="Open the Contact Us Area">Contact Us</a>
                     </li>
                 </ul>
             </nav>
@@ -35,7 +38,7 @@
 
         <section id="game-area-section" class="flex-containers flex-center game-img">
             <!-- Start -->
-            <div id="start-games" class="flex-containers flex-center game-area hide">
+            <div id="start-games" class="flex-containers flex-center game-area">
                 <div id="start-view" class="start-area text-center">
                     <h2 class="text-center">Welcome to Quiz For Fun!</h2>
                     <p class="text-center">Amazing challenges are waiting for you!</p>
@@ -89,20 +92,27 @@
                     <!-- This Section is dedicated to the Information displayed -->
                     <!-- Used Brian Design for references but code adjusted by myself-->
                     <div id="info-questions-area">
+                        <!-- Progress Bar -->
                         <div id="questions-progress">
                             <p class="questions-score-text">Progress Bar</p>
                             <div id="progress" class="progress-bar">
                                 <div id="progress-full" class="progress-bar-full"></div>
                             </div>
                         </div>
+                        <!-- Score -->
                         <div id="questions-score">
                             <p class="questions-score-text">Score</p>
                             <p id="score" class="score-number">0</p>
                         </div>
+                        <!-- Timer -->
+                        <div id="timer" class="timer-container">
+                            <span class="timer-text">Time Left:</span>
+                            <span class="timer-sec">1</span>
+                        </div>
                     </div>
                     <!--Here will be displayed the questions and anserws -->
                     <div id="questions-area">
-                        <h2>Question?</h2>
+                        <h2 id="questions-text">Question?</h2>
                         <div class="answer-container flex-center btn">
                                 <p class="answer-index">A</p>
                                 <p class="answer-text" data-number="1">Answer 1</p>
@@ -209,6 +219,8 @@
         </footer>
         <!-- Javascript Core File -->
         <script src="assets/js/script.js"></script>
+        <script src="assets/js/quiz-engine.js"></script>
+        <script src="assets/js/questions.js"></script>
         <!-- Font Awesome Script -->
         <script src="https://kit.fontawesome.com/0644654b1f.js" crossorigin="anonymous"></script>
     </body>
