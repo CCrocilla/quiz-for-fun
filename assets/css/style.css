@@ -36,7 +36,7 @@ h1 {
     color: #C84B31; 
 }
 
-.logos { 
+.logo-qff { 
     font-size: 150%;
     text-transform: uppercase;
     text-decoration: none;
@@ -124,6 +124,9 @@ h1 {
     text-align: center;
 }
 
+.text-left {
+    text-align: left;
+}
 
 /* Modal Experiment */
 .popup-instruction {
@@ -180,7 +183,6 @@ footer {
 
 
 /* Pre-Quiz Area */
-
 .pre-quiz-content {
     padding: 15px;
     margin: 15px;
@@ -252,11 +254,11 @@ footer {
 /* Questions Area */
 .answer-container {
     display: flex;
-    width: 25vw;
     margin: 10px;
     padding: 10px;
     font-size: 2rem;
     background-color: #070707;
+    border-radius: 15px;
     color: #ECDBBA;
     cursor: pointer;
 }
@@ -277,6 +279,19 @@ footer {
     flex: 20%;
 }
 
+.btn-answers {
+    background-color: #C84B31;
+    color: #070707;
+    font-size: 1rem;
+    width: 230px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn-answers:hover {
+    background-color: #ECDBBA;
+}
 
 .correct-answer {
     background-color: green;
@@ -294,3 +309,27 @@ footer {
     padding: 30px;
 }
 
+/* Error Page */
+.te-content {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50%;
+    min-width: 350px;
+    height: fit-content;
+    min-height: 300px;
+    font-size: 1.3rem;
+    padding: 35px;
+    margin: 35px;
+    background-color: #C84B31;
+    color: #070707;
+    border-radius: 10px;
+    box-shadow: 7px 7px #ECDBBA;
+}
+
+.te-content .anchor-text {
+    text-decoration: none;
+    cursor: pointer;
+    margin: 20px auto;
+    padding-top: 12px;
+    font-size: 22px;
+}

@@ -1,4 +1,4 @@
-let questions = [
+/*let questions = [
     {
         question: 'What my name?',
         answer1: 'Filippo',
@@ -15,4 +15,4 @@ let questions = [
         answer4: 'Ferus',
         correctAnswer: 3,
     }
-]   
+]   */

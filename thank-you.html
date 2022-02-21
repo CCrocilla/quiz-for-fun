@@ -13,33 +13,45 @@
         <title>Quiz For Fun</title>
     </head>
     <body>
-        <header id="" class="flex-containers">
-            <a href="index.html" id="logo" class="logos flex-items" aria-label="Go to the Home Page">
-                    <h1>Quiz For Fun</h1>
+        <header id="header" class="flex-containers flex-center">
+            <a href="index.html" id="logo" class="logo-qff flex-items flex-center" aria-label="Open the Home Page">
+                <h1>Quiz For Fun</h1>
             </a>
-
-            <nav id="menu" class="navbar flex-items">
-                <ul>
-                    <li>
-                        <a href="index.html" aria-label="Go to the Home Page" class="active">Home</a>
-                    </li>
-                    <li>
-                        <a href="instructions.html" aria-label="Go to the Instructions Page">Instructions</a>
-                    </li>
-                    <li>
-                        <a href="contact-us.html" aria-label="Go to the Contact Us Page">Contact Us</a>
-                    </li>
-                </ul>
-            </nav>
         </header>
 
-        <section id="" class="flex-containers">
-            Thanks you area
+        <section id="game-area-section" class="flex-containers flex-center game-img">
+            <div class="te-content">
+                <h2 class="text-center">
+                    Thanks for your Submission!
+                </h2>
+                <p class="text-left">We will take care of everything!</p> 
+                <p class="text-left">Let's go to the Home Page by clicking on the Home button below and have fun!!!</p>
+                <a href="index.html" class="anchor-text text-center btn-games" aria-label="Go to the Home Page">Home</a>
+            </div>
         </section>
 
-        <footer id="footer" class="flex-containers">
-            Footer Area
+        <footer id="footer" class="flex-containers flex-center">
+            <ul id="social" class="social-network text-center">
+                <li>
+                    <a href="https://facebook.com" target="_blank" rel="noopener" 
+                    aria-label="Visit our Facebook Page (This link opens in a new tab)" ><i class="fab fa-facebook-square"></i></a>
+                </li>
+                <li>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" 
+                    aria-label="Visit our Instagram Page (This link opens in a new tab)" ><i class="fab fa-instagram-square"></i></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com" target="_blank" rel="noopener" 
+                    aria-label="Visit our Twitter Page (This link opens in a new tab)" ><i class="fab fa-twitter-square"></i></a>
+                </li>
+                
+            </ul>
         </footer>
-        
+        <!-- Javascript Core File -->
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/quiz-score.js"></script>
+        <script src="assets/js/questions.js"></script>
+        <!-- Font Awesome Script -->
+        <script src="https://kit.fontawesome.com/0644654b1f.js" crossorigin="anonymous"></script>
     </body>
 </html>

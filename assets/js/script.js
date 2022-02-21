@@ -4,6 +4,7 @@
 let startBtn = document.getElementById('start-btn');
 let startView = document.getElementById('start-games');
 let quizView = document.getElementById('quiz-view');
+let questionView = document.getElementById('question-view');
 //  Variables Instruction
 let anchorInstruction = document.getElementById('anchor-instruction')
 let modalInstruction = document.getElementById('modal-instruction');
@@ -24,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "start") {
                 startGameBtn();
-            } else {
+            } /*else {
                 alert("Something went wrong");
-            }
+            }*/
         })
     }
 })
@@ -64,25 +65,6 @@ window.onclick = function(event) {
 } 
 // -----------> End Modal
 
-
-// -----------> Quiz Engine
-//  Variables Quiz
-let question = document.getElementById('question-text');
-let answers = Array.from(document.querySelectorAll('.answer-text'));
-let progress = document.getElementById('progress');
-let progressFull = document.getElementById('progress-full');
-let scoreText = document.getElementById('score');
-let questionsView = document.getElementById('question-view');
-
-let currentQuestion = {};
-let trueAnswer = true;
-let score = 0;
-let questionCounter = 0;
-let availableQuestion = [];
-let shuffleQuestion;
-
-const moviesQuestions = document.getElementById('movies-btn')
-
 // -----------> Questions
 let questions = [
     {
@@ -104,38 +86,84 @@ let questions = [
 ]  
 // -----------> End Questions
 
-const POINTS = 100;
+// -----------> Quiz Engine
+//  Variables Quiz
+let question = document.getElementById('question-text');
+let answers = Array.from(document.querySelectorAll('.answer-text'));
+let progress = document.getElementById('progress');
+let progressFull = document.getElementById('progress-full');
+let scoreText = document.getElementById('score');
+let questionsView = document.getElementById('question-view');
+
+let currentQuestion = {};
+let trueAnswer = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestion = [];
+let shuffleQuestion;
+
+const moviesQuestions = document.getElementById('movies-btn');
+const videogamesQuestions = document.getElementById('videogames-btn');
+
+// Disable Buttons if username is empty
+username.addEventListener('keyup', () => {
+    moviesQuestions.disabled = !username.value;
+    videogamesQuestions.disabled = !username.value;
+})
+
+// Check if username as been filled in before to start the Movies quiz
+moviesQuestions.addEventListener('click', () => {
+    startView.classList.add("hide");
+    startBtn.classList.add("hide");
+    quizView.classList.add('hide');
+    questionView.classList.remove('hide');
+    startGame()
+})
+
+// Check if username as been filled in before to start the Videogames quiz
+videogamesQuestions.addEventListener('click', () => {
+    startView.classList.add("hide");
+    startBtn.classList.add("hide");
+    quizView.classList.add('hide');
+    questionView.classList.remove('hide');
+    startGame()
+})
+
+
+const POINTS = 10;
 const MAX_QUESTIONS = 2;
 
+// Function to start the quiz
 startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestion = [...questions];
-    getNewQuestion();
+    getQuestion();
 }
 
-getNewQuestion = () => {
-    /*if(availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
+// Function to get new questions
+getQuestion = () => {
+    if(availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score)
 
         return window.location.assign('/end-game.html');
-    }*/
+    }
 
     questionCounter++;
-    progress.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
+    progress.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
     progressFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
-    // This will generate a random value from the questions
+    // Generate a random value from the questions variable
     let questionsIndex = Math.floor(Math.random() * availableQuestion.length);
     currentQuestion = availableQuestion[questionsIndex];
     question.innerText = currentQuestion.question
 
-    //This is required for the possible answers
+    // Required to display the possible answers
     answers.forEach(answer => {
-        const number = answer.dataset['number'];
+        let number = answer.dataset['number'];
         answer.innerText = currentQuestion['answer' + number]   
     })
-
+    // Remove the Question answered
     availableQuestion.splice(questionsIndex, 1);
 
     trueAnswer = true;
@@ -149,7 +177,7 @@ answers.forEach(answer => {
         let selectedChoice = event.target;
         let selectedAnswer = selectedChoice.dataset['number'];
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct-answer' : 'wrong-answer';
+        let classToApply = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
 
         if(classToApply === 'correct-answer') {
             incrementScore(POINTS);
@@ -159,7 +187,7 @@ answers.forEach(answer => {
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
-            getNewQuestion();
+            getQuestion();
         }, 1000);
     })
 })
@@ -170,5 +198,8 @@ incrementScore = num => {
     scoreText.innerText = score;
 }
 
-
 startGame();
+
+
+
+// 
