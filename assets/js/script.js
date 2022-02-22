@@ -141,6 +141,19 @@ const getQuestion = () => {
 
       //  return window.location.assign('end-game.html');
     }
+    
+    // -----------------> Timer 
+    let timerSec = 1000;
+
+    let time = setInterval(function() {   
+    document.getElementById('quiz-time').innerText = timerSec;
+    timerSec--;
+    if (timerSec === -1) {
+        clearInterval(time);
+        alert("Game Over!!");
+        }
+    }, 1000);
+
 
     questionCounter++;
     progress.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
@@ -155,6 +168,7 @@ const getQuestion = () => {
     answersElement.forEach(answer => {
         let number = answer.dataset['number'];
         answer.innerText = currentQuestion.answers[number - 1]; 
+         console.log('currencyQuestion', currentQuestion.correctAnswer);
     })
     // Remove the Question answered
     window.availableQuestion.splice(questionsIndex, 1);
@@ -169,9 +183,10 @@ answersElement.forEach(answer => {
 
         let selectedChoice = event.target;
         let selectedAnswer = selectedChoice.dataset['number'];
+        console.log('selectedChoise', 'selectedAnswer', selectedChoice, selectedAnswer);
+        let answerColorChange = selectedAnswer === currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
+        console.log('currencyQuestion', currentQuestion.correctAnswer);
 
-        let answerColorChange = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
-        
         if(answerColorChange === 'correct-answer') {
             incrementScore(POINTS);
         }
@@ -185,7 +200,7 @@ answersElement.forEach(answer => {
     })
 })
 
-// Increment Score 
+// -----------------> Increment Score 
 incrementScore = num => {
     score += num;
     scoreText.innerText = score;

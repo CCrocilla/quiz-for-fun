@@ -269,7 +269,7 @@ footer {
 .info-quiz {
     display: flex;
     justify-content: space-between;
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding: 10px;
 }
 
@@ -291,7 +291,7 @@ footer {
 }
 
 .questions-text-view {
-    font: 1.5rem;
+    font-size: 1.8rem;
     margin-top: 40px;
 }
 
