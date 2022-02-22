@@ -68,10 +68,6 @@ h1 {
     cursor: pointer;
 }
 
-.navbar a {
-
-  }
-
 .game-img {
     width: 100vw;
     max-width: 100%;
@@ -86,7 +82,7 @@ h1 {
 }
 
 /* This is used for both Start and Instructions */
-.game-area, .content-popup, .pre-quiz, .quiz {
+.game-area, .content-popup, .pre-quiz, .quiz, .end-game {
     /*background-image: linear-gradient(to right top, #070707, #003b58, #007a8c, #00b978, #a8eb12);*/
     background-color: #C84B31;
     color: #070707;
@@ -103,7 +99,7 @@ h1 {
     font-family: 'Press Start 2P', cursive, sans-serif;
     background-color: #ECDBBA;
     color: #070707;
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 175px;
     margin: 10px;
     padding: 10px;
@@ -181,7 +177,6 @@ footer {
 }
 /* End Footer Section */
 
-
 /* Pre-Quiz Area */
 .pre-quiz-content {
     padding: 15px;
@@ -214,6 +209,11 @@ footer {
     display: block;
 }
 
+.text-labels {
+    font-size: 1rem;
+    margin-top: 5px;    
+}
+
 .input-forms:hover {
     border-color: #ECDBBA;  
 }
@@ -232,8 +232,8 @@ footer {
     font-family: 'Press Start 2P', cursive, sans-serif;
     background-color: #ECDBBA;
     color: #070707;
-    font-size: 1rem;
-    width: 175px;
+    font-size: 1.5rem;
+    width: 255px;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -249,7 +249,6 @@ footer {
 .btn-games[disabled]:hover {
     cursor: not-allowed;
 }
-
 
 /* Questions Area */
 .answer-container {
@@ -267,26 +266,33 @@ footer {
     padding: 10px;
 }
 
-.info-questions-area {
+.info-quiz {
     display: flex;
     justify-content: space-between;
+    font-size: 1rem;
+    padding: 10px;
 }
 
 .progress-bar {
     border: 2px solid #070707;
     border-radius: 10px;
-    padding: 10px;
-    flex: 20%;
+    padding: 5px;
+    width: 100px;
 }
 
 .btn-answers {
     background-color: #C84B31;
     color: #070707;
-    font-size: 1rem;
+    font-size: 1.5rem;
     width: 230px;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
+}
+
+.questions-text-view {
+    font: 1.5rem;
+    margin-top: 40px;
 }
 
 .btn-answers:hover {
@@ -301,12 +307,10 @@ footer {
     background-color: red;
 }
 
-
 /* Instruction */
 .popup-instruction .content-popup, .quiz {
     height: fit-content;
-    margin: 30px;
-    padding: 30px;
+    padding: 30px 10px;
 }
 
 /* Error Page */
@@ -329,7 +333,5 @@ footer {
 .te-content .anchor-text {
     text-decoration: none;
     cursor: pointer;
-    margin: 20px auto;
-    padding-top: 12px;
-    font-size: 22px;
+    margin: 40px auto;
 }

@@ -41,29 +41,31 @@
             </div>
 
             <!-- Login Quiz -->
-            <div id="quiz-view" class="flex-containers flex-center pre-quiz fit-content hide">
+            <div id="pre-quiz-view" class="flex-containers flex-center pre-quiz fit-content hide">
                 <form method="GET" action="">
                     <div id="pre-quiz" class="pre-quiz-content">   
                         <div class="text-center">
                             <h2>Hi! Almost time to start! Set username, difficulty, pick a category and start!</h2>
                         </div>
                         <!-- Username Section -->
-                        <div>
+                        <div class="text-labels">
                             <label for="username">Username *</label>
                             <input type="text" id="username" class="input-forms" name="user_name" required placeholder="Insert your username here!">
                         </div>
                         <!-- Difficulty Selection -->
                         <div class="text-center">
                             <h2>Select the difficulty speed here!</h2>
-                        <!-- Radio Button Difficulty Section -->
-                            <label for="easy" class="radio-label-difficulty">Easy</label>
-                            <input type="radio" id="easy" class="radio-btn-difficulty" value="easy" name="level_speed" required>
-                    
-                            <label for="medium" class="radio-label-difficulty">Medium</label>
-                            <input type="radio" id="medium" class="radio-btn-difficulty" value="medium" name="level_speed" required>
-                    
-                            <label for="hard" class="radio-label-difficulty">Hard</label>
-                            <input type="radio" id="hard" class="radio-btn-difficulty" value="hard" name="level_speed" required>
+                            <!-- Radio Button Difficulty Section -->
+                            <div class="text-labels">
+                                <label for="easy" class="radio-label-difficulty">Easy</label>
+                                <input type="radio" id="easy" class="radio-btn-difficulty" value="easy" name="level_speed" required>
+                        
+                                <label for="medium" class="radio-label-difficulty">Medium</label>
+                                <input type="radio" id="medium" class="radio-btn-difficulty" value="medium" name="level_speed" required>
+                        
+                                <label for="hard" class="radio-label-difficulty">Hard</label>
+                                <input type="radio" id="hard" class="radio-btn-difficulty" value="hard" name="level_speed" required>
+                            </div>
                         </div>
 
                         <!-- Category Selection -->    
@@ -77,32 +79,32 @@
             </div>
 
             <!-- Question Quiz Area -->
-            <div id="question-view" class="flex-containers flex-center start-area quiz hide">
+            <div id="quiz-view" class="flex-containers flex-center quiz hide">
                 <div id="questions" class="text-center">
                     <!-- This Section is dedicated to the Information displayed -->
                     <!-- Used Brian Design for references but code adjusted by myself-->
-                    <div id="info-questions-area">
+                    <div id="info-questions-area" class="info-quiz">
                         <!-- Progress Bar -->
                         <div id="questions-progress">
-                            <p class="questions-score-text">Progress Bar</p>
+                            <p class="questions-score-text">Question:</p>
                             <div id="progress" class="progress-bar">
                                 <div id="progress-full" class="progress-bar-full"></div>
                             </div>
                         </div>
                         <!-- Score -->
                         <div id="questions-score">
-                            <p class="questions-score-text">Score</p>
-                            <p id="score" class="score-number">0</p>
+                            <p class="questions-score-text">Score:</p>
+                            <p id="score" class="score-number progress-bar">0</p>
                         </div>
                         <!-- Timer -->
                         <div id="timer" class="timer-container">
-                            <span class="timer-text">Time Left:</span>
-                            <span class="timer-sec">1</span>
+                            <p class="timer-text">Time:</p>
+                            <p class="timer-sec progress-bar">1</p>
                         </div>
                     </div>
                     <!--Here will be displayed the questions and anserws -->
                     <div id="questions-area">
-                        <h2 id="question-text">Question?</h2>
+                        <h2 id="question-text" class="questions-text-view">Question?</h2>
                         <div class="answer-container flex-center btn">
                                 <p class="answer-index">A</p>
                                 <button class="answer-text btn-answers" data-number="1">Answer 1</button>
@@ -205,9 +207,9 @@
             </ul>
         </footer>
         <!-- Javascript Core File -->
+        <script src="assets/js/questions.js"></script>
         <script src="assets/js/script.js"></script>
         <script src="assets/js/quiz-score.js"></script>
-        <script src="assets/js/questions.js"></script>
         <!-- Font Awesome Script -->
         <script src="https://kit.fontawesome.com/0644654b1f.js" crossorigin="anonymous"></script>
     </body>

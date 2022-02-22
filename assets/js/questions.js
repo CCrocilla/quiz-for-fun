@@ -1,18 +1,26 @@
-/*let questions = [
+const questionsVideogames = [
     {
         question: 'What my name?',
-        answer1: 'Filippo',
-        answer2: 'Claudio',
-        answer3: 'James',
-        answer4: 'Aristotele',
+        answers:['Filippo', 'Claudio', 'James', 'Aristotele'],
         correctAnswer: 2,
     },
     {
         question: 'What my surname?',
-        answer1: 'Super',
-        answer2:'Mega',
-        answer3: 'Crocilla',
-        answer4: 'Ferus',
-        correctAnswer: 3,
+        answers: ['Super', 'Ciccio', 'Mega', 'Crocilla'],
+        correctAnswer: 4,
     }
-]   */
+]  
+
+
+const questionsMovies = [
+    {
+        question: 'What my friend name?',
+        answers:['Wolrd', 'Luigi', 'Hola', 'Aristotele'],
+        correctAnswer: 2,
+    },
+    {
+        question: 'What best Luigi s friend?',
+        answers: ['Hola', 'Wolrd', 'Mega', 'Mario'],
+        correctAnswer: 4,
+    }
+]  

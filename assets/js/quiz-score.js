@@ -31,7 +31,7 @@ saveHighScore = event => {
 
 
 let highScoresList = document.getElementById('high-score');
-let highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+//let highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 highScoresList.innerHTML = highScores.map(score => {
     return `<li class="high-score"> ${score.name} - ${score.score}`

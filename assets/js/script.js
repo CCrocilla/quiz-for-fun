@@ -3,8 +3,8 @@
 //  Variables Home Page
 let startBtn = document.getElementById('start-btn');
 let startView = document.getElementById('start-games');
-let quizView = document.getElementById('quiz-view');
-let questionView = document.getElementById('question-view');
+let quizView = document.getElementById('pre-quiz-view');
+let questionView = document.getElementById('quiz-view');
 //  Variables Instruction
 let anchorInstruction = document.getElementById('anchor-instruction')
 let modalInstruction = document.getElementById('modal-instruction');
@@ -65,45 +65,31 @@ window.onclick = function(event) {
 } 
 // -----------> End Modal
 
-// -----------> Questions
-let questions = [
-    {
-        question: 'What my name?',
-        answer1: 'Filippo',
-        answer2: 'Claudio',
-        answer3: 'James',
-        answer4: 'Aristotele',
-        correctAnswer: 2,
-    },
-    {
-        question: 'What my surname?',
-        answer1: 'Super',
-        answer2:'Mega',
-        answer3: 'Crocilla',
-        answer4: 'Ferus',
-        correctAnswer: 3,
-    }
-]  
-// -----------> End Questions
 
 // -----------> Quiz Engine
 //  Variables Quiz
-let question = document.getElementById('question-text');
-let answers = Array.from(document.querySelectorAll('.answer-text'));
+//Const > Variable > Arrow Function > addEvent
+// Declared globally
+window.availableQuestion = [];
+
+const POINTS = 10;
+const MAX_QUESTIONS = 2;
+const moviesQuestions = document.getElementById('movies-btn');
+const videogamesQuestions = document.getElementById('videogames-btn');
+
+let questionElement = document.getElementById('question-text');
+let answersElement = Array.from(document.querySelectorAll('.answer-text'));
 let progress = document.getElementById('progress');
 let progressFull = document.getElementById('progress-full');
 let scoreText = document.getElementById('score');
-let questionsView = document.getElementById('question-view');
 
 let currentQuestion = {};
 let trueAnswer = true;
 let score = 0;
 let questionCounter = 0;
-let availableQuestion = [];
 let shuffleQuestion;
 
-const moviesQuestions = document.getElementById('movies-btn');
-const videogamesQuestions = document.getElementById('videogames-btn');
+
 
 // Disable Buttons if username is empty
 username.addEventListener('keyup', () => {
@@ -117,7 +103,7 @@ moviesQuestions.addEventListener('click', () => {
     startBtn.classList.add("hide");
     quizView.classList.add('hide');
     questionView.classList.remove('hide');
-    startGame()
+    startGame('movies')
 })
 
 // Check if username as been filled in before to start the Videogames quiz
@@ -126,67 +112,74 @@ videogamesQuestions.addEventListener('click', () => {
     startBtn.classList.add("hide");
     quizView.classList.add('hide');
     questionView.classList.remove('hide');
-    startGame()
+    startGame('videogames')
 })
 
-
-const POINTS = 10;
-const MAX_QUESTIONS = 2;
-
 // Function to start the quiz
-startGame = () => {
+const startGame = (game) => {
     questionCounter = 0;
     score = 0;
-    availableQuestion = [...questions];
+    // Switch between questions category
+    switch (game){
+        case 'movies':
+            window.availableQuestion = questionsMovies;
+            break;
+        case 'videogames':
+            window.availableQuestion = questionsVideogames;
+            break;
+        default: 
+            window.availableQuestion = [];
+            console.error('Not available questions')
+    }
     getQuestion();
 }
 
-// Function to get new questions
-getQuestion = () => {
-    if(availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem('recentScore', score)
+// Function to get new questions. callback => arrow function
+const getQuestion = () => {
+    if(window.availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
+        localStorage.setItem('recentScore', score);
 
-        return window.location.assign('/end-game.html');
+      //  return window.location.assign('end-game.html');
     }
 
     questionCounter++;
-    progress.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    progress.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
     progressFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
     // Generate a random value from the questions variable
-    let questionsIndex = Math.floor(Math.random() * availableQuestion.length);
-    currentQuestion = availableQuestion[questionsIndex];
-    question.innerText = currentQuestion.question
+    let questionsIndex = Math.floor(Math.random() * window.availableQuestion.length);
+    let currentQuestion = window.availableQuestion[questionsIndex];
+    questionElement.innerText = currentQuestion.question;
 
     // Required to display the possible answers
-    answers.forEach(answer => {
+    answersElement.forEach(answer => {
         let number = answer.dataset['number'];
-        answer.innerText = currentQuestion['answer' + number]   
+        answer.innerText = currentQuestion.answers[number - 1]; 
     })
     // Remove the Question answered
-    availableQuestion.splice(questionsIndex, 1);
+    window.availableQuestion.splice(questionsIndex, 1);
 
     trueAnswer = true;
 }
 
 // Run Event for each answer clicked.
-answers.forEach(answer => {
+answersElement.forEach(answer => {
     answer.addEventListener('click', event => {
         if(trueAnswer != true) return;
 
         let selectedChoice = event.target;
         let selectedAnswer = selectedChoice.dataset['number'];
 
-        let classToApply = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
-
-        if(classToApply === 'correct-answer') {
+        let answerColorChange = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
+        
+        if(answerColorChange === 'correct-answer') {
             incrementScore(POINTS);
         }
 
-        selectedChoice.parentElement.classList.add(classToApply);
+        selectedChoice.parentElement.classList.add(answerColorChange);
 
         setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
+            selectedChoice.parentElement.classList.remove(answerColorChange);
             getQuestion();
         }, 1000);
     })
@@ -198,8 +191,4 @@ incrementScore = num => {
     scoreText.innerText = score;
 }
 
-startGame();
 
-
-
-// 

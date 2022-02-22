@@ -19,18 +19,18 @@
             </a>
         </header>
 
-        <section class="end-game flex-containers flex-center game-img">
-            <div class="flex-container">
+        <section class="flex-containers flex-center game-img">
+            <div class="flex-container end-game">
                 <div id="end-game" class="flex-center">
                     <h1 class="final-text">Final Score: </h1>
                     <span class="final-score">0</span>
-                    <button id="save-score" class="bt-games" type="submit" onclick="saveHighScore(event)">Save</button>
+                    <button id="save-score" class="btn-games" type="submit" onclick="saveHighScore(event)">Save</button>
                 
                 </div>
                 <a href="index.html" class="btn-games">Go to Home Page</a>
             </div>
 
-            <div class="flex-containers flex-center">
+            <div class="end-game flex-containers flex-center">
                 <div id="high-scores" class="flex-center">
                     <h1 id="final-score">LeaderBoard</h1>
                     <ul id="high-score-list"></ul>
@@ -57,9 +57,9 @@
             </ul>
         </footer>
         <!-- Javascript Core File -->
+        <script src="assets/js/questions.js"></script>
         <script src="assets/js/script.js"></script>
         <script src="assets/js/quiz-score.js"></script>
-        <script src="assets/js/questions.js"></script>
         <!-- Font Awesome Script -->
         <script src="https://kit.fontawesome.com/0644654b1f.js" crossorigin="anonymous"></script>
     </body>
