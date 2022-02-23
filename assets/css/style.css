@@ -7,6 +7,7 @@
     border: none;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow: auto;
     /*transition: all 0.3s;*/
 }
 
@@ -45,7 +46,7 @@ h1 {
     padding: 15px;
 }
 
-.navbar {
+.navbar-container {
     font-size: 120%;
     display: flex;
     justify-content: center;
@@ -53,7 +54,7 @@ h1 {
     padding: 15px;
 }
 
-.navbar a {
+.nav-anchor {
     text-decoration: none;
     list-style: none;
     display: inline-flex;
@@ -123,6 +124,15 @@ h1 {
 .text-left {
     text-align: left;
 }
+
+.flex-inline {
+    display: inline-flex;
+}
+
+.decorations {
+    text-decoration: none;
+    list-style: none;
+} 
 
 /* Modal Experiment */
 .popup-instruction {
@@ -311,6 +321,23 @@ footer {
 .popup-instruction .content-popup, .quiz {
     height: fit-content;
     padding: 30px 10px;
+}
+
+
+/* ---------Score Page--------- */
+.final-text, .final-score {
+    color: #070707;
+    font-size: 2rem;
+}
+
+/* ---------Contact Us--------- */
+.form-users {
+    padding: 10px;
+    margin: 10px;
+}
+
+.textarea-area {
+    
 }
 
 /* Error Page */

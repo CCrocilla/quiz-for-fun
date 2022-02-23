@@ -1,5 +1,5 @@
  
-// -----------> Home
+// ------------- Home ------------- //
 //  Variables Home Page
 let startBtn = document.getElementById('start-btn');
 let startView = document.getElementById('start-games');
@@ -10,7 +10,7 @@ let anchorInstruction = document.getElementById('anchor-instruction')
 let modalInstruction = document.getElementById('modal-instruction');
 //  Variables Contact Us
 let anchorContactUs = document.getElementById('anchor-contact');
-let modalContactUs = document.getElementById('anchor-contact');
+let modalContactUs = document.getElementById('modal-contact-us');
 //  Variables Close Functionality
 let close = document.getElementsByClassName('close')[0];
 
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "start") {
                 startGameBtn();
-            } /*else {
-                alert("Something went wrong");
-            }*/
+            } else {
+                console.log("Something went wrong!");
+            }
         })
     }
 })
@@ -38,7 +38,7 @@ function startGameBtn() {
     quizView.classList.remove("hide");
 }
 
-// -----------> Modal Instruction (Reference W3 School)
+// ------------- Modal Instruction (Studied on W3 School) ------------- //
 //When the user clicks on the button, open the modal
 anchorInstruction.addEventListener('click', openInstruction);
 
@@ -50,6 +50,7 @@ function openInstruction() {
 
 // When the user clicks on x, close the modal
 close.onclick = function() {
+    console.log('Does not work');
     modalInstruction.style.display = "none";
     startView.classList.remove("hide");
     startBtn.classList.remove("hide");
@@ -59,14 +60,18 @@ close.onclick = function() {
 window.onclick = function(event) {
     if (event.target == modalInstruction) {
         modalInstruction.style.display = "none";
+        startView.classList.remove("hide");
+        startBtn.classList.remove("hide");
     } else if (event.target == modalContactUs ) {
         modalContactUs.style.display = "none";
+        startView.classList.remove("hide");
+        startBtn.classList.remove("hide");
     }
 } 
-// -----------> End Modal
+// ------------- End Modal ------------- //
 
 
-// -----------> Quiz Engine
+// ------------- Quiz Engine ------------- //
 //  Variables Quiz
 //Const > Variable > Arrow Function > addEvent
 // Declared globally
@@ -88,8 +93,6 @@ let trueAnswer = true;
 let score = 0;
 let questionCounter = 0;
 let shuffleQuestion;
-
-
 
 // Disable Buttons if username is empty
 username.addEventListener('keyup', () => {
@@ -139,11 +142,21 @@ const getQuestion = () => {
     if(window.availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
 
-      //  return window.location.assign('end-game.html');
+    //  return window.location.assign('end-game.html');
     }
     
-    // -----------------> Timer 
-    let timerSec = 1000;
+    // ------------- Timer ------------- //
+    let timerSec = document.querySelectorAll('input[name="level_speed"]:checked');
+    if (document.getElementById('easy').checked === true){
+        timerSec = 200;
+    } else if (document.getElementById('medium').checked === true){
+        timerSec = 100;
+    } else if (document.getElementById('hard').checked === true){
+        timerSec = 20;
+    } else {
+        timerSec = 0;
+        console.error('No difficulty has been selected');
+    }
 
     let time = setInterval(function() {   
     document.getElementById('quiz-time').innerText = timerSec;
@@ -153,7 +166,7 @@ const getQuestion = () => {
         alert("Game Over!!");
         }
     }, 1000);
-
+    // ------------- End Timer ------------- //
 
     questionCounter++;
     progress.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
@@ -168,7 +181,6 @@ const getQuestion = () => {
     answersElement.forEach(answer => {
         let number = answer.dataset['number'];
         answer.innerText = currentQuestion.answers[number - 1]; 
-         console.log('currencyQuestion', currentQuestion.correctAnswer);
     })
     // Remove the Question answered
     window.availableQuestion.splice(questionsIndex, 1);
@@ -176,17 +188,14 @@ const getQuestion = () => {
     trueAnswer = true;
 }
 
-// Run Event for each answer clicked.
+// Run Event for each answer clicked to check the match with the correct answer.
 answersElement.forEach(answer => {
     answer.addEventListener('click', event => {
         if(trueAnswer != true) return;
 
         let selectedChoice = event.target;
         let selectedAnswer = selectedChoice.dataset['number'];
-        console.log('selectedChoise', 'selectedAnswer', selectedChoice, selectedAnswer);
         let answerColorChange = selectedAnswer === currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
-        console.log('currencyQuestion', currentQuestion.correctAnswer);
-
         if(answerColorChange === 'correct-answer') {
             incrementScore(POINTS);
         }
@@ -200,10 +209,8 @@ answersElement.forEach(answer => {
     })
 })
 
-// -----------------> Increment Score 
+// ------------- Increment Score ------------- //
 incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 }
-
-

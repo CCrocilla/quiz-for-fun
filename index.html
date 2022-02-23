@@ -18,11 +18,10 @@
                 <h1>Quiz For Fun</h1>
             </a>
 
-            <nav id="menu" class="navbar flex-items">
-                        <a href="index.html" id="anchor-home" aria-label="Open the Home Page">Home</a>
-                        <a href="#modal-instruction" id="anchor-instruction" aria-label="Open the Instructions Area">Instructions</a>
-                        <a href="#modal-score" id="anchor-score" aria-label="Open the Score Area">Score</a>
-                        <a href="#modal-contact-us" id="anchor-contact" aria-label="Open the Contact Us Area">Contact Us</a>
+            <nav id="menu" class="navbar-container flex-items">
+                <a href="index.html" id="anchor-home" class="nav-anchor" aria-label="Open the Home Page">Home</a>  
+                <a href="end-game.html" id="anchor-score" class="nav-anchor" aria-label="Open the Score Page">Scores</a>
+                <a href="contact-us.html" id="anchor-contact" class="nav-anchor" aria-label="Open the Contact Us Page">Contact Us</a>
             </nav>
         </header>
 
@@ -35,8 +34,9 @@
                     <p class="text-center">What are you waiting for? Start the quiz, have fun and enjoy!</p>
                 </div>
                 
-                <div>
-                    <button id="start-btn" class="btn btn-start" data-type="start">Start</button>
+                <div class="btns-container flex-inline flex-center">
+                    <button id="start-btn" class="btn btn-start text-center" data-type="start">Start</button>
+                    <a href="#modal-instruction" id="anchor-instruction" class="btn btn-start decorations text-center" aria-label="Open the Rules Popup">Rules</a>
                 </div>
             </div>
 
@@ -203,10 +203,9 @@
                     <a href="https://twitter.com" target="_blank" rel="noopener" 
                     aria-label="Visit our Twitter Page (This link opens in a new tab)" ><i class="fab fa-twitter-square"></i></a>
                 </li>
-                
             </ul>
         </footer>
-        <!-- Javascript Core File -->
+        <!-- Javascript Core Files -->
         <script src="assets/js/questions.js"></script>
         <script src="assets/js/script.js"></script>
         <script src="assets/js/quiz-score.js"></script>
