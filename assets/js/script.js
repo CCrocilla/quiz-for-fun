@@ -214,3 +214,16 @@ incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 }
+
+// ------------- Contact Us ------------- //
+let userComment = document.getElementById('user-comment');
+let textAreaField = document.querySelectorAll('input[name="form_nfrb"]:checked');
+    if (document.getElementById('newsletter').checked === true){
+        userComment.classList.add('hide');
+    } else if (document.getElementById('feedback').checked === true){
+        userComment.classList.remove('hide');
+    } else if (document.getElementById('report').checked === true){
+        userComment.classList.remove('hide');
+    } else {
+        userComment.classList.remove('hide');
+    }
