@@ -6,7 +6,7 @@ let startView = document.getElementById('start-games');
 let quizView = document.getElementById('pre-quiz-view');
 let questionView = document.getElementById('quiz-view');
 //  Variables Instruction
-let anchorInstruction = document.getElementById('anchor-instruction')
+let anchorInstruction = document.getElementById('anchor-instruction');
 let modalInstruction = document.getElementById('modal-instruction');
 //  Variables Close Functionality
 let close = document.getElementsByClassName('close')[0];
@@ -59,10 +59,6 @@ window.onclick = function(event) {
         modalInstruction.style.display = "none";
         startView.classList.remove("hide");
         startBtn.classList.remove("hide");
-    } else if (event.target == modalContactUs ) {
-        modalContactUs.style.display = "none";
-        startView.classList.remove("hide");
-        startBtn.classList.remove("hide");
     }
 } 
 // ------------- End Modal ------------- //
@@ -75,7 +71,7 @@ window.onclick = function(event) {
 window.availableQuestion = [];
 
 const POINTS = 10;
-const MAX_QUESTIONS = 2;
+const MAX_QUESTIONS = 3;
 const moviesQuestions = document.getElementById('movies-btn');
 const videogamesQuestions = document.getElementById('videogames-btn');
 
@@ -224,6 +220,4 @@ function stopTimer() {
     }
 }
 // ------------- End Timer ------------- //
-
-
 
