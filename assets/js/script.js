@@ -8,9 +8,6 @@ let questionView = document.getElementById('quiz-view');
 //  Variables Instruction
 let anchorInstruction = document.getElementById('anchor-instruction')
 let modalInstruction = document.getElementById('modal-instruction');
-//  Variables Contact Us
-let anchorContactUs = document.getElementById('anchor-contact');
-let modalContactUs = document.getElementById('modal-contact-us');
 //  Variables Close Functionality
 let close = document.getElementsByClassName('close')[0];
 
@@ -229,15 +226,4 @@ function stopTimer() {
 // ------------- End Timer ------------- //
 
 
-// ------------- Contact Us ------------- //
-let userComment = document.getElementById('user-comment');
-let textAreaField = document.querySelectorAll('input[name="form_nfrb"]:checked');
-    if (document.getElementById('newsletter').checked === true){
-        userComment.classList.add('hide');
-    } else if (document.getElementById('feedback').checked === true){
-        userComment.classList.remove('hide');
-    } else if (document.getElementById('report').checked === true){
-        userComment.classList.remove('hide');
-    } else {
-        userComment.classList.remove('hide');
-    }
+
