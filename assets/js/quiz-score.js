@@ -2,14 +2,13 @@ let username = document.getElementById('username');
 let finalScore = document.getElementsByClassName('final-score');
 let recentScore = localStorage.getItem('recentScore');
 let saveScore = document.getElementById('save-score');
-
 let highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 const MAX_HIGH_SCORES = 10;
 
 finalScore.innerText = recentScore;
 
-saveHighScore = event => {
+saveScore = event => {
     event.preventDefault()
 
     let score = {
@@ -19,11 +18,11 @@ saveHighScore = event => {
 
     highScores.push(score)
 
-    highScores.sort ((a,b) => {
+    highScores.sort((a,b) => {
     return b.score - a.score 
     })
 
-    highScores.splice(5);
+    highScores.splice(10);
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
     window.location.assign('/')

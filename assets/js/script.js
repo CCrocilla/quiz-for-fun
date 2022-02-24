@@ -89,10 +89,12 @@ let progressFull = document.getElementById('progress-full');
 let scoreText = document.getElementById('score');
 
 let currentQuestion = {};
-let trueAnswer = true;
+let countDown = null;
 let score = 0;
 let questionCounter = 0;
 let shuffleQuestion;
+
+
 
 // Disable Buttons if username is empty
 username.addEventListener('keyup', () => {
@@ -142,39 +144,17 @@ const getQuestion = () => {
     if(window.availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
 
-    //  return window.location.assign('end-game.html');
-    }
-    
-    // ------------- Timer ------------- //
-    let timerSec = document.querySelectorAll('input[name="level_speed"]:checked');
-    if (document.getElementById('easy').checked === true){
-        timerSec = 200;
-    } else if (document.getElementById('medium').checked === true){
-        timerSec = 100;
-    } else if (document.getElementById('hard').checked === true){
-        timerSec = 20;
-    } else {
-        timerSec = 0;
-        console.error('No difficulty has been selected');
+    return window.location.assign('quiz-score.html');
     }
 
-    let time = setInterval(function() {   
-    document.getElementById('quiz-time').innerText = timerSec;
-    timerSec--;
-    if (timerSec === -1) {
-        clearInterval(time);
-        alert("Game Over!!");
-        }
-    }, 1000);
-    // ------------- End Timer ------------- //
-
+    startTimer();
     questionCounter++;
     progress.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
     progressFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
     // Generate a random value from the questions variable
     let questionsIndex = Math.floor(Math.random() * window.availableQuestion.length);
-    let currentQuestion = window.availableQuestion[questionsIndex];
+    currentQuestion = window.availableQuestion[questionsIndex];
     questionElement.innerText = currentQuestion.question;
 
     // Required to display the possible answers
@@ -185,35 +165,69 @@ const getQuestion = () => {
     // Remove the Question answered
     window.availableQuestion.splice(questionsIndex, 1);
 
-    trueAnswer = true;
+    checkAnswer();
 }
 
 // Run Event for each answer clicked to check the match with the correct answer.
-answersElement.forEach(answer => {
-    answer.addEventListener('click', event => {
-        if(trueAnswer != true) return;
+function checkAnswer() { 
+    answersElement.forEach(answer => {
+        answer.addEventListener('click', event => {
+            let selectedChoice = event.target;
+            let selectedAnswer = selectedChoice.dataset['number'];
+            let answerColorChange = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
+            if(answerColorChange === 'correct-answer') {
+                incrementScore(POINTS);
+            }
 
-        let selectedChoice = event.target;
-        let selectedAnswer = selectedChoice.dataset['number'];
-        let answerColorChange = selectedAnswer === currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
-        if(answerColorChange === 'correct-answer') {
-            incrementScore(POINTS);
-        }
-
-        selectedChoice.parentElement.classList.add(answerColorChange);
-
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(answerColorChange);
-            getQuestion();
-        }, 1000);
+            selectedChoice.parentElement.classList.add(answerColorChange);
+            setTimeout(() => {
+                selectedChoice.parentElement.classList.remove(answerColorChange);
+                getQuestion();
+            }, 1000);
+        })
     })
-})
+}
 
 // ------------- Increment Score ------------- //
 incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 }
+
+
+// ------------- Timer ------------- //
+function startTimer() { 
+    stopTimer();
+    let elementTimerSec = document.querySelector('input[name="level_speed"]:checked');
+    let timerSec = 0;
+    if (elementTimerSec.value === 'easy'){
+        timerSec = 200;
+    } else if (elementTimerSec.value === 'medium'){
+        timerSec = 100;
+    } else if (elementTimerSec.value === 'hard'){
+        timerSec = 20;
+    } else {
+        timerSec = 0;
+        console.error('No difficulty has been selected');
+    }
+
+    countDown = setInterval(function() {   
+        document.getElementById('quiz-time').innerText = timerSec;
+        timerSec--;
+        if (timerSec === -1) {
+            clearInterval(countDown);
+            alert("Game Over!!");
+        }
+    }, 1000);
+}
+
+function stopTimer() {
+    if (countDown !== null) {
+        clearInterval(countDown);
+    }
+}
+// ------------- End Timer ------------- //
+
 
 // ------------- Contact Us ------------- //
 let userComment = document.getElementById('user-comment');
