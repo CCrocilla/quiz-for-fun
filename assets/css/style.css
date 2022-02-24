@@ -7,7 +7,6 @@
     border: none;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    overflow: hidden;
     /*transition: all 0.3s;*/
 }
 
@@ -406,4 +405,33 @@ textarea:focus {
     text-decoration: none;
     cursor: pointer;
     margin: 40px auto;
+}
+
+@media screen and (max-width: 768px) {
+
+    header {
+        display: flex;
+        flex-flow: column wrap;
+    }
+    
+    .logo-qff { 
+        font-size: 80%;
+        flex: 100%;
+        margin-left: 0px;
+        text-align: center;
+    }
+    
+    .navbar-container {
+        font-size: 80%;
+        margin-right: 0px;
+    }
+    
+    .nav-anchor {
+        width: 111px;
+        margin: 5px;
+    }
+
+    .btn-start {
+        width: 150px;
+    }
 }
