@@ -1,19 +1,21 @@
  
 // ------------- Home ------------- //
-//  Variables Home Page
-let startBtn = document.getElementById('start-btn');
-let startView = document.getElementById('start-games');
-let quizView = document.getElementById('pre-quiz-view');
-let questionView = document.getElementById('quiz-view');
 //  Variables Header and Footer
 let header = document.getElementById('header');
 let footer = document.getElementById('footer');
+//  Variables Home Page
+let startBtn = document.getElementById('start-btn');
+let startView = document.getElementById('start-games');
+let preQuizView = document.getElementById('pre-quiz-view');
+let questionView = document.getElementById('quiz-view');
 //  Variables Instruction
 let anchorInstruction = document.getElementById('anchor-instruction');
 let modalInstruction = document.getElementById('modal-instruction');
 //  Variables Close Functionality
 let close = document.getElementsByClassName('close')[0];
-
+//  Variables Hamburger Menu
+let mobileMenu = document.getElementById('menu-mobile');
+let desktopMenu = document.getElementsByClassName('navbar-hide')[0];
 
 
 // Wait for the DOM to finish loading before running the game
@@ -35,9 +37,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function startGameBtn() {
     startView.classList.add("hide");
-    startBtn.classList.add("hide");
-    quizView.classList.remove("hide");
+    preQuizView.classList.remove("hide");
 }
+
+
+// ----------- Hamburger Menu ----------- //
+mobileMenu.addEventListener('click', openNavBar);
+
+function openNavBar() {
+    if (desktopMenu.style.display === "none") {
+        desktopMenu.style.display = "flex";
+    } else {
+        desktopMenu.style.display = "none";
+    }
+}
+
+// -----------  End Hamburger Menu ----------- //
+
 
 // ----------- Modal Instruction (Studied on W3 School) ----------- //
 //When the user clicks on the button, open the modal
@@ -46,7 +62,6 @@ anchorInstruction.addEventListener('click', openInstruction);
 function openInstruction() {
     modalInstruction.style.display = "flex";
     startView.classList.add("hide");
-    startBtn.classList.add("hide");
     header.classList.add("hide");
     footer.classList.add("hide");
 }
@@ -55,7 +70,6 @@ function openInstruction() {
 close.onclick = function() {
     modalInstruction.style.display = "none";
     startView.classList.remove("hide");
-    startBtn.classList.remove("hide");
     header.classList.remove("hide");
     footer.classList.remove("hide");
 }
@@ -65,7 +79,6 @@ window.onclick = function(event) {
     if (event.target == modalInstruction) {
         modalInstruction.style.display = "none";
         startView.classList.remove("hide");
-        startBtn.classList.remove("hide");
         header.classList.remove("hide");
         footer.classList.remove("hide");
     }
@@ -107,8 +120,7 @@ username.addEventListener('keyup', () => {
 // Check if username as been filled in before to start the Movies quiz
 moviesQuestions.addEventListener('click', () => {
     startView.classList.add("hide");
-    startBtn.classList.add("hide");
-    quizView.classList.add('hide');
+    preQuizView.classList.add('hide');
     questionView.classList.remove('hide');
     startGame('movies')
 })
@@ -116,8 +128,7 @@ moviesQuestions.addEventListener('click', () => {
 // Check if username as been filled in before to start the Videogames quiz
 videogamesQuestions.addEventListener('click', () => {
     startView.classList.add("hide");
-    startBtn.classList.add("hide");
-    quizView.classList.add('hide');
+    preQuizView.classList.add('hide');
     questionView.classList.remove('hide');
     startGame('videogames')
 })

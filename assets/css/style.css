@@ -46,7 +46,6 @@ h1 {
 .navbar-container {
     font-size: 120%;
     display: flex;
-    justify-content: center;
     margin-right: 40px;
     padding: 15px;
 }
@@ -72,7 +71,7 @@ h1 {
     border-color: #ECDBBA;
 }
 
-.nav-anchor:active {
+.active {
     background-color: #ECDBBA;
     color: #070707;
     border-color: #ECDBBA;
@@ -420,18 +419,19 @@ textarea:hover {
     margin: 40px auto;
 }
 
-@media screen and (max-width: 768px) {
 
+/* ---------- Media Query ---------- */
+
+@media screen and (max-width: 1200px) {
     header {
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: row nowrap;
     }
     
     .logo-qff { 
-        font-size: 80%;
-        flex: 100%;
+        font-size: 70%;
         margin-left: 0px;
-        text-align: center;
+       /* text-align: center;*/
     }
     
     .navbar-container {
@@ -440,11 +440,18 @@ textarea:hover {
     }
     
     .nav-anchor {
-        width: 111px;
+        width: 112px;
         margin: 5px;
     }
 
-    .btn-start {
-        width: 150px;
+    .icon-mobile {
+        font-size: 2rem;
+        display: flex;
+        margin-right: 0px;
+        padding: 15px;
+    }
+
+    .navbar-hide {
+        display: none;
     }
 }
