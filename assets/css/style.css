@@ -177,11 +177,11 @@ footer {
 
 .social-network li {
     display: inline;
-    margin-left: 30px;  
+    margin-left: 20px;  
 }
 
 .social-network li i {
-    font-size: 60px;
+    font-size: 50px;
     text-decoration: none;
     list-style-type: none;
     margin-right: 40px;
@@ -197,14 +197,6 @@ footer {
 .pre-quiz-content {
     padding: 15px;
     margin: 15px;
-}
-
-.pre-quiz-content div label {
-    font-size: 120%;
-}
-
-.pre-quiz-content .radio-label-difficulty {
-    margin-left: 20px;
 }
 
 .fit-content {
@@ -226,8 +218,9 @@ footer {
 }
 
 .text-labels {
-    font-size: 1rem;
-    margin-top: 5px;    
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px;    
 }
 
 .input-forms:hover {
@@ -242,6 +235,11 @@ footer {
 .pre-quiz h2 {
     font-size: 1.8rem;
     margin-top: 20px;
+}
+
+.radio-btn-difficulty {
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
 .btn-games {
@@ -326,7 +324,7 @@ footer {
 /* Instruction */
 .popup-instruction .content-popup, .quiz {
     height: fit-content;
-    padding: 30px 10px;
+    padding: 35px 40px;
 }
 
 
