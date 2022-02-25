@@ -5,11 +5,15 @@ let startBtn = document.getElementById('start-btn');
 let startView = document.getElementById('start-games');
 let quizView = document.getElementById('pre-quiz-view');
 let questionView = document.getElementById('quiz-view');
+//  Variables Header and Footer
+let header = document.getElementById('header');
+let footer = document.getElementById('footer');
 //  Variables Instruction
 let anchorInstruction = document.getElementById('anchor-instruction');
 let modalInstruction = document.getElementById('modal-instruction');
 //  Variables Close Functionality
 let close = document.getElementsByClassName('close')[0];
+
 
 
 // Wait for the DOM to finish loading before running the game
@@ -35,7 +39,7 @@ function startGameBtn() {
     quizView.classList.remove("hide");
 }
 
-// ------------- Modal Instruction (Studied on W3 School) ------------- //
+// ----------- Modal Instruction (Studied on W3 School) ----------- //
 //When the user clicks on the button, open the modal
 anchorInstruction.addEventListener('click', openInstruction);
 
@@ -43,14 +47,17 @@ function openInstruction() {
     modalInstruction.style.display = "flex";
     startView.classList.add("hide");
     startBtn.classList.add("hide");
+    header.classList.add("hide");
+    footer.classList.add("hide");
 }
 
 // When the user clicks on x, close the modal
 close.onclick = function() {
-    console.log('Does not work');
     modalInstruction.style.display = "none";
     startView.classList.remove("hide");
     startBtn.classList.remove("hide");
+    header.classList.remove("hide");
+    footer.classList.remove("hide");
 }
   
 // When the user clicks outside of the modal, close the modal
@@ -59,12 +66,14 @@ window.onclick = function(event) {
         modalInstruction.style.display = "none";
         startView.classList.remove("hide");
         startBtn.classList.remove("hide");
+        header.classList.remove("hide");
+        footer.classList.remove("hide");
     }
 } 
-// ------------- End Modal ------------- //
+// ----------- End Modal ----------- //
 
 
-// ------------- Quiz Engine ------------- //
+// ----------- Quiz Engine ----------- //
 //  Variables Quiz
 //Const > Variable > Arrow Function > addEvent
 // Declared globally
@@ -127,7 +136,7 @@ const startGame = (game) => {
             break;
         default: 
             window.availableQuestion = [];
-            console.error('Not available questions')
+            console.error('No available questions')
     }
     getQuestion();
 }
