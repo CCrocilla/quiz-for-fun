@@ -11,8 +11,6 @@ let close = document.getElementsByClassName('close')[0];
 //  Variables Hamburger Menu
 let mobileMenu = document.getElementById('menu-mobile');
 
-
-
 // Wait for the DOM to finish loading before running the game
 // Get the Button Elements and add event listeners to them
 // DOMContentLoaded taken from Love-Math Project
@@ -31,7 +29,6 @@ function startGameBtn() {
     preQuizView.classList.remove("hide");
 }
 
-
 // ----------- Hamburger Menu ----------- //
 mobileMenu.addEventListener('click', openNavBar);
 
@@ -43,7 +40,6 @@ function openNavBar() {
         desktopMenu.classList.add("hide-mobile");
     }
 }
-
 // -----------  End Hamburger Menu ----------- //
 
 
@@ -86,7 +82,7 @@ window.onclick = function(event) {
 
 // ----------- Quiz Engine ----------- //
 //  Variables Quiz
-//Const > Variable > Arrow Function > addEvent
+
 // Declared globally
 window.availableQuestion = [];
 
@@ -145,7 +141,6 @@ function modQuiz() {
     let startView = document.getElementById('start-games');
     let preQuizView = document.getElementById('pre-quiz-view');
     let questionView = document.getElementById('quiz-view');
-
     startView.classList.add("hide");
     preQuizView.classList.add('hide');
     questionView.classList.remove('hide');
@@ -153,30 +148,26 @@ function modQuiz() {
 
 // Check if username as been filled in before to start the Movies quiz
 moviesQuestions.addEventListener('click', (event) => {
-    
     if (checkValidationForm()) {
         event.preventDefault()
         saveLocalUsername();
         modQuiz();
         startGame('movies');
     } else {
-        console.error('Form not valid!')
+        console.error('Form not valid!');
     }
 })
 
 // Check if username as been filled in before to start the Videogames quiz
 videogamesQuestions.addEventListener('click', (event) => {
-    event.preventDefault()
-    saveLocalUsername();
-
-    let startView = document.getElementById('start-games');
-    let preQuizView = document.getElementById('pre-quiz-view');
-    let questionView = document.getElementById('quiz-view');
-
-    startView.classList.add("hide");
-    preQuizView.classList.add('hide');
-    questionView.classList.remove('hide');
-    startGame('videogames')
+    if (checkValidationForm()) {
+        event.preventDefault()
+        saveLocalUsername();
+        modQuiz();
+        startGame('videogames');
+    } else {
+        console.error('Form not valid!');
+    }
 })
 
 // Function to start the quiz
