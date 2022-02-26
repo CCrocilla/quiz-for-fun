@@ -66,14 +66,12 @@ h1 {
 }
 
 .nav-anchor:hover {
-    background-color: #ECDBBA;
-    color: #070707;
+    color: #ECDBBA;
     border-color: #ECDBBA;
 }
 
 .active {
-    background-color: #ECDBBA;
-    color: #070707;
+    color: #ECDBBA;
     border-color: #ECDBBA;
 }
 

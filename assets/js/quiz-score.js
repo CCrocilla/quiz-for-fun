@@ -1,4 +1,3 @@
-let username = document.getElementById('username');
 let finalScore = document.getElementsByClassName('final-score');
 let recentScore = localStorage.getItem('recentScore');
 let saveScore = document.getElementById('save-score');
@@ -16,7 +15,7 @@ saveScore = event => {
         name: username.value
     }
 
-    highScores.push(score)
+    highScores.push(score);
 
     highScores.sort((a,b) => {
     return b.score - a.score 
@@ -34,4 +33,4 @@ let highScoresList = document.getElementById('high-score');
 
 highScoresList.innerHTML = highScores.map(score => {
     return `<li class="high-score"> ${score.name} - ${score.score}`
-}).join('')
+}).join('');

@@ -92,7 +92,7 @@ window.onclick = function(event) {
 // Declared globally
 window.availableQuestion = [];
 
-const POINTS = 10;
+const POINTS = 100;
 const MAX_QUESTIONS = 3;
 const moviesQuestions = document.getElementById('movies-btn');
 const videogamesQuestions = document.getElementById('videogames-btn');
@@ -102,12 +102,33 @@ let answersElement = Array.from(document.querySelectorAll('.answer-text'));
 let progress = document.getElementById('progress');
 let progressFull = document.getElementById('progress-full');
 let scoreText = document.getElementById('score');
+let username = document.getElementById('username')
 
 let currentQuestion = {};
 let countDown = null;
 let score = 0;
 let questionCounter = 0;
 let shuffleQuestion;
+
+
+// Local Storage Setup for Username
+username.addEventListener('input', user => {
+    playerName = user.target.value;
+})
+
+const saveLocalUsername = () => {
+    localStorage.setItem('inputUsername', playerName);
+}
+
+const storedUsername = localStorage.getItem('inputUsername');
+
+moviesQuestions.addEventListener('click', saveLocalUsername);
+videogamesQuestions.addEventListener('click', saveLocalUsername);
+
+if (username) {
+    username.value = storedUsername;
+}
+// End Local Storage Setup for Username 
 
 
 
@@ -152,11 +173,11 @@ const startGame = (game) => {
     getQuestion();
 }
 
-// Function to get new questions. callback => arrow function
+// Function to get new questions using callback => arrow function
 const getQuestion = () => {
     if(window.availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
-
+    
     return window.location.assign('quiz-score.html');
     }
 
@@ -170,12 +191,12 @@ const getQuestion = () => {
     currentQuestion = window.availableQuestion[questionsIndex];
     questionElement.innerText = currentQuestion.question;
 
-    // Required to display the possible answers
+    // Display the possible answers
     answersElement.forEach(answer => {
         let number = answer.dataset['number'];
         answer.innerText = currentQuestion.answers[number - 1]; 
     })
-    // Remove the Question answered
+    // Remove the Questions answered
     window.availableQuestion.splice(questionsIndex, 1);
 
     checkAnswer();
@@ -202,9 +223,10 @@ function checkAnswer() {
 }
 
 // ------------- Increment Score ------------- //
-incrementScore = num => {
+let incrementScore = num => {
     score += num;
     scoreText.innerText = score;
+    console.log(score)
 }
 
 
