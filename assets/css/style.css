@@ -99,6 +99,7 @@ h1 {
     height: 450px;
     border-radius: 10px;
     box-shadow: 7px 7px #ECDBBA;
+    position: relative;
 }
 
 .hide {
@@ -106,20 +107,24 @@ h1 {
 }
 
 .text-center {
-    text-align: center;
+    text-align: center !important; 
 }
 
 .text-left {
-    text-align: left;
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
 }
 
 .flex-inline {
     display: inline-flex;
 }
 
-.decorations {
-    text-decoration: none;
-    list-style: none;
+.decorations { /* Change Class name in decoration-none*/
+    text-decoration: none !important;
+    list-style: none !important;
 } 
 
 .btn-start {
@@ -159,6 +164,9 @@ h1 {
     border: 2px solid #070707;
     border-radius: 50%;
     padding: 3px 10px;
+    position: relative;
+    top: 0;
+    right: 0;
 }
 
 .close:hover,
@@ -447,7 +455,7 @@ textarea:hover {
         padding: 15px;
     }
 
-    .navbar-hide {
+    .hide-mobile {
         display: none;
     }
 }

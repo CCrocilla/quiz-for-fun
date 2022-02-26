@@ -3,11 +3,6 @@
 //  Variables Header and Footer
 let header = document.getElementById('header');
 let footer = document.getElementById('footer');
-//  Variables Home Page
-let startBtn = document.getElementById('start-btn');
-let startView = document.getElementById('start-games');
-let preQuizView = document.getElementById('pre-quiz-view');
-let questionView = document.getElementById('quiz-view');
 //  Variables Instruction
 let anchorInstruction = document.getElementById('anchor-instruction');
 let modalInstruction = document.getElementById('modal-instruction');
@@ -15,27 +10,23 @@ let modalInstruction = document.getElementById('modal-instruction');
 let close = document.getElementsByClassName('close')[0];
 //  Variables Hamburger Menu
 let mobileMenu = document.getElementById('menu-mobile');
-let desktopMenu = document.getElementsByClassName('navbar-hide')[0];
+
 
 
 // Wait for the DOM to finish loading before running the game
 // Get the Button Elements and add event listeners to them
 // DOMContentLoaded taken from Love-Math Project
 document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
-
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            if (this.getAttribute("data-type") === "start") {
-                startGameBtn();
-            } else {
-                console.log("Something went wrong!");
-            }
-        })
-    }
+    let startBtn = document.getElementById("start-btn");
+    startBtn.addEventListener('click', () => {
+        startGameBtn();
+    })
 })
 
 function startGameBtn() {
+    let startView = document.getElementById('start-games');
+    let preQuizView = document.getElementById('pre-quiz-view');
+    
     startView.classList.add("hide");
     preQuizView.classList.remove("hide");
 }
@@ -45,10 +36,11 @@ function startGameBtn() {
 mobileMenu.addEventListener('click', openNavBar);
 
 function openNavBar() {
-    if (desktopMenu.style.display === "none") {
-        desktopMenu.style.display = "flex";
+    let desktopMenu = document.getElementById('menu');
+    if (desktopMenu.classList.contains("hide-mobile")) {
+        desktopMenu.classList.remove("hide-mobile");
     } else {
-        desktopMenu.style.display = "none";
+        desktopMenu.classList.add("hide-mobile");
     }
 }
 
@@ -60,6 +52,8 @@ function openNavBar() {
 anchorInstruction.addEventListener('click', openInstruction);
 
 function openInstruction() {
+    let startView = document.getElementById('start-games');
+
     modalInstruction.style.display = "flex";
     startView.classList.add("hide");
     header.classList.add("hide");
@@ -68,6 +62,8 @@ function openInstruction() {
 
 // When the user clicks on x, close the modal
 close.onclick = function() {
+    let startView = document.getElementById('start-games');
+
     modalInstruction.style.display = "none";
     startView.classList.remove("hide");
     header.classList.remove("hide");
@@ -76,6 +72,8 @@ close.onclick = function() {
   
 // When the user clicks outside of the modal, close the modal
 window.onclick = function(event) {
+    let startView = document.getElementById('start-games');
+
     if (event.target == modalInstruction) {
         modalInstruction.style.display = "none";
         startView.classList.remove("hide");
@@ -108,46 +106,73 @@ let currentQuestion = {};
 let countDown = null;
 let score = 0;
 let questionCounter = 0;
-let shuffleQuestion;
-
+let playerName = "";
 
 // Local Storage Setup for Username
-username.addEventListener('input', user => {
+const storedUsername = localStorage.getItem('inputUsername');
+
+if (username) {
+    username.value = storedUsername;
+}
+
+username.addEventListener('change', user => {
     playerName = user.target.value;
 })
 
 const saveLocalUsername = () => {
     localStorage.setItem('inputUsername', playerName);
 }
-
-const storedUsername = localStorage.getItem('inputUsername');
-
-moviesQuestions.addEventListener('click', saveLocalUsername);
-videogamesQuestions.addEventListener('click', saveLocalUsername);
-
-if (username) {
-    username.value = storedUsername;
-}
 // End Local Storage Setup for Username 
 
 
-
 // Disable Buttons if username is empty
-username.addEventListener('keyup', () => {
-    moviesQuestions.disabled = !username.value;
-    videogamesQuestions.disabled = !username.value;
-})
+/*username.addEventListener('keyup', () => {
+    moviesQuestions.disabled = checkValidationForm();
+    videogamesQuestions.disabled = checkValidationForm();
+})*/
 
-// Check if username as been filled in before to start the Movies quiz
-moviesQuestions.addEventListener('click', () => {
+function checkValidationForm() {
+    let inputRadio = document.querySelector('input[name="level_speed"]:checked');
+    let inputUsername = document.getElementById('username');
+    let isValid = (inputUsername.value !== "" && inputRadio !== null);
+    console.log('isValid', isValid)
+    return isValid;
+}
+
+
+// Da applicare ovunque
+function modQuiz() {
+    let startView = document.getElementById('start-games');
+    let preQuizView = document.getElementById('pre-quiz-view');
+    let questionView = document.getElementById('quiz-view');
+
     startView.classList.add("hide");
     preQuizView.classList.add('hide');
     questionView.classList.remove('hide');
-    startGame('movies')
+}
+
+// Check if username as been filled in before to start the Movies quiz
+moviesQuestions.addEventListener('click', (event) => {
+    
+    if (checkValidationForm()) {
+        event.preventDefault()
+        saveLocalUsername();
+        modQuiz();
+        startGame('movies');
+    } else {
+        console.error('Form not valid!')
+    }
 })
 
 // Check if username as been filled in before to start the Videogames quiz
-videogamesQuestions.addEventListener('click', () => {
+videogamesQuestions.addEventListener('click', (event) => {
+    event.preventDefault()
+    saveLocalUsername();
+
+    let startView = document.getElementById('start-games');
+    let preQuizView = document.getElementById('pre-quiz-view');
+    let questionView = document.getElementById('quiz-view');
+
     startView.classList.add("hide");
     preQuizView.classList.add('hide');
     questionView.classList.remove('hide');
@@ -171,14 +196,17 @@ const startGame = (game) => {
             console.error('No available questions')
     }
     getQuestion();
+    checkAnswer();
 }
 
 // Function to get new questions using callback => arrow function
 const getQuestion = () => {
+    console.log('suca', questionCounter)
+    
     if(window.availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
-    
-    return window.location.assign('quiz-score.html');
+        
+        return window.location.replace('quiz-score.html');
     }
 
     startTimer();
@@ -199,13 +227,14 @@ const getQuestion = () => {
     // Remove the Questions answered
     window.availableQuestion.splice(questionsIndex, 1);
 
-    checkAnswer();
+    
 }
 
 // Run Event for each answer clicked to check the match with the correct answer.
 function checkAnswer() { 
     answersElement.forEach(answer => {
         answer.addEventListener('click', event => {
+            console.log('forte', currentQuestion, answer);
             let selectedChoice = event.target;
             let selectedAnswer = selectedChoice.dataset['number'];
             let answerColorChange = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
