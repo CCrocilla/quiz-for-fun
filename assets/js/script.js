@@ -47,7 +47,8 @@ function openNavBar() {
 //When the user clicks on the button, open the modal
 anchorInstruction.addEventListener('click', openInstruction);
 
-function openInstruction() {
+function openInstruction(event) {
+    event.preventDefault();
     let startView = document.getElementById('start-games');
 
     modalInstruction.style.display = "flex";
@@ -192,6 +193,7 @@ const startGame = (game) => {
 
 // Function to get new questions using callback => arrow function
 const getQuestion = () => {
+    console.log(recentScore, score);
     if(window.availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
         
