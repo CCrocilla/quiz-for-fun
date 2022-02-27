@@ -192,8 +192,6 @@ const startGame = (game) => {
 
 // Function to get new questions using callback => arrow function
 const getQuestion = () => {
-    console.log('suca', questionCounter)
-    
     if(window.availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
         
@@ -217,15 +215,12 @@ const getQuestion = () => {
     })
     // Remove the Questions answered
     window.availableQuestion.splice(questionsIndex, 1);
-
-    
 }
 
 // Run Event for each answer clicked to check the match with the correct answer.
 function checkAnswer() { 
     answersElement.forEach(answer => {
         answer.addEventListener('click', event => {
-            console.log('forte', currentQuestion, answer);
             let selectedChoice = event.target;
             let selectedAnswer = selectedChoice.dataset['number'];
             let answerColorChange = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
@@ -248,7 +243,7 @@ let incrementScore = num => {
     scoreText.innerText = score;
     console.log(score)
 }
-
+// ------------- End Increment Score ------------- //
 
 // ------------- Timer ------------- //
 function startTimer() { 
