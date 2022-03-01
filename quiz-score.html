@@ -34,7 +34,7 @@
                 <div id="end-game" class="flex-containers flex-center">
                     <h1 class="final-text text-center">Final Score: </h1>
                     <span id="quiz-final-score-value" class="final-score text-center">0</span>
-                    <button id="save-score-btn" class="btn-games" type="submit" onclick="saveScore(event)">Save</button>
+                    <button id="save-score-btn" class="btn-games" type="submit" onclick="getStatus()">View</button>
                 </div>
 
                 <div id="high-scores" class="flex-containers flex-center">
@@ -44,44 +44,9 @@
                           <th>#</th>
                           <th>Username</th>
                           <th>Difficulty</th>
-                          <th>Category</th>
                           <th>Score</th>
                         </tr>
-                        <tr>
-                          <td>1.</td>
-                          <td id="content-user"></td>
-                          <td id="content-difficulty"></td>
-                          <td id="content-category"></td>
-                          <td id="content-Score"></td>
-                        </tr>
-                        <tr>
-                          <td>2.</td>
-                          <td id="content-user"></td>
-                          <td id="content-difficulty"></td>
-                          <td id="content-category"></td>
-                          <td id="content-Score"></td>
-                        </tr>
-                        <tr>
-                          <td>3.</td>
-                          <td id="content-user"></td>
-                          <td id="content-difficulty"></td>
-                          <td id="content-category"></td>
-                          <td id="content-Score"></td>
-                        </tr>
-                        <tr>
-                          <td>4.</td>
-                          <td id="content-user"></td>
-                          <td id="content-difficulty"></td>
-                          <td id="content-category"></td>
-                          <td id="content-Score"></td>
-                        </tr>
-                        <tr>
-                          <td>5.</td>
-                          <td id="content-user"></td>
-                          <td id="content-difficulty"></td>
-                          <td id="content-category"></td>
-                          <td id="content-Score"></td>
-                        </tr>
+                        <tbody id="rows-leaderboard"></tbody>
                       </table>
                     <a href="index.html" class="btn-games decorations text-center" aria-label="Open the Home Page">Home Page</a>
                 </div>
@@ -106,9 +71,9 @@
             </ul>
         </footer>
         <!-- Javascript Core Files -->
-        <script src="assets/js/questions.js"></script>
         <script src="assets/js/quiz-score.js"></script>
-        <script src="assets/js/script.js"></script>
+        <!-- Form RestDb.io -->
+        <script src="https://quizforfundb-d21e.restdb.io/rest/_jsapi.js"></script>
         <!-- Font Awesome Script -->
         <script src="https://kit.fontawesome.com/0644654b1f.js" crossorigin="anonymous"></script>
     </body>

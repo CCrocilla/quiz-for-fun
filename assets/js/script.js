@@ -45,7 +45,9 @@ function openNavBar() {
 
 // ----------- Modal Instruction (Studied on W3 School) ----------- //
 //When the user clicks on the button, open the modal
-anchorInstruction.addEventListener('click', openInstruction);
+if (anchorInstruction != null){
+    anchorInstruction.addEventListener('click', openInstruction);
+}
 
 function openInstruction(event) {
     event.preventDefault();
@@ -103,10 +105,16 @@ let currentQuestion = {};
 let countDown = null;
 let score = 0;
 let questionCounter = 0;
-let playerName = "";
+
+
+// Local Storage Setup for recentScore
+let recentScore = localStorage.getItem('recentScore');
 
 // Local Storage Setup for Username
 const storedUsername = localStorage.getItem('inputUsername');
+let playerName = storedUsername || "";
+
+
 
 if (username) {
     username.value = storedUsername;
