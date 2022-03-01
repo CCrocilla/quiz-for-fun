@@ -88,7 +88,7 @@ window.onclick = function(event) {
 window.availableQuestion = [];
 
 const POINTS = 100;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 10;
 const moviesQuestions = document.getElementById('movies-btn');
 const videogamesQuestions = document.getElementById('videogames-btn');
 
@@ -121,13 +121,7 @@ const saveLocalUsername = () => {
 }
 // End Local Storage Setup for Username 
 
-
-// Disable Buttons if username is empty
-/*username.addEventListener('keyup', () => {
-    moviesQuestions.disabled = checkValidationForm();
-    videogamesQuestions.disabled = checkValidationForm();
-})*/
-
+// Check Validation Form
 function checkValidationForm() {
     let inputRadio = document.querySelector('input[name="level_speed"]:checked');
     let inputUsername = document.getElementById('username');
@@ -137,7 +131,7 @@ function checkValidationForm() {
 }
 
 
-// Da applicare ovunque
+// Function created to avoid repetitions
 function modQuiz() {
     let startView = document.getElementById('start-games');
     let preQuizView = document.getElementById('pre-quiz-view');
@@ -194,7 +188,7 @@ const startGame = (game) => {
 // Function to get new questions using callback => arrow function
 const getQuestion = () => {
     console.log(recentScore, score);
-    if(window.availableQuestion.length === 0 || questionCounter > MAX_QUESTIONS) {
+    if(window.availableQuestion.length === 0 || questionCounter === MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
         
         return window.location.replace('quiz-score.html');
@@ -203,7 +197,7 @@ const getQuestion = () => {
     startTimer();
     questionCounter++;
     progress.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
-    progressFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    progressFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
 
     // Generate a random value from the questions variable
     let questionsIndex = Math.floor(Math.random() * window.availableQuestion.length);
@@ -255,7 +249,7 @@ function startTimer() {
     if (elementTimerSec.value === 'easy'){
         timerSec = 200;
     } else if (elementTimerSec.value === 'medium'){
-        timerSec = 100;
+        timerSec = 40;
     } else if (elementTimerSec.value === 'hard'){
         timerSec = 20;
     } else {

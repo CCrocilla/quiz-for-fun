@@ -7,7 +7,6 @@
     border: none;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    transition: all 0.3s;
 }
 
 body {
@@ -20,6 +19,7 @@ body {
 .flex-containers {
     display: flex;
     flex-flow: row wrap;
+    width: 100%;
 }
 
 .flex-center {
@@ -322,6 +322,12 @@ footer {
 
 .btn-answers:hover {
     background-color: #C84B31;
+}
+
+.progress-bar-full {
+    width: 0%;
+    height: 100%;
+    background: #ECDBBA;
 }
 
 .correct-answer {
