@@ -18,7 +18,7 @@ if (recentScore <= 300) {
     <h2 class="final-text text-center">Final Score: </h2>
     <span id="quiz-final-score-value" class="final-score text-center"> ${recentScore}</span>
     `;
-} else if (recentScore > 210 && recentScore <= 300) {
+} else if (recentScore > 601 && recentScore <= 1000) {
     textEndGame.innerHTML = `
     <h2 class="final-text text-center">Hi ${inputUsername}! </h2>
     <p class="final-text text-center">Thanks for playing! Your are amazing! Worderfull Score! Play again!</p>
