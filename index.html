@@ -92,7 +92,7 @@
                         <div id="questions-progress">
                             <p class="questions-score-text">Question:</p>
                             <div id="progress" class="progress-bar">
-                                <span id="progress-full" class="progress-bar-full">I am</span>
+                                <span id="progress-full" class="progress-bar-full"></span>
                             </div>
                         </div>
                         <!-- Score -->
@@ -111,19 +111,19 @@
                         <h2 id="question-text" class="questions-text-view">Question?</h2>
                         <div class="answer-container flex-center btn">
                                 <p class="answer-index">A.</p>
-                                <button class="answer-text btn-answers" data-number="1">Answer 1</button>
+                                <p class="answer-text btn-answers" data-number="1">Answer 1</p>
                         </div>
                         <div class="answer-container flex-center">
                                 <p class="answer-index">B.</p>
-                                <button class="answer-text btn-answers" data-number="2">Answer 2</button>
+                                <p class="answer-text btn-answers" data-number="2">Answer 2</p>
                         </div>
                         <div class="answer-container flex-center">
                                 <p class="answer-index">C.</p>
-                                <button class="answer-text btn-answers" data-number="3">Answer 3</button>
+                                <p class="answer-text btn-answers" data-number="3">Answer 3</p>
                         </div>
                         <div class="answer-container flex-center">
                                 <p class="answer-index">D.</p>
-                                <button class="answer-text btn-answers" data-number="4">Answer 4</button>
+                                <p class="answer-text btn-answers" data-number="4">Answer 4</p>
                         </div>
                     </div>
                 </div>
@@ -145,51 +145,6 @@
                     </p>
                 </div>
             </div>
-            
-            <!-- Contact Us Modal -->
-            <div id="modal-contact-us" class="flex-containers flex-center popup-contact-us hide">
-                <!-- Contact Us Content -->
-                <div class="content-popup">
-                    <form method="GET" action="https://ccrocilla.github.io/quizforfun/thankyou.html">
-                        <div id="text-contact-us" class="text-contact">
-                            <h2>
-                                Daily amazing quiz just a click away in your email address?!
-                            </h2>
-                            <p>    
-                                Sign in here for our newsletter and more!!!
-                            </p>
-                        </div>
-            
-                        <!-- Form Area for the User -->
-                        <div id="form-contact-us" class="flex-containers hide">    
-                            <div id="form-user-contact-us" class="forms-users">
-                                <label for="username-cu">Username *</label>
-                                <input type="text" id="username-cu" class="input-forms" name="user_name_cu" required placeholder="Insert your first name here!">
-                                                                
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" class="input-forms" name="email_address" required placeholder="Insert your email address here!">
-                    
-                                <!-- Radio Button Section -->
-                                <label for="newsletter" class="radio-label-nfb"></label>
-                                <input type="radio" id="newsletter" class="radio-btn-nfb" value="newsletter" name="newsletter_email" required>
-                                    
-                                <label for="feedback" class="radio-label-nfb">Weekly</label>
-                                <input type="radio" id="feedback" class="radio-btn-nfb" value="feedback" name="newsletter_email" required>
-                                    
-                                <label for="report" class="radio-label-nfb">Monthly</label>
-                                <input type="radio" id="report" class="radio-btn-nfb" value="report" name="newsletter_email" required>
-                            </div>
-                                
-                            <div id="btn-nfb" class="btn">
-                                <input type="submit" value="Submit!" class="buttons">
-                                <input type="reset" value="Reset Form" class="buttons">
-                            </div>
-                                    
-                        </div>
-                    </form>
-                    <a href="#modal-contact-us" class="close">X</a>
-                </div>
-            </div>   
         </section>
 
         <footer id="footer" class="flex-containers flex-center">

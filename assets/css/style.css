@@ -263,12 +263,6 @@ footer {
     border-radius: 10px;
     box-shadow: 5px 10px #070707;
 }
-/*
-.btn-games:hover {
-    color:#ECDBBA;
-    background-color: #070707;
-    box-shadow: 5px 10px #ECDBBA;
-}*/
 
 /*Disable the button - W3School References*/
 .btn-games[disabled]:hover {
@@ -280,7 +274,9 @@ footer {
     display: flex;
     margin: 10px;
     padding: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    width: fit-content;
+    height: fit-content;
     background-color: #070707;
     border-radius: 15px;
     color: #ECDBBA;
@@ -299,17 +295,21 @@ footer {
 }
 
 .progress-bar {
-    border: 2px solid #070707;
+    border: 2px solid #ECDBBA;
     border-radius: 10px;
     padding: 5px;
-    width: 100px;
+    width: 95px;
+    color: #ECDBBA;
+    background-color: #070707;
+    box-shadow: 2px 5px #ECDBBA;
 }
 
 .btn-answers {
     color: #070707;
     background-color: #ECDBBA;
-    font-size: 1.5rem;
-    width: 100%;
+    font-size: 1.2rem;
+    width: 260px;
+    height: 55px;
     margin: 2px;
     padding: 10px;
     border-radius: 10px;

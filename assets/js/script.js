@@ -8,8 +8,7 @@ let anchorInstruction = document.getElementById('anchor-instruction');
 let modalInstruction = document.getElementById('modal-instruction');
 //  Variables Close Functionality
 let close = document.getElementsByClassName('close')[0];
-//  Variables Hamburger Menu
-let mobileMenu = document.getElementById('menu-mobile');
+
 
 // Wait for the DOM to finish loading before running the game
 // Get the Button Elements and add event listeners to them
@@ -24,24 +23,9 @@ document.addEventListener("DOMContentLoaded", function() {
 function startGameBtn() {
     let startView = document.getElementById('start-games');
     let preQuizView = document.getElementById('pre-quiz-view');
-    
     startView.classList.add("hide");
     preQuizView.classList.remove("hide");
 }
-
-// ----------- Hamburger Menu ----------- //
-mobileMenu.addEventListener('click', openNavBar);
-
-function openNavBar() {
-    let desktopMenu = document.getElementById('menu');
-    if (desktopMenu.classList.contains("hide-mobile")) {
-        desktopMenu.classList.remove("hide-mobile");
-    } else {
-        desktopMenu.classList.add("hide-mobile");
-    }
-}
-// -----------  End Hamburger Menu ----------- //
-
 
 // ----------- Modal Instruction (Studied on W3 School) ----------- //
 //When the user clicks on the button, open the modal
@@ -62,7 +46,6 @@ function openInstruction(event) {
 // When the user clicks on x, close the modal
 close.onclick = function() {
     let startView = document.getElementById('start-games');
-
     modalInstruction.style.display = "none";
     startView.classList.remove("hide");
     header.classList.remove("hide");
@@ -72,7 +55,7 @@ close.onclick = function() {
 // When the user clicks outside of the modal, close the modal
 window.onclick = function(event) {
     let startView = document.getElementById('start-games');
-
+    
     if (event.target == modalInstruction) {
         modalInstruction.style.display = "none";
         startView.classList.remove("hide");
@@ -99,12 +82,13 @@ let answersElement = Array.from(document.querySelectorAll('.answer-text'));
 let progress = document.getElementById('progress');
 let progressFull = document.getElementById('progress-full');
 let scoreText = document.getElementById('score');
-let username = document.getElementById('username')
+let username = document.getElementById('username');
 
 let currentQuestion = {};
 let countDown = null;
 let score = 0;
 let questionCounter = 0;
+
 
 
 // Local Storage Setup for recentScore
@@ -113,8 +97,6 @@ let recentScore = localStorage.getItem('recentScore');
 // Local Storage Setup for Username
 const storedUsername = localStorage.getItem('inputUsername');
 let playerName = storedUsername || "";
-
-
 
 if (username) {
     username.value = storedUsername;
@@ -139,8 +121,8 @@ function checkValidationForm() {
 }
 
 
-// Function created to avoid repetitions
-function modQuiz() {
+// Function created to avoid repetitions and visualize the Quiz Area
+function modeQuiz() {
     let startView = document.getElementById('start-games');
     let preQuizView = document.getElementById('pre-quiz-view');
     let questionView = document.getElementById('quiz-view');
@@ -154,7 +136,7 @@ moviesQuestions.addEventListener('click', (event) => {
     if (checkValidationForm()) {
         event.preventDefault()
         saveLocalUsername();
-        modQuiz();
+        modeQuiz();
         startGame('movies');
     } else {
         console.error('Form not valid!');
@@ -166,7 +148,7 @@ videogamesQuestions.addEventListener('click', (event) => {
     if (checkValidationForm()) {
         event.preventDefault()
         saveLocalUsername();
-        modQuiz();
+        modeQuiz();
         startGame('videogames');
     } else {
         console.error('Form not valid!');
@@ -255,10 +237,13 @@ function startTimer() {
     let elementTimerSec = document.querySelector('input[name="level_speed"]:checked');
     let timerSec = 0;
     if (elementTimerSec.value === 'easy'){
+        // Set Timer Easy
         timerSec = 200;
     } else if (elementTimerSec.value === 'medium'){
+        // Set Timer Medium
         timerSec = 40;
     } else if (elementTimerSec.value === 'hard'){
+        // Set Timer Hard
         timerSec = 20;
     } else {
         timerSec = 0;
@@ -270,7 +255,9 @@ function startTimer() {
         timerSec--;
         if (timerSec === -1) {
             clearInterval(countDown);
-            alert("Game Over!!");
+            localStorage.setItem('recentScore', score);
+        
+            return window.location.replace('quiz-score.html');
         }
     }, 1000);
 }
