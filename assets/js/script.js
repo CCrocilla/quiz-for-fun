@@ -84,6 +84,7 @@ let progressFull = document.getElementById('progress-full');
 let scoreText = document.getElementById('score');
 let username = document.getElementById('username');
 
+
 let currentQuestion = {};
 let countDown = null;
 let score = 0;
@@ -111,15 +112,22 @@ const saveLocalUsername = () => {
 }
 // End Local Storage Setup for Username 
 
+// Local Storage Setup Difficulty Radio Buttons
+
+const saveLocalDifficulty = () => {
+    let inputRadio = document.querySelector('input[name="level_speed"]:checked');
+    localStorage.setItem('inputDifficulty', inputRadio.value);
+}
+
+// End Local Storage Setup for Difficulty Radio Buttons
+
 // Check Validation Form
 function checkValidationForm() {
     let inputRadio = document.querySelector('input[name="level_speed"]:checked');
     let inputUsername = document.getElementById('username');
     let isValid = (inputUsername.value !== "" && inputRadio !== null);
-    console.log('isValid', isValid)
     return isValid;
 }
-
 
 // Function created to avoid repetitions and visualize the Quiz Area
 function modeQuiz() {
@@ -136,6 +144,7 @@ moviesQuestions.addEventListener('click', (event) => {
     if (checkValidationForm()) {
         event.preventDefault()
         saveLocalUsername();
+        saveLocalDifficulty();
         modeQuiz();
         startGame('movies');
     } else {
