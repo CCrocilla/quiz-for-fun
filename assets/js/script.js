@@ -68,8 +68,7 @@ window.onclick = function(event) {
 
 // ----------- Quiz Engine ----------- //
 //  Variables Quiz
-
-// Declared globally
+// Declared globaly the questions variable
 window.availableQuestion = [];
 
 const POINTS = 100;
@@ -113,12 +112,10 @@ const saveLocalUsername = () => {
 // End Local Storage Setup for Username 
 
 // Local Storage Setup Difficulty Radio Buttons
-
 const saveLocalDifficulty = () => {
     let inputRadio = document.querySelector('input[name="level_speed"]:checked');
     localStorage.setItem('inputDifficulty', inputRadio.value);
 }
-
 // End Local Storage Setup for Difficulty Radio Buttons
 
 // Check Validation Form
@@ -189,8 +186,8 @@ const getQuestion = () => {
     console.log(recentScore, score);
     if(window.availableQuestion.length === 0 || questionCounter === MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
-        
-        return window.location.replace('quiz-score.html');
+        // LINK NEEDS TO BE CHANGED BEFORE SUBMISSION
+        return window.location.replace('https://8000-ccrocilla-quizforfun-gmb7hnrv92c.ws-eu34xl.gitpod.io/quiz-score.html?open');
     }
 
     startTimer();

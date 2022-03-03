@@ -42,7 +42,7 @@ const questionsVideogames = [
     {
         question: 'In which month of 2020 was PS5 released?',
         answers:['January', 'June', 'September', 'November'],
-        correctAnswer: 2,
+        correctAnswer: 4,
     },
 
     //Q5
@@ -103,7 +103,7 @@ const questionsVideogames = [
 
     //Q13
     {
-        question: ' In which console was the first Final Fantasy released',
+        question: ' In which console was the first Final Fantasy released?',
         answers:['PlayStation', 'Xbox', 'Nintendo', 'Odyssey'],
         correctAnswer: 3,
     },

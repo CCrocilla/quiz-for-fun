@@ -1,8 +1,12 @@
-// ------------- Display Score & Text ------------- //
+// ------------- Variables Display Score & Text ------------- //
 let finalScore = document.getElementById('quiz-final-score-value');
 let recentScore = localStorage.getItem('recentScore');
 let inputUsername = localStorage.getItem('inputUsername');
-let textEndGame = document.getElementById('end-game');
+let inputDifficulty = localStorage.getItem('inputDifficulty');
+// -------------- Variables Scores Text and Leaderboard -------------- //
+let scoresView = document.getElementById('high-scores');
+let textEndGame = document.getElementById('end-game-text');
+
 
 const btnYesNo = `
     <h2>Do you want to save your Score?</h2>
@@ -10,7 +14,7 @@ const btnYesNo = `
     <button id="save-score-btn-no" class="btn-games" type="submit">No</button>
     `; 
 
-const textFinalScore = `
+const textScore = `
     <h2 class="final-text text-center">Hi ${inputUsername}!</h2>
     <h2 class="final-text text-center">Your Score: </h2>
     <span id="quiz-final-score-value" class="final-score text-center"> ${recentScore}</span>
@@ -18,22 +22,22 @@ const textFinalScore = `
 
 if (recentScore <= 300) {
     textEndGame.innerHTML = `
-    ${textFinalScore}
+    ${textScore}
     <p class="final-text text-center">Thanks for playing! Your are a Noob! Score is too low! Play again!</p>
     ${btnYesNo}`;   
 } else if (recentScore > 301 && recentScore <= 600) {
     textEndGame.innerHTML = `
-    ${textFinalScore}
+    ${textScore}
     <p class="final-text text-center">Thanks for playing! Good Score but you can do more! Play again!</p>
     ${btnYesNo}`;
 } else if (recentScore > 601 && recentScore <= 1000) {
     textEndGame.innerHTML = `
-    ${textFinalScore}
+    ${textScore}
     <p class="final-text text-center">Thanks for playing! Your are amazing! Worderfull Score! Play again!</p>
     ${btnYesNo}`;
 } else {
     textEndGame.innerHTML = `
-    ${textFinalScore}
+    ${textScore}
     <p class="final-text text-center">Play again!</p>
     ${btnYesNo}`;
 }
@@ -44,9 +48,31 @@ if (recentScore <= 300) {
 const API_URL = "https://quizforfundb-d21e.restdb.io/rest/quiz-for-fun";
 const API_KEY = "621d964834fd621565858a7b";
 const LIMIT_SCORES = 5;
+// Reference Code from Stackoverflow modified by me for my needs
+const urlParams = new URLSearchParams(window.location.search);
+const requestOpenScore = urlParams.get('open');
+
+console.log('request', requestOpenScore)
+// Check if "open" has been requested and will start the function.
+if (requestOpenScore !== null) {
+    getStatus();
+}
 
 document.getElementById("save-score-btn-no").addEventListener("click", () => getStatus());
 document.getElementById("save-score-btn-yes").addEventListener("click", () => saveAndGetStatus());
+document.getElementById("anchor-score").addEventListener("click", () => getStatus());
+
+// Function to display the Result to the User.
+function displayEndGameText() {
+    scoresView.classList.add("hide");
+    textEndGame.classList.remove("hide");
+}
+
+// Function to display the Score to the User.
+function displayScoreView() {
+    scoresView.classList.remove("hide");
+    textEndGame.classList.add("hide");
+}
 
 async function getStatus() {
     const headers = { 
@@ -62,19 +88,19 @@ async function getStatus() {
     const response = await fetch(API_URL+`?max=${LIMIT_SCORES}&h={"$orderby": {"score": -1}}`, requestOptions);
 
     const data = await response.json();
-
+    console.log(data);
     if (response.ok) {
         displayScore(data);
     } else {
         console.log('No Score Available')
         throw new Error(data.error);
     }
-    
 }
 
 
 function saveAndGetStatus() {
-    saveStatus(inputUsername, recentScore, 'hard', 'movies')
+    saveStatus(inputUsername, recentScore, inputDifficulty, 'movies')
+    displayScoreView();
     setTimeout(getStatus, 2000)
 }
 
@@ -109,12 +135,14 @@ async function saveStatus(username, score, difficulty, category) {
         console.log('Error... No Score Saved')
         throw new Error(data.error);
     }
-    
 }
 
 
 async function displayScore(data) {
+    
     let rowsLeaderboard = document.getElementById('rows-leaderboard');
+    // Required to clean and then print table again
+    rowsLeaderboard.innerHTML = "";
     
     data.forEach((element, i) => {
         rowsLeaderboard.innerHTML += `<tr>
