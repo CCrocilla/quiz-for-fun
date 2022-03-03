@@ -187,7 +187,7 @@ const getQuestion = () => {
     if(window.availableQuestion.length === 0 || questionCounter === MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
         // LINK NEEDS TO BE CHANGED BEFORE SUBMISSION
-        return window.location.replace('https://8000-ccrocilla-quizforfun-gmb7hnrv92c.ws-eu34xl.gitpod.io/quiz-score.html?open');
+        return window.location.replace('https://8000-ccrocilla-quizforfun-gmb7hnrv92c.ws-eu34xl.gitpod.io/quiz-score.html?endgame');
     }
 
     startTimer();

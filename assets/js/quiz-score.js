@@ -51,12 +51,16 @@ const LIMIT_SCORES = 5;
 // Reference Code from Stackoverflow modified by me for my needs
 const urlParams = new URLSearchParams(window.location.search);
 const requestOpenScore = urlParams.get('open');
+const requestOpenEndGame = urlParams.get('endgame');
 
 console.log('request', requestOpenScore)
 // Check if "open" has been requested and will start the function.
-if (requestOpenScore !== null) {
+if (requestOpenScore !== endgame) {
+    displayScoreView()
     getStatus();
-}
+}// else {
+
+//}
 
 document.getElementById("save-score-btn-no").addEventListener("click", () => getStatus());
 document.getElementById("save-score-btn-yes").addEventListener("click", () => saveAndGetStatus());
@@ -75,6 +79,7 @@ function displayScoreView() {
 }
 
 async function getStatus() {
+    debugger;
     const headers = { 
         'cache-control': 'no-cache',
         'x-apikey': API_KEY
@@ -90,7 +95,8 @@ async function getStatus() {
     const data = await response.json();
     console.log(data);
     if (response.ok) {
-        displayScore(data);
+        displayEndGameText();
+        //displayScore(data);
     } else {
         console.log('No Score Available')
         throw new Error(data.error);
