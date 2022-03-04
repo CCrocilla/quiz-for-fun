@@ -331,11 +331,11 @@ footer {
 }
 
 .correct-answer {
-    background-color: green;
+    background-color: #357C3C;
 }
 
 .wrong-answer {
-    background-color: red;
+    background-color: #E40017;
 }
 
 /* Instruction */
@@ -344,11 +344,27 @@ footer {
     padding: 35px 40px;
 }
 
+.content-popup {
+    position: fixed;
+    top: 60px;
+}
+
 
 /* ---------Score Page--------- */
 .final-text, .final-score {
     color: #070707;
     font-size: 1.5rem;
+}
+
+.table-container {
+    width: 95%;
+    font-size: 1.5rem;
+    border: 3px solid #070707;
+    box-shadow: 5px 10px #070707;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 60px;
 }
 
 /* ---------Contact Us--------- */
@@ -411,6 +427,9 @@ textarea:hover {
 }
 
 
+
+
+
 /* Error Page */
 .te-content {
     display: flex;
@@ -436,31 +455,14 @@ textarea:hover {
 
 
 /* ---------- Media Query ---------- */
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1220px) {
     header {
         display: flex;
         flex-flow: row nowrap;
     }
-    
-    .logo-qff { 
-        font-size: 70%;
-        margin-left: 0px;
-       /* text-align: center;*/
-    }
-    
-    .navbar-container {
-        font-size: 80%;
-        margin-right: 0px;
-    }
-    
-    .nav-anchor {
-        width: 112px;
-        margin: 5px;
-    }
 
     .icon-mobile {
-        font-size: 2rem;
+        font-size: 3rem;
         display: flex;
         margin-right: 0px;
         padding: 15px;
@@ -468,5 +470,77 @@ textarea:hover {
 
     .hide-mobile {
         display: none;
+    }
+
+    .navbar-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        background-color: #070707;
+        width: 100%;
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    
+    .position-fixed {
+        position: fixed;
+        left: 0;
+        right: 0;
+        background-color: #070707;
+        height: 80px;
+    }
+
+    header {
+        top: 0;
+    }
+
+    footer {
+        bottom: 0;
+    }
+    
+    .logo-qff { 
+        font-size: 100%;
+        margin-left: 0px;
+    }
+    
+    .navbar-container {
+        font-size: 100%;
+        margin-right: 0px;
+    }
+
+    .icon-mobile {
+        font-size: 2rem;
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .logo-qff { 
+        font-size: 70%;
+        margin-left: 0px;
+    }
+    
+    .navbar-container {
+        font-size: 87%;
+        margin-right: 0px;
+    }
+
+    .icon-mobile {
+        font-size: 1.5rem;
+    }
+    
+    .btn-answers:hover {
+        background-color: #ECDBBA;
+    }
+
+    .social-network li i {
+        font-size: 45px;
     }
 }

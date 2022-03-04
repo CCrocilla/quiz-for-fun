@@ -187,7 +187,7 @@ const getQuestion = () => {
     if(window.availableQuestion.length === 0 || questionCounter === MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
         // LINK NEEDS TO BE CHANGED BEFORE SUBMISSION
-        return window.location.replace('https://8000-ccrocilla-quizforfun-gmb7hnrv92c.ws-eu34xl.gitpod.io/quiz-score.html?endgame');
+        return window.location.replace('/quiz-score.html?open=endgame');
     }
 
     startTimer();
@@ -224,7 +224,7 @@ function checkAnswer() {
             setTimeout(() => {
                 selectedChoice.parentElement.classList.remove(answerColorChange);
                 getQuestion();
-            }, 1000);
+            }, 1200);
         })
     })
 }
@@ -263,7 +263,7 @@ function startTimer() {
             clearInterval(countDown);
             localStorage.setItem('recentScore', score);
         
-            return window.location.replace('quiz-score.html');
+            return window.location.replace('quiz-score.html?open=endgame');
         }
     }, 1000);
 }

@@ -3,7 +3,7 @@ let finalScore = document.getElementById('quiz-final-score-value');
 let recentScore = localStorage.getItem('recentScore');
 let inputUsername = localStorage.getItem('inputUsername');
 let inputDifficulty = localStorage.getItem('inputDifficulty');
-// -------------- Variables Scores Text and Leaderboard -------------- //
+// -------------- Variables Scores Text & Leaderboard -------------- //
 let scoresView = document.getElementById('high-scores');
 let textEndGame = document.getElementById('end-game-text');
 
@@ -51,35 +51,37 @@ const LIMIT_SCORES = 5;
 // Reference Code from Stackoverflow modified by me for my needs
 const urlParams = new URLSearchParams(window.location.search);
 const requestOpenScore = urlParams.get('open');
-const requestOpenEndGame = urlParams.get('endgame');
 
-console.log('request', requestOpenScore)
-// Check if "open" has been requested and will start the function.
-if (requestOpenScore !== endgame) {
-    displayScoreView()
+console.log('request', requestOpenScore);
+
+// Check if "open" has been requested and will start the function
+if (requestOpenScore == 'score') {
+    displayScoreView();
     getStatus();
-}// else {
-
-//}
+} else if (requestOpenScore == 'endgame'){
+    displayEndGameText();
+}
 
 document.getElementById("save-score-btn-no").addEventListener("click", () => getStatus());
 document.getElementById("save-score-btn-yes").addEventListener("click", () => saveAndGetStatus());
 document.getElementById("anchor-score").addEventListener("click", () => getStatus());
 
-// Function to display the Result to the User.
+// Function to display the Result to the User
 function displayEndGameText() {
     scoresView.classList.add("hide");
     textEndGame.classList.remove("hide");
 }
 
-// Function to display the Score to the User.
+// Function to display the Score to the User
 function displayScoreView() {
     scoresView.classList.remove("hide");
     textEndGame.classList.add("hide");
 }
 
+// Get the Score from the DB and display it
 async function getStatus() {
-    debugger;
+    displayScoreView();
+
     const headers = { 
         'cache-control': 'no-cache',
         'x-apikey': API_KEY
@@ -95,8 +97,7 @@ async function getStatus() {
     const data = await response.json();
     console.log(data);
     if (response.ok) {
-        displayEndGameText();
-        //displayScore(data);
+        displayScore(data);
     } else {
         console.log('No Score Available')
         throw new Error(data.error);
