@@ -187,7 +187,7 @@ const getQuestion = () => {
     if(window.availableQuestion.length === 0 || questionCounter === MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
         // LINK NEEDS TO BE CHANGED BEFORE SUBMISSION
-        return window.location.replace('/quiz-score.html?open=endgame');
+        return window.location.replace('quiz-score.html?open=endgame');
     }
 
     startTimer();

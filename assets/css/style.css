@@ -92,7 +92,11 @@ h1 {
 }
 
 /* This is used for both Start and Instructions */
-.game-area, .content-popup, .pre-quiz, .quiz, .end-game {
+.game-area, 
+.content-popup,
+.pre-quiz,
+.quiz,
+.end-game {
     background-color: #C84B31;
     color: #070707;
     display: flex;
@@ -103,6 +107,7 @@ h1 {
     border-radius: 10px;
     box-shadow: 7px 7px #ECDBBA;
     position: relative;
+    padding: 15px;
 }
 
 .hide {
@@ -205,9 +210,6 @@ footer {
 /* End Footer Section */
 
 /* Pre-Quiz Area */
-.pre-quiz-content {
-    padding: 20px;
-}
 
 .fit-content {
     height: fit-content;
@@ -243,8 +245,8 @@ footer {
 }
 
 .pre-quiz h2 {
-    font-size: 1.5rem;
-    margin-top: 20px auto;
+    font-size: 1.4rem;
+    margin: 25px 0px 5px 0px;
 }
 
 .radio-btn-difficulty {
@@ -262,6 +264,10 @@ footer {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 5px 10px #070707;
+}
+
+.username-info {
+    font-size: 0.9rem;
 }
 
 /*Disable the button - W3School References*/
@@ -305,6 +311,7 @@ footer {
 }
 
 .btn-answers {
+    display: flex;
     color: #070707;
     background-color: #ECDBBA;
     font-size: 1.2rem;
@@ -461,11 +468,22 @@ textarea:hover {
         flex-flow: row nowrap;
     }
 
+    .logo-qff { 
+        font-size: 100%;
+        margin-left: 0px;
+    }
+    
+    .navbar-container {
+        font-size: 100%;
+        margin-right: 0px;
+    }
+
     .icon-mobile {
-        font-size: 3rem;
+        font-size: 2.5rem;
         display: flex;
         margin-right: 0px;
         padding: 15px;
+        z-index: 99;
     }
 
     .hide-mobile {
@@ -480,6 +498,9 @@ textarea:hover {
         z-index: 5;
         background-color: #070707;
         width: 100%;
+        justify-content: flex-start;
+        height: 80px;
+        top: 50px;
     }
 }
 
@@ -528,7 +549,7 @@ textarea:hover {
     }
     
     .navbar-container {
-        font-size: 87%;
+        font-size: 78%;
         margin-right: 0px;
     }
 
