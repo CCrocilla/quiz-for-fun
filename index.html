@@ -24,10 +24,8 @@
                 <a href="contact-us.html" id="anchor-contact" class="nav-anchor" aria-label="Open the Contact Us Page">Contact Us</a>
             </nav>
 
-
-
             <div id="menu-mobile" class="flex-center icon-mobile hide">
-                <i class="fas fa-bars"></i>         
+                <i id="icon-mobile-animation" class="fas fa-bars"></i>         
             </div>
         </header>
 
@@ -42,7 +40,7 @@
                 
                 <div class="btns-container flex-inline flex-center">
                     <button id="start-btn" class="btn btn-start text-center" data-type="start">Start</button>
-                    <a href="#modal-instruction" id="anchor-instruction" class="btn btn-start decorations text-center" aria-label="Open the Rules Popup">Rules</a>
+                    <a href="#modal-instruction" id="anchor-instruction" class="btn btn-start decorations-none text-center" aria-label="Open the Rules Popup">Rules</a>
                 </div>
             </div>
 
@@ -56,22 +54,22 @@
                         <!-- Username Section -->
                         <div class="text-labels">
                             <label for="username">Username *</label>
-                            <input type="text" id="username" class="input-forms" name="user_name" maxlength="10" required placeholder="Insert your username here!">
-                            <h3 class="username-info">Username: max 10 characters.</h3>
+                            <input type="text" id="username" class="input-forms" name="user_name" maxlength="8" required placeholder="Insert your username here!">
+                            <h3 class="username-info">Username: max 8 characters.</h3>
                         </div>
                         <!-- Difficulty Selection -->
                         <div class="text-center">
                             <h2>Select the difficulty speed here!</h2>
                             <!-- Radio Button Difficulty Section -->
                             <div class="text-labels">
-                                <label for="easy" class="radio-label-difficulty">Easy</label>
                                 <input type="radio" id="easy" class="radio-btn-difficulty" value="easy" name="level_speed" required>
-                        
-                                <label for="medium" class="radio-label-difficulty">Medium</label>
+                                <label for="easy" class="radio-label-difficulty">Easy</label>
+                                
                                 <input type="radio" id="medium" class="radio-btn-difficulty" value="medium" name="level_speed" required>
-                        
-                                <label for="hard" class="radio-label-difficulty">Hard</label>
+                                <label for="medium" class="radio-label-difficulty">Medium</label>
+
                                 <input type="radio" id="hard" class="radio-btn-difficulty" value="hard" name="level_speed" required>
+                                <label for="hard" class="radio-label-difficulty">Hard</label>
                             </div>
                         </div>
 
@@ -112,7 +110,7 @@
                     <!--Here will be displayed the questions and anserws -->
                     <div id="questions-area">
                         <h2 id="question-text" class="questions-text-view flex-center">Question?</h2>
-                        <div class="answer-container flex-center btn">
+                        <div class="answer-container flex-center">
                                 <p class="answer-index">A.</p>
                                 <p class="answer-text btn-answers flex-center" data-number="1">Answer 1</p>
                         </div>
@@ -135,8 +133,8 @@
             <!-- Instruction Modal -->
             <div id="modal-instruction" class="flex-containers flex-center popup-instruction start-area">
                 <!-- Instruction Content -->
-                <div class="content-popup text-center">
-                    <h2 class="text-center">Instructions</h2>
+                <div class="content-popup text-left text-small">
+                    <h2 class="text-center space-margin-bottom">Instructions</h2>
                     <a href="#modal-instruction" class="close">X</a>
                     <p>There is only one rule... Have Fun!</p>
                     <p>Click on the Start Button, enter your username, select the 

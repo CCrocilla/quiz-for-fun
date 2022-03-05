@@ -54,14 +54,14 @@
                             <input type="email" id="email" class="input-forms" name="email_address" required placeholder="Insert your email address here!">
                     
                             <!-- Radio Button selection Newsletter/Feedback/Report -->
-                            <label for="newsletter" class="radio-label-nfrb">Newsletter</label>
                             <input type="radio" id="newsletter" class="radio-btn-nfrb" value="newsletter" name="form_nfrb" required>
-                                    
-                            <label for="feedback" class="radio-label-nfrb">Feedback</label>
+                            <label for="newsletter" class="radio-label-nfrb">Newsletter</label>
+                            
                             <input type="radio" id="feedback" class="radio-btn-nfrb" value="feedback" name="form_nfrb" required>
-                                    
+                            <label for="feedback" class="radio-label-nfrb">Feedback</label>
+                            
+                            <input type="radio" id="report" class="radio-btn-nfrb" value="report" name="form_nfrb" required>        
                             <label for="report" class="radio-label-nfrb">Report bug</label>
-                            <input type="radio" id="report" class="radio-btn-nfrb" value="report" name="form_nfrb" required>
                         </div>
 
                         <div id="user-comment" class="textarea-area hide">
@@ -69,9 +69,9 @@
                             <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Insert your Feedback or Bug here!"></textarea>
                         </div>
                                 
-                        <div id="btn-nfb" class="btn btn-container flex-center">
-                            <input type="reset" value="Reset" class="btn-forms">
-                            <input type="submit" value="Submit!" class="btn-forms">
+                        <div id="btn-nfb" class="btn-container flex-center">
+                            <input type="reset" value="Reset" class="btn btn-forms">
+                            <input type="submit" value="Submit!" class="btn btn-forms">
                         </div>         
                     </div>
                 </form>

@@ -28,7 +28,31 @@ body {
     align-items: center;
 }
 
-/* Logo and Headers */
+.text-big {
+    font-size: 2rem;
+}
+
+.text-medium {
+    font-size: 1.5rem;
+}
+
+.text-small {
+    font-size: 1.25rem;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.space-margin-top {
+    margin-top: 20px;
+}
+
+.space-margin-bottom {
+    margin-bottom: 20px;
+}
+
+/* Headers - Logo & Navbar */
 h1 {
     font-family: 'Press Start 2P', cursive, sans-serif;
     color: #C84B31; 
@@ -91,7 +115,7 @@ h1 {
     padding: 10px;
 }
 
-/* This is used for both Start and Instructions */
+/* This is used for all the areas and Instructions */
 .game-area, 
 .content-popup,
 .pre-quiz,
@@ -130,21 +154,24 @@ h1 {
     display: inline-flex;
 }
 
-.decorations { /* Change Class name in decoration-none*/
+.decorations-none { /* Change Class name in decoration-none*/
     text-decoration: none !important;
     list-style: none !important;
 } 
 
-.btn-start {
+.btn {
     font-family: 'Press Start 2P', cursive, sans-serif;
     background-color: #ECDBBA;
     color: #070707;
-    font-size: 1.5rem;
-    width: 155px;
+    font-size: 1.3rem;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 5px 10px #070707;
+}
+
+.btn-start {
+    width: 155px;
 }
 
 .btn-start:hover, .btn-games:hover {
@@ -153,7 +180,7 @@ h1 {
     box-shadow: 5px 10px #ECDBBA;
 }
 
-/* Modal Experiment */
+/* Modal Instructions */
 .popup-instruction {
     display: none;
     position: fixed;
@@ -164,7 +191,7 @@ h1 {
     background-color: rgba(7, 7, 7, 0.8);
 }
 
-  /* The Close Button */
+/* The Close Button */
 .close {
     font-size: 28px;
     text-decoration: none;
@@ -210,7 +237,6 @@ footer {
 /* End Footer Section */
 
 /* Pre-Quiz Area */
-
 .fit-content {
     height: fit-content;
 }
@@ -250,20 +276,12 @@ footer {
 }
 
 .radio-btn-difficulty {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.1rem;
+    height: 1.1rem;
 }
 
 .btn-games {
-    font-family: 'Press Start 2P', cursive, sans-serif;
-    background-color: #ECDBBA;
-    color: #070707;
-    font-size: 1.5rem;
     width: 255px;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 5px 10px #070707;
 }
 
 .username-info {
@@ -271,9 +289,10 @@ footer {
 }
 
 /*Disable the button - W3School References*/
-.btn-games[disabled]:hover {
+.btn-games-disabled {
     cursor: not-allowed;
 }
+/* End Pre-Quiz Area*/
 
 /* Questions Area */
 .answer-container {
@@ -344,6 +363,7 @@ footer {
 .wrong-answer {
     background-color: #E40017;
 }
+/* End Questions Area */
 
 /* Instruction */
 .popup-instruction .content-popup, .quiz {
@@ -355,7 +375,6 @@ footer {
     position: fixed;
     top: 60px;
 }
-
 
 /* ---------Score Page--------- */
 .final-text, .final-score {
@@ -372,6 +391,23 @@ footer {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 60px;
+    background-color: #ECDBBA;
+}
+
+
+.table-container th {
+    padding: 5px;
+    background-color: #C84B31;
+    border-radius: 7px;
+    box-shadow: 4px 5px 4px 2px #070707;
+}
+
+.table-container td {
+    padding-top: 10px;
+}
+
+.loading {
+    padding: 50px;
 }
 
 /* ---------Contact Us--------- */
@@ -422,20 +458,8 @@ textarea:hover {
 }
 
 .btn-forms {
-    font-family: 'Press Start 2P', cursive, sans-serif;
-    background-color: #ECDBBA;
-    color: #070707;
-    font-size: 1rem;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 5px 10px #070707;
-    width: 150px;
+    width: 155px;
 }
-
-
-
-
 
 /* Error Page */
 .te-content {
@@ -460,7 +484,6 @@ textarea:hover {
     margin: 40px auto;
 }
 
-
 /* ---------- Media Query ---------- */
 @media screen and (max-width: 1220px) {
     header {
@@ -472,11 +495,6 @@ textarea:hover {
         font-size: 100%;
         margin-left: 0px;
     }
-    
-    .navbar-container {
-        font-size: 100%;
-        margin-right: 0px;
-    }
 
     .icon-mobile {
         font-size: 2.5rem;
@@ -486,25 +504,35 @@ textarea:hover {
         z-index: 99;
     }
 
+    .icon-mobile-rotate {
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        transform: rotate(90deg);
+    }
+
     .hide-mobile {
         display: none;
     }
 
     .navbar-container {
+        font-size: 100%;
+        margin-right: 0px;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         z-index: 5;
         background-color: #070707;
-        width: 100%;
+        width: 92%;
         justify-content: flex-start;
-        height: 80px;
-        top: 50px;
+        height: 75px;
+        top: 0px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 }
-
-
 
 
 @media screen and (max-width: 768px) {
@@ -539,7 +567,6 @@ textarea:hover {
         font-size: 2rem;
     }
 }
-
 
 
 @media screen and (max-width: 500px) {

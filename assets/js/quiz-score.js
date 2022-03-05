@@ -10,8 +10,8 @@ let textEndGame = document.getElementById('end-game-text');
 
 const btnYesNo = `
     <h2>Do you want to save your Score?</h2>
-    <button id="save-score-btn-yes" class="btn-games" type="submit">Yes</button>
-    <button id="save-score-btn-no" class="btn-games" type="submit">No</button>
+    <button id="save-score-btn-yes" class="btn btn-games" type="submit">Yes</button>
+    <button id="save-score-btn-no" class="btn btn-games" type="submit">No</button>
     `; 
 
 const textScore = `
@@ -153,10 +153,10 @@ async function displayScore(data) {
     
     data.forEach((element, i) => {
         rowsLeaderboard.innerHTML += `<tr>
-        <td> ${i+1}.</td>
-        <td> ${element.username}</td>
-        <td> ${element.difficulty}</td>
-        <td> ${element.score}</td>
+        <td>${i+1}.</td>
+        <td>${element.username}</td>
+        <td><span class="text-capitalize">${element.difficulty}</span></td>
+        <td>${element.score}</td>
         </tr>`
     })   
 }

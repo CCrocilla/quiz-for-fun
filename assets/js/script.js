@@ -1,4 +1,3 @@
- 
 // ------------- Home ------------- //
 //  Variables Header and Footer
 let header = document.getElementById('header');
@@ -83,18 +82,19 @@ let progressFull = document.getElementById('progress-full');
 let scoreText = document.getElementById('score');
 let username = document.getElementById('username');
 
-
 let currentQuestion = {};
 let countDown = null;
 let score = 0;
 let questionCounter = 0;
 
-
-
 // Local Storage Setup for recentScore
 let recentScore = localStorage.getItem('recentScore');
 
-// Local Storage Setup for Username
+
+/**
+ * Local Storage Setup for Username
+ * Content Studied on W3 School
+ */
 const storedUsername = localStorage.getItem('inputUsername');
 let playerName = storedUsername || "";
 
@@ -126,7 +126,7 @@ function checkValidationForm() {
     return isValid;
 }
 
-// Function created to avoid repetitions and visualize the Quiz Area
+// Function created to visualize the Quiz Area
 function modeQuiz() {
     let startView = document.getElementById('start-games');
     let preQuizView = document.getElementById('pre-quiz-view');
@@ -186,7 +186,7 @@ const getQuestion = () => {
     console.log(recentScore, score);
     if(window.availableQuestion.length === 0 || questionCounter === MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
-        // LINK NEEDS TO BE CHANGED BEFORE SUBMISSION
+    
         return window.location.replace('quiz-score.html?open=endgame');
     }
 
@@ -209,6 +209,7 @@ const getQuestion = () => {
     window.availableQuestion.splice(questionsIndex, 1);
 }
 
+
 // Run Event for each answer clicked to check the match with the correct answer.
 function checkAnswer() { 
     answersElement.forEach(answer => {
@@ -224,7 +225,7 @@ function checkAnswer() {
             setTimeout(() => {
                 selectedChoice.parentElement.classList.remove(answerColorChange);
                 getQuestion();
-            }, 1200);
+            }, 1500);
         })
     })
 }
@@ -233,7 +234,6 @@ function checkAnswer() {
 let incrementScore = num => {
     score += num;
     scoreText.innerText = score;
-    console.log(score)
 }
 // ------------- End Increment Score ------------- //
 
