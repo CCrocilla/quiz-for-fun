@@ -190,6 +190,7 @@ h1 {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 5px 10px #070707;
+    cursor: pointer;
 }
 
 .btn-start {
@@ -330,7 +331,6 @@ footer {
     background-color: #070707;
     border-radius: 15px;
     color: #ECDBBA;
-    cursor: pointer;
 }
 
 .answer-index {
@@ -369,6 +369,7 @@ footer {
     margin: 2px;
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .questions-text-view {
@@ -429,7 +430,6 @@ footer {
     margin-bottom: 15px;
     background-color: #ECDBBA;
 }
-
 
 .table-container th {
     padding: 5px;

@@ -39,22 +39,26 @@ Click in the image above to access the Live Website or [click here!](https://ccr
 	5. As a First Time Visitor, I want to be able to have clear Instructions on how the game works.
 	6. As a First Time Visitor, I want to be able to check my final score.
 	7. As a First Time Visitor, I want to find the website pleasant to the eye, visually intuitive, with catchy colours and images.
-
+   
 - #### Returning Visitor Goals
-	1. As a Returning Visitor, I want to frequently be able to find new quiz.
-	2. As a Returning Visitor, I want to be bale to report issues.
-	3. As a Returning Visitor, I want to be bale to report issues.
-	4. As a Returning Visitor, I want to access the website through my social media accounts.
+	1. As a Returning Visitor, I want to be frequently able to find new quiz questions.
+	2. As a Returning Visitor, I want to be able to check my score against others in a leaderboard.
+	3. As a Returning Visitor, I want to be able to report issues.
+	4. As a Returning Visitor, I want to be able to provide feedback.
+	5. As a Returning Visitor, I want to access the website through my social media accounts.
 /*ARRIVED HERE*/
 - #### Frequent User Goals
-	1. As a Frequent User, I want to see new quiz.
+	1. As a Frequent User, I want to see new quizzes.
 	2. As a Frequent User, I want to play with higher level of difficulties.
-	3. As a Frequent User, I want to increase my personal score (Possibility to share result via Social Media?).
+	3. As a Frequent User, I want to get a better personal score.
 	4. As a Frequent User, I want to sign up to the Newsletter in order to weekly updates on the new quiz.
-	5. As a Frequent User, I want to report issues.
-	6. As a Frequent User, I want to share a feedback on the website.
-	7. As a Frequent User, I want to share new quiz myself.
-	8. As a Frequent User, I want to see if my quiz are present in the website.
+	5. As a Frequent User, I want to be able to check my score against others in a leader board.
+	6. As a Frequent User, I want to sign up to the Newsletter in order to get weekly updates on new quizzes.
+	7. As a Frequent User, I want to check if the reported issues are being resolved.
+	8. As a Frequent User, I want to share a feedback on the website.
+	9. As a Frequent User, I want to share new quiz myself.
+	10. As a Frequent User, I want to see if my quiz are present in the website.
+
 
 <!-- Use Cases Area -->
 ### **Use Cases**

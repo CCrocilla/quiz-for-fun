@@ -89,7 +89,6 @@ let questionCounter = 0;
 // Local Storage Setup for recentScore
 let recentScore = localStorage.getItem('recentScore');
 
-
 /**
  * Local Storage Setup for Username
  * Content Studied on W3 School
@@ -215,13 +214,19 @@ function checkAnswer() {
         answer.addEventListener('click', event => {
             let selectedChoice = event.target;
             let selectedAnswer = selectedChoice.dataset.number;
+            
+
             let answerColorChange = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
             if(answerColorChange === 'correct-answer') {
                 incrementScore(POINTS);
+                selectedChoice.disabled = true;
+            } else {
+                selectedChoice.disabled = true;
             }
-
+            
             selectedChoice.parentElement.classList.add(answerColorChange);
             setTimeout(() => {
+                selectedChoice.disabled = false;
                 selectedChoice.parentElement.classList.remove(answerColorChange);
                 getQuestion();
             }, 1500);

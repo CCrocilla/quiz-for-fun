@@ -27,17 +27,17 @@ const textScore = `
 if (recentScore <= 300) {
     textEndGame.innerHTML = `
     ${textScore}
-    <p class="final-text text-center space-margin-bottom">Thanks for playing! Your are a Noob! Score is too low! Play again!</p>
+    <p class="final-text text-center space-margin-bottom">Thanks for playing! Your are a Noob! The score is too low! Play again!</p>
     ${btnYesNo}`;   
 } else if (recentScore > 301 && recentScore <= 600) {
     textEndGame.innerHTML = `
     ${textScore}
-    <p class="final-text text-center space-margin-bottom">Thanks for playing! Good Score but you can do more! Play again!</p>
+    <p class="final-text text-center space-margin-bottom">Thanks for playing! Good score but you can do better! Play again!</p>
     ${btnYesNo}`;
 } else if (recentScore > 601 && recentScore <= 1000) {
     textEndGame.innerHTML = `
     ${textScore}
-    <p class="final-text text-center space-margin-bottom">Thanks for playing! Your are amazing! Worderfull Score! Play again!</p>
+    <p class="final-text text-center space-margin-bottom">Thanks for playing! Your are amazing! Worderful score! Play again!</p>
     ${btnYesNo}`;
 } else {
     textEndGame.innerHTML = `
