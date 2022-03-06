@@ -595,7 +595,7 @@ textarea:hover {
 
 @media screen and (max-width: 500px) {
     .logo-qff { 
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         margin-left: 0px;
     }
     
@@ -618,5 +618,9 @@ textarea:hover {
 
     .btn-answers:hover {
         background-color: #ECDBBA;
+    }
+
+    .content-popup {
+        top: 10px;
     }
 }

@@ -46,7 +46,7 @@ Click in the image above to access the Live Website or [click here!](https://ccr
 	3. As a Returning Visitor, I want to be able to report issues.
 	4. As a Returning Visitor, I want to be able to provide feedback.
 	5. As a Returning Visitor, I want to access the website through my social media accounts.
-/*ARRIVED HERE*/
+
 - #### Frequent User Goals
 	1. As a Frequent User, I want to see new quizzes.
 	2. As a Frequent User, I want to play with higher level of difficulties.
@@ -55,10 +55,8 @@ Click in the image above to access the Live Website or [click here!](https://ccr
 	5. As a Frequent User, I want to be able to check my score against others in a leader board.
 	6. As a Frequent User, I want to sign up to the Newsletter in order to get weekly updates on new quizzes.
 	7. As a Frequent User, I want to check if the reported issues are being resolved.
-	8. As a Frequent User, I want to share a feedback on the website.
-	9. As a Frequent User, I want to share new quiz myself.
-	10. As a Frequent User, I want to see if my quiz are present in the website.
-
+	8. As a Frequent User, I want to share feedback on the website.
+	
 
 <!-- Use Cases Area -->
 ### **Use Cases**
@@ -67,12 +65,13 @@ Click in the image above to access the Live Website or [click here!](https://ccr
 <details>
     <summary>Description</summary>
     
-- User can use this website to play quiz.
-- Users should be able to read the Instruction
-- Users should be able to to start a new game. 
-- Users should be able to select different type of categories.
+- Users can use open this website to play trivia quizzes.
+- Users should be able to read Instructions/Rules.
+- Users should be able to start a new game.
+- Users should be able to enter their usernames.
 - Users should be able to select different type of difficulties.
-- The home page also provides information about the history and rational of the website.
+- Users should be able to select different type of categories.
+- Users should be able to navigate to the Scores and Contact Us pages. 
 
 </details>
 
@@ -81,27 +80,70 @@ Click in the image above to access the Live Website or [click here!](https://ccr
 
 **System:** Website with Quiz.
 
-**Actors:** User looking for playing some amazing quiz.
+**Actors:** User looking for playing some amazing trivia quizzes.
 </details>
 
 <details>
     <summary>Pre-Conditions</summary>
 
-User should enter Username in order to play.
+- Users should enter Username in order to play.
+- Users should selected the difficulty level and the questions categories (video games or movies).
 </details>
 
 <details>
     <summary>Basic Flow</summary>
 
-- The user browses for quiz and discover the website. The user navigates to the Home Page of the website, and it is  attarcted by the visual impact of the website. 
-- The user read the instructions. 
+- The user browses for quiz and discover the website. The user navigates to the Home Page of the website, and is attracted by the visual impact of the website. 
+- The user read the instructions/rules. 
 - The user start a new game. 
 </details>
 
 <details>
     <summary>Alternative/Exception Flow</summary>
 
-- When the user selects a non-existent page, a 404 Error Page will be prompted guiding the user back to Home Page.
+- When the user selects a non-existent page, a 404 Error Page will be prompted guiding the user back to the Home Page.
+</details>
+
+
+### *_Scores Page_*
+<details>
+    <summary>Description</summary>
+    
+- Users, can decide if they want to save their score after each played game.   
+- Users can open this page to check their saved score against other players.
+- Users should be able to check the saved scores vs the difficulty level.
+- Users should be able to go back to the Home Page. 
+ 
+</details>
+ 
+<details>
+    <summary>System & Actors</summary>
+ 
+**System:** Website with Quiz.
+ 
+**Actors:** User looking for saved scores vs other players or level of difficulties.
+</details>
+ 
+<details>
+    <summary>Pre-Conditions</summary>
+ 
+Users should enter Username in order to save the score after the game.
+Userd should selected the difficulty level and the questions categories (video games or movies).
+User should play the game and answer all the available questions.
+Users should save their score at the end of the game to be included into the leader board.
+</details>
+ 
+<details>
+    <summary>Basic Flow</summary>
+ 
+- The user is playing the game answering all available questions. At the end of the game the user can visualise the obatained score along with a message from the system.
+The user can decide if he/she wants to save the score into the leader board. The user can access the score page to check the score against other player of per difficulty level.  The user can navigate back to the Home Page of the website. 
+</details>
+ 
+<details>
+    <summary>Alternative/Exception Flow</summary>
+ 
+- When the user selects a non-existent page, a 404 Error Page will be prompted guiding the user back to the Home Page.
 </details>
 
 
@@ -109,7 +151,7 @@ User should enter Username in order to play.
 <details>
     <summary>Description</summary>
 
-- Users can use this page of the website to provide a general feedback, subscribe for the newsletter, report issues or send a quiz. 
+- Users can use this page of the website to subscribe for the newsletter, provide a general feedback or report issues. 
 </details>
 
 <details>
@@ -117,29 +159,31 @@ User should enter Username in order to play.
 
 **System:** Website with Quiz.
 
-**Actors:** Users that want to report issue, provide feedback, subscribe to a newsletter or write their own quiz.
+**Actors:** Users that want to subscribe to a newsletter, provide feedback or report issue.
 </details>
 
 <details>
     <summary>Pre-Conditions</summary>
-The user(s) should provide a Username and an email address.
+
+- The user should provide a Username.
+- The user should provide an Email Address.
 </details>
 
 <details>
     <summary>Basic Flow</summary>
 
-- The user browses for quiz and discover the website. The user navigate to the Home Page and then go in the Contact Us Page. 
-- The user fill in the mandatory fields (Username, Password).
-- The user can select using the checkboxes provided what he/she want to do before submitting (provide a general feedback, subscribe for the newsletter, report issues or send a quiz).
-- The user will be prompted to a dummy Thank you page to provide a clear feedback to the user that the form has been submitted. 
+- The user browses for quiz and discover the website. The user navigate to the Home Page and then go into the "Contact Us" Page. 
+- The user fill in the mandatory fields (Username, Email Address).
+- The user can select using the checkboxes provided if he/she wants to provide a general feedback, subscribe for the newsletter or report issues/bugs.
+- The user will be prompted to a dummy "Thank you" Page which provides a clear feedback that the form has been successfully submitted. 
 
 </details>
 
 <details>
     <summary>Alternative/Exception Flow</summary>
 
-- The user can reset the form filled.
-- When the user selects a non-existent page, a 404 Error Page will be prompted guiding the user back to Home Page.
+- The user can reset the filled form.
+- When the user selects a non-existent page, a 404 Error Page will be prompted guiding the user back to the Home Page.
 </details>
 
 
@@ -147,8 +191,8 @@ The user(s) should provide a Username and an email address.
 
 ## **Design**
 
-#### The webpage has been designed to provide a simple, interractive and intuitive view which is able to offer a ...... 
-#### Every page has a minimalistic structure which however contains all the relevant features in order to provide the user with an intercative, clear and effective experience.  
+#### The webpage has been designed to provide a simple, interactive and intuitive view which is able to offer a pleasant experience to users that want to relax or unlash their competitive side playing trivia quizzes. The website allows the user to select different categories of trivia questions (video games or movies). A modal window can be opened to access the instruction to play the game. 
+#### Every page has a minimalistic structure which however contains all the relevant features in order to provide the user with an interactive, clear and effective experience.  
 
 - ### **Colour Scheme**
 #### The goal is to use a colour palette that will provide the user with a good and positive impact at a first glance, when opening the website and through the entire navigation experience. 
@@ -156,19 +200,19 @@ The user(s) should provide a Username and an email address.
 Colour Source: 
   - #### [Adobe Color](https://color.adobe.com/create/color-wheel)
   - #### [Color Hunt](https://colorhunt.co/) 
-#### The main colors are Navy (#181D31) and Beige (#E6DDC4) and those characterize the full website while Orange (#FB743E) is used to make a good contrast in the elements to provide a better view of those elements. 
+#### The main colors are variant of the Black (#070707) and Beige (#ECDBBA) and Orange (#C84B31) characterizing the full website while a variant of the Red (#E40017) and Green (#357C3C) are used to mark incorrect vs correct answers providing an immediate and visual impact to the users.
+
  
 
 - ### **Typography**
 #### Google Fonts has been used to select the fonts for the Website. 
-#### The Main fonts used are: 'XXX' and 'XXX' while the Sans-serif has been set up as fall-back in case the main font is not loaded. 
+#### The Main fonts used are: 'Press Start 2P' and 'Roboto' while Consive and Sans-serif has been set up as fall-back in case the main font is not loaded. 
 Source:
   - [Google Fonts](https://fonts.google.com/)
 
 
-- ### **Images and Videos**
-#### Real and effective images have been used to provide a pleasant visual experience to the user.
-#### The developer selected a video for the home page of the websites, the selected video helps in providing a pleasant visual experience to the user.
+- ### **Images**
+#### Real and effective images have been used as background to provide a pleasant visual experience to the user.
 Sources:  
   - [Pexels](https://www.pexels.com/)
 
@@ -176,8 +220,9 @@ Sources:
 
 ## **Features**
 - ### *__Structure__*:
-The page has been structured in an easy and user-friendly way with 2 different pages. 
-The Structure of the website and the components used are listed below: 
+The Website is composed of 5 different pages. Each of these page has been structured in a simple, easy and user-friendly way. 
+The Structure of the website and the components used are listed below:
+
 
 - ### *__Home Page__*:
 #### The Home Page shows the logo of the website on the top center of the page and a navigation bar on the top right.
