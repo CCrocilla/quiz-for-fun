@@ -1,4 +1,3 @@
-
 //  Variables Hamburger Menu
 let mobileMenu = document.getElementById('menu-mobile');
 let iconMobile = document.getElementById('icon-mobile-animation');

@@ -4,24 +4,27 @@
 
 ## **Overview**
 
-#### The website offer the possibility to play amazin quiz! 
-#### Internet users all around the world love to play quiz!
-#### The website is intuitive and user-friendly! The user can insert their Username, select, the grade of difficulty, the category and start playing! The users can also subscribe to a newsletter to receive regular updates on new quiz that will be implemented as well as provide a feedback on the quiz, report issues or submit their own quiz that will be reviewed and can be implemented in the random quiz displayed!
+#### The website offer the possibility to play amazin quizzes! 
+#### Internet users all around the world love playing quiz testing theiw own knowledge and challenge themselves against others. The idea of this website is to provide a means to partecipate to a frinendly competitition, answering questions about movies or videogames, granting a few relaxing minutes to yourself or just letting your competitive side go wild.
+#### The website is intuitive and user-friendly! The users can insert their Username, select the grade of difficulty (this will affect the time available to answer the questions), the category (movies or videogames) and start playing! The users can also subscribe to a newsletter to receive regular updates on new quizzes as well as provide a feedback or report issues. 
+#### A Leaderboard will show the top 10 users and their score.
+#### Good luck, enjoy the questions and might the force be with you! 
 
 
-<a href="Here will be inserted the Link of the Website" target="_blank" rel="noopener noreferrer"><img src="Here will be inserted the image" alt="Home Page" width="800px"/></a>
-Click in the image above to access the Live Website or [click here!](https://ccrocilla.github.io "Quiz For Fun")
+<a href="https://ccrocilla.github.io/quiz-for-fun/" target="_blank" rel="noopener noreferrer"><img src="Here will be inserted the image" alt="Home Page" width="800px"/></a>
+Click in the image above to access the Live Website or [click here!](https://ccrocilla.github.io/quiz-for-fun/ "Quiz For Fun")
 
 ## **Project** 
 
 ### **User Goal**
 - Easy, Intuitive and User-Friendly Website!
 - Wide compatibility with every Browsers and Devices.
-- Quiz randomly displayed in order to incentivate the user to continue playing.
-- Different categories and level of difficulties to increase the challenge for the most competitive users.
-- Possibility for the user to share his/her own quiz via the Contact Us Page.
-- Newsletter available to receive weekly new update on new quiz.
+- 10 questions available for two different categories (Movies and Videogames), selected from a randomized larger pool of questions, to provide the user with a unique experience and to incentives for more playing.
+- Different categories and level of difficulties to increase challenges for the most competitive users.
+- Best players will make the leaderboard showing the Top 10 user's scores
+- Newsletter available to receive weekly updates on new quizzes via the Contact Us Page.
 - Possibility for the user to send a feedback and/or report an issue in the quiz.
+- Possibility for the user to send a feedback and /or report issues/bugs in the quiz.
 
 ---
 
@@ -30,18 +33,19 @@ Click in the image above to access the Live Website or [click here!](https://ccr
 ### **User Stories**
 - #### First Time Visitor Goals
 	1. As a First Time visitor of a website dedicated to quiz, I want to have a visual impact on the Landing Page that will attract my attention.  
-	2. As a First Time Visitor, I want to be able to navigate easely through the website.
-	3. As a First Time Visitor, I want to be able to access a a quiz game.
-	4. As a First Time Visitor, I want to be able to see the categories of quiz available. 
+	2. As a First Time Visitor, I want to be able to navigate easily through the website.
+	3. As a First Time Visitor, I want to be able to see the available quiz categories.
+	4. As a First Time Visitor, I want to be able to be able to access and play quiz games. 
 	5. As a First Time Visitor, I want to be able to have clear Instructions on how the game works.
-	6. As a First Time Visitor, I want to find the website pleasant to the eye, visually intuitive, with catchy colours and images.
+	6. As a First Time Visitor, I want to be able to check my final score.
+	7. As a First Time Visitor, I want to find the website pleasant to the eye, visually intuitive, with catchy colours and images.
 
 - #### Returning Visitor Goals
 	1. As a Returning Visitor, I want to frequently be able to find new quiz.
 	2. As a Returning Visitor, I want to be bale to report issues.
 	3. As a Returning Visitor, I want to be bale to report issues.
 	4. As a Returning Visitor, I want to access the website through my social media accounts.
-
+/*ARRIVED HERE*/
 - #### Frequent User Goals
 	1. As a Frequent User, I want to see new quiz.
 	2. As a Frequent User, I want to play with higher level of difficulties.

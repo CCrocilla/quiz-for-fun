@@ -121,7 +121,7 @@ const questionsVideogames = [
         answers:['None', 'Finaly Fantasy XIV', 'Atari E.T.', 'SimCity'],
         correctAnswer: 3,
     }
-]
+];
 
 // Movies quiz questions
 const questionsMovies = [
@@ -229,4 +229,4 @@ const questionsMovies = [
         answers:['Titanic', 'Avengers: Endgame', 'Avatar', 'Star Wars: The Force Awakens'],
         correctAnswer: 3,
     }
-]
+];

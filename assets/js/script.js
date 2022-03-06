@@ -48,7 +48,7 @@ closeX.onclick = function() {
     startView.classList.remove("hide");
     header.classList.remove("hide");
     footer.classList.remove("hide");
-}
+};
   
 // When the user clicks outside of the modal, close the modal
 window.onclick = function(event) {
@@ -60,7 +60,7 @@ window.onclick = function(event) {
         header.classList.remove("hide");
         footer.classList.remove("hide");
     }
-} 
+};
 // ----------- End Modal ----------- //
 
 
@@ -103,18 +103,18 @@ if (username) {
 
 username.addEventListener('change', user => {
     playerName = user.target.value;
-})
+});
 
 const saveLocalUsername = () => {
     localStorage.setItem('inputUsername', playerName);
-}
+};
 // End Local Storage Setup for Username 
 
 // Local Storage Setup Difficulty Radio Buttons
 const saveLocalDifficulty = () => {
     let inputRadio = document.querySelector('input[name="level_speed"]:checked');
     localStorage.setItem('inputDifficulty', inputRadio.value);
-}
+};
 // End Local Storage Setup for Difficulty Radio Buttons
 
 // Check Validation Form
@@ -138,7 +138,7 @@ function modeQuiz() {
 // Check if username as been filled in before to start the Movies quiz
 moviesQuestions.addEventListener('click', (event) => {
     if (checkValidationForm()) {
-        event.preventDefault()
+        event.preventDefault();
         saveLocalUsername();
         saveLocalDifficulty();
         modeQuiz();
@@ -146,19 +146,19 @@ moviesQuestions.addEventListener('click', (event) => {
     } else {
         console.error('Form not valid!');
     }
-})
+});
 
 // Check if username as been filled in before to start the Videogames quiz
 videogamesQuestions.addEventListener('click', (event) => {
     if (checkValidationForm()) {
-        event.preventDefault()
+        event.preventDefault();
         saveLocalUsername();
         modeQuiz();
         startGame('videogames');
     } else {
         console.error('Form not valid!');
     }
-})
+});
 
 // Function to start the quiz
 const startGame = (game) => {
@@ -174,11 +174,11 @@ const startGame = (game) => {
             break;
         default: 
             window.availableQuestion = [];
-            console.error('No available questions')
+            console.error('No available questions');
     }
     getQuestion();
     checkAnswer();
-}
+};
 
 // Function to get new questions using callback => arrow function
 const getQuestion = () => {
@@ -203,10 +203,10 @@ const getQuestion = () => {
     answersElement.forEach(answer => {
         let number = answer.dataset.number;
         answer.innerText = currentQuestion.answers[number - 1]; 
-    })
+    });
     // Remove the Questions answered
     window.availableQuestion.splice(questionsIndex, 1);
-}
+};
 
 
 // Run Event for each answer clicked to check the match with the correct answer.
@@ -225,15 +225,15 @@ function checkAnswer() {
                 selectedChoice.parentElement.classList.remove(answerColorChange);
                 getQuestion();
             }, 1500);
-        })
-    })
+        });
+    });
 }
 
 // ------------- Increment Score ------------- //
 let incrementScore = num => {
     score += num;
     scoreText.innerText = score;
-}
+};
 // ------------- End Increment Score ------------- //
 
 // ------------- Timer ------------- //

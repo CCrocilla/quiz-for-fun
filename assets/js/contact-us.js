@@ -15,5 +15,5 @@ for (let radio of radioTextArea) {
             } else {
                 userComment.classList.remove('hide');
             }
-        })
+        });
 }

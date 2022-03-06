@@ -421,8 +421,8 @@ footer {
 
 .table-container {
     width: 95%;
-    font-size: 1.4rem;
-    border: 2px solid #070707;
+    font-size: 1.25rem;
+    border: 3px solid #070707;
     box-shadow: 5px 10px #070707;
     border-radius: 10px;
     text-align: center;
@@ -435,11 +435,11 @@ footer {
     padding: 5px;
     background-color: #C84B31;
     border-radius: 7px;
-    box-shadow: 4px 5px 4px 2px #070707;
+    box-shadow: 4px 5px #070707;
 }
 
 .table-container td {
-    padding-top: 10px;
+    padding-top: 8px;
 }
 
 .loading {

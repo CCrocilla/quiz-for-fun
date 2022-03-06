@@ -47,7 +47,6 @@ if (recentScore <= 300) {
 }
 // ------------- End Display Score & Text ------------- //
 
-
 // ------------- API LeaderBoard ------------- //
 const API_URL = "https://quizforfundb-d21e.restdb.io/rest/quiz-for-fun";
 const API_KEY = "621d964834fd621565858a7b";
@@ -89,12 +88,12 @@ async function getStatus() {
     const headers = { 
         'cache-control': 'no-cache',
         'x-apikey': API_KEY
-    }
+    };
 
     const requestOptions = {
         method: "GET",
         headers: headers,
-    }
+    };
 
     const response = await fetch(API_URL+`?max=${LIMIT_SCORES}&h={"$orderby": {"score": -1}}`, requestOptions);
 
@@ -103,38 +102,36 @@ async function getStatus() {
     if (response.ok) {
         displayScore(data);
     } else {
-        console.log('No Score Available')
+        console.log('No Score Available');
         throw new Error(data.error);
     }
 }
 
-
 function saveAndGetStatus() {
-    saveStatus(inputUsername, recentScore, inputDifficulty, 'movies')
+    saveStatus(inputUsername, recentScore, inputDifficulty, 'movies');
     displayScoreView();
-    setTimeout(getStatus, 2000)
+    setTimeout(getStatus, 2000);
 }
-
 
 async function saveStatus(username, score, difficulty, category) {
     const headers = { 
         'cache-control': 'no-cache',
         'x-apikey': API_KEY, 
         'content-type': 'application/json'
-    }
+    };
 
     const objBody = {
         username: username,
         score: score,
         difficulty: difficulty,
         category: category
-    }
+    };
 
     const requestOptions = {
         method: "POST",
         headers: headers,
         body: JSON.stringify(objBody)
-    }
+    };
 
     const response = await fetch(API_URL, requestOptions);
 
@@ -143,14 +140,12 @@ async function saveStatus(username, score, difficulty, category) {
     if (response.ok) {
         console.log(data);
     } else {
-        console.log('Error... No Score Saved')
+        console.log('Error... No Score Saved');
         throw new Error(data.error);
     }
 }
 
-
 async function displayScore(data) {
-    
     let rowsLeaderboard = document.getElementById('rows-leaderboard');
     // Required to clean and then print table again
     rowsLeaderboard.innerHTML = "";
@@ -161,7 +156,7 @@ async function displayScore(data) {
         <td>${element.username}</td>
         <td><span class="text-capitalize">${element.difficulty}</span></td>
         <td>${element.score}</td>
-        </tr>`
-    })   
+        </tr>`;
+    });  
 }
 
