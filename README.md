@@ -7,7 +7,7 @@
 #### The website offer the possibility to play amazin quizzes! 
 #### Internet users all around the world love playing quiz testing theiw own knowledge and challenge themselves against others. The idea of this website is to provide a means to partecipate to a frinendly competitition, answering questions about movies or videogames, granting a few relaxing minutes to yourself or just letting your competitive side go wild.
 #### The website is intuitive and user-friendly! The users can insert their Username, select the grade of difficulty (this will affect the time available to answer the questions), the category (movies or videogames) and start playing! The users can also subscribe to a newsletter to receive regular updates on new quizzes as well as provide a feedback or report issues. 
-#### A Leaderboard will show the top 10 users and their score.
+#### A Leaderboard will show the top 10 users and their scores.
 #### Good luck, enjoy the questions and might the force be with you! 
 
 
@@ -226,36 +226,52 @@ The Structure of the website and the components used are listed below:
 
 
 - ### *__Home Page__*:
-#### The Home Page shows the logo of the website on the top center of the page and a navigation bar on the top right.
-#### A small underline animation activates when the user mouse hovers on of the elements in the nav bar, highlighting the content. 
-#### The active page is underlined in the navigation bar when selected. 
+#### The Home Page shows the logo of the website on the top left of the page and a navigation bar menu on the top right.
+#### A border and text color change animation activates when the user hover the mouse over the elements in the nav bar, highlighting the content. 
+#### The active page change the default color of the text and the color of the border in the navigation bar menu when selected. 
 #### Depending on the device used (if laptop, desktop, tablet or smartphone) the positions of the nav bar change, creating an hamburger menu that will be displayed on the top right part of the page to adapt the view for a highly responsive rendering. 
-#### Those behaviour are consistent in all pages. 
-#### Following from Logo and the nav bar the user will see a Background Image inside of which there is a section dedicated to the game in the center of the page.
-#### The Game Area shows a brief welcome message and the Start Button.
-#### {WORK IN PROGRESS}
+#### Those behaviours are consistent in all pages. 
+#### Following from Logo and the nav bar, the user will see a Background Image inside of which there is a section dedicated to the game in the center of the page.
+#### The Game Area shows a brief welcome message and the Start and Rules Buttons.
+#### By clicking on the latter the instructions/rules of the game can be accessed opening a modal pop-up window. While, clicking on the Start button, the user is able to access a pre-quiz form area, where username (with a max of 8 characters), level of difficulty (Easy, Medium, Hard) and categories (movie or videogames) can be selected. The level of difficulty will dictate the available time to answer each question going from 60 to 30 to 15 s depending on the Easy, Medium and Hard levels, respectively. These fields are mandatory, if not selected a warning message will appear to the user. Once this information is indicated, the game will start. 
+#### All the information (Username and Difficulty) filled by the user is saved in the Local Storage of the browser and if the user access again the Pre-Quiz Game Area, the username will be automatically filled in. 
+
+- ### *__Quiz Area__*:
+ 
+#### The quiz questions are divided into two main categories, movies or video games. To win the game, the user needs to correctly answer 10 questions in the assigned time. For each question, the question number, the score and the available time are displayed on the top. 
+#### The question with 4 possible answers are presented to the user, each button (with an answer) changes colour when the users hover the mouse over it. Once the answer is selected, a function in the JavaScript code section, will check and will assign a green or red colur if the answer is correct/incorrect, respectively. 
+#### In the JavaScript code a function is used to randomly select over a larger available pool, the 10 questions shown in the game area. The random nature of this selection allows the user to be presented with different combination every time the game is played. Every timeWhenever  the users answer a question, the time counter is resented to the original level (depending on the level of difficulty), the score increases (if the correct answer is selected) and the question counter (question number) increases. 
+#### When the user completes the game or if the available time runs out, he/she is redirected to the Scores Page, where a message provides feedback on the quality of the played game and where the user can select if he/she wants to save the final score into the leader board.   
+ 
+- ### *__Scores Page__*:
+#### This page has Header and Footer consistent with the Home Page.
+#### The page is characterized by an image extended as background on top of which there is the Score Area. 
+#### As mentioned in the Section above, when the user(s) completes the game, he/she is redirected to the Scores page. 
+#### At this stage a message is displayed showing the Username, the Score and some witty feedback to the users, giving them the possibility to Save (or Not) the Score in an external Database (RestDB.io). 
+#### If the user clicks on the Yes Button to Save the Score, a Fetch Function with a POST method is triggered in order to save the information into the database. 
+#### If the user clicks on the No button the Leader board will be retrieved displaying the Scores of other users using a fetch function with the GET method. In addition, the user can access the leader board by clicking directly on the Score anchor element in the NavBar. The redirection after the game or directly by clicking the Score button was implemented by using Query Parameters. 
  
 - ### *__Contact Us Page__*:
 #### This page has Header and Footer consistent with the Home Page.
-#### The page is characterized by an image extended as background on top of which there is a form that the user can fill with the following information: Username, Email Address and a Checkboxes (or Radio) Buttons that will allow the user to select:
+#### The page is characterized by an image extended as background on top of which there is a form that the user can fill with the following information: Username, Email Address and a Radio Buttons that will allow the user to select:
 - Newsletter (the users can receive the newsletter weekly).
 - Feedback (The user can provide a general feedback on the website).
 - Report Issue (The user can report an issue).
-- Quiz (The user can submit his/her own quiz).
-#### A Reset and a Sign In Button are included.
+#### A Reset and a Submit Buttons are included.
 #### The Reset Button resets the form. 
-#### The Sign In Button opens a dummy thank you page to provide a clear feedback to the user stating that the form has been sent correctly.  
-#### {WORK IN PROGRESS}
+#### The Submit Button opens a dummy thank you page to provide a clear feedback to the user stating that the form has been sent correctly.  
+#### If the Radio button selected is “Report Issue” or “Feedback” a Text area will be displayed allowing the user to insert text, while if the “Newsletter” radio button is selected the Text area field is hidden.
+
 
 - ### *__Thank you page__*:
-This page will be triggered when the user clicks on the Submit Button for both the Share and Contact Us Page. 
+This page will be triggered when the user clicks on the Submit Button in Contact Us Page. 
 The page is characterized by an image extended as background overlaid by a clear message for the user.
-This page is used to let the user know that the data has been inserted correctly.
-The users have also the possibility to click on the highlighted orange text in order to navigate back to the Home Page. 
+This page is used to let the user know that the feedback or the bug has been reported correctly.
+The users also have the possibility to click on the Home button to navigate back to the Home Page. 
 
 - ### *__404 Error Page__*:
-For any broken or incorrect links, the 404 Error page will be triggered. Here the user will have an image displayed in the background and above text box that will inform the users that the page is not correct. 
-A hyperlink is present in the text displayed and highlighted in orange in order to allow the user to navigate back to the Home Page.  
+For any broken or incorrect links, the 404 Error page will be triggered. Here the user will have an image displayed in the background and above a text box that will inform the users that the page is not correct. 
+The users also have the possibility to click on the Home button to navigate back to the Home Page. 
  
 ---
 
@@ -396,12 +412,15 @@ A hyperlink is present in the text displayed and highlighted in orange in order 
 - #### TinyPNG
     - #### TinyPNG has been used to compress images.
 
-- #### Convertio
-    - #### Convertio has been used to convert the images in webp exxtension.
+- #### Convert.io
+    - #### Convertio has been used to convert the images in webp extension.
+
+- #### RestDB.io
+    - #### Restdb.io is an online NoSQL database backend for web and serverless "low code" applications. it has been used to model information quickly amd for the data management. 
 
 ---
 ## **Testing**
-The testing phases have been carried out using the **W3C Javascript Validator**, **W3C CSS Validator** and **W3C Markup Validator**(in all pages). No errors have been identified from the Validators as can be seen in the screenshot below: 
+The testing phases have been carried out using the **W3C Javascript Validator**, **W3C CSS Validator** and **W3C Markup Validator**(for all pages). No errors have been identified from the Validators as can be seen in the screenshot below: 
 
 - **JavaScript**
 
@@ -446,45 +465,45 @@ The testing phases have been carried out using the **W3C Javascript Validator**,
 
 
 - ### **Lighthouse Validator**
-Below it is possible to taka e look at the result obtained in Lighthouse:
+Below it is possible to take a look at the result obtained in Lighthouse:
 
 <details>
-    <summary>Click here for for Lighthouse Desktop - Homepage</summary>
+    <summary>Click here for Lighthouse Desktop - Homepage</summary>
 <img src="" alt="Lighthouse Desktop Homepage" width="800px"/>
 </details>
 
 <details>
-    <summary>Click here for for Lighthouse Mobile - Homepage</summary>
+    <summary>Click here for Lighthouse Mobile - Homepage</summary>
 <img src="" alt="Lighthouse Mobile Homepage" width="800px"/>
 </details>
 
 <details>
-    <summary>Click here for for Lighthouse Desktop - Contact Us</summary>
+    <summary>Click here for Lighthouse Desktop - Contact Us</summary>
 <img src="" alt="Lighthouse Desktop Contact Us" width="800px"/>
 </details>
 
 <details>
-    <summary>Click here for for Lighthouse Mobile - Contact Us</summary>
+    <summary>Click here for Lighthouse Mobile - Contact Us</summary>
 <img src="" alt="Lighthouse Mobile Contact Us" width="800px"/>
 </details>
 
 <details>
-    <summary>Click here for for Lighthouse Desktop - Thanks you</summary>
+    <summary>Click here for Lighthouse Desktop - Thanks you</summary>
 <img src="" alt="Lighthouse Desktop Thank you" width="800px"/>
 </details>
 
 <details>
-    <summary>Click here for for Lighthouse Mobile - Thanks you</summary>
+    <summary>Click here for Lighthouse Mobile - Thanks you</summary>
 <img src="" alt="Lighthouse Mobile Thank You" width="800px"/>
 </details>
 
 <details>
-    <summary>Click here for for Lighthouse Desktop - Error 404</summary>
+    <summary>Click here for Lighthouse Desktop - Error 404</summary>
 <img src="" alt="Lighthouse Desktop Error 404" width="800px"/>
 </details>
 
 <details>
-    <summary>Click here for for Lighthouse Mobile - Error 404</summary>
+    <summary>Click here for Lighthouse Mobile - Error 404</summary>
 <img src="" alt="Lighthouse Mobile Error 404" width="800px"/>
 </details>
 
@@ -492,11 +511,11 @@ Below it is possible to taka e look at the result obtained in Lighthouse:
 
 - ### **Test Cases**
 
-List of Test Cases perfomed. All the Tests have also been performed in all the Devices and the tests includes also Layout testing. 
+List of Test Cases performed. These Tests were executed for all available Devices listed in the section below including also Layout testing. 
 
 | Page | Feature | Expected Result | Status | 
 | --- | --- | --- | --- |
-| Home | Header | Make sure that the Logo and the nav bar are displayed on the top part of the Home Page. | Example: Pass |
+| Home | Header | Make sure that the Logo and the nav bar are displayed on the top part of the Home Page. | Pass |
 | Home | Header | Make sure that by clicking on the Logo the user is redirected to the Home Page. |  |
 | Home | Header | Make sure that the Background Image is displayed with no overlap with the Logo and Nav Bar. |  |
 | Home | Video | Make sure that the video apppears and that the autoplay works. |  |
@@ -535,9 +554,22 @@ Additional tests include checks on different devices using the Toggle Device Emu
 ### **Bugs**
 - No other bugs could be found in the website during the test phase.
 
-
 ### Future Implementation
-- List here the possible future implementation
+- Difficulty Points: In future implementation different point scores will be assigned depending on the difficulty level selected by the user. 
+This will also be reflected in the Leader board visualization with 3 different associated leader board. The user will have the possibility to switch using a Easy, Medium or Hard button located below the leaderboard title. 
+ 
+- Login: a Login System and a Check Validation for the Username used in the Pre-Quiz Area. 
+The user will have the possibility to access the website with a login and password, playing the games. Each score per user will be overwritten to maintain database dimension.
+If the user is a guest, he/she will also be able to play the game by inserting only a username. If this exists an error message will be prompted to. 
+ 
+- More Questions More Fun: Add More Categories and more Questions to give the user the possibility to visit the website more and more. 
+ 
+- Newsletter, Report and feedback: future implementations will include the creation of a form. Once the user compile this, he/she will receive a weekly/monthly email with website news. Thanks to this form, it will be possible to send a real notification helping the developer implementing suggested features or fixing any issues reported by the users.
+It would be also important to implement a captcha in the form before the submission to avoid spam. 
+
+
+
+
 ---
 
 ## **Development** 
@@ -591,7 +623,7 @@ In order to create a Local Clone follow the steps below:
 ---
 ## **Credits**
 
-Thanks to my Mentor, Narender Singh, for his guide and support in the realization of this project.
+Thanks to my Mentor, Narender Singh, for his guide and support for the realization of this project.
 Thanks to the useful reference and suggestions derived from sources listed below, I manage to gain a deeper understanding of how the various elements/components of HTML, CSS and Javascript are used. In addition, continuous trial and error tests provided a useful means to further experiment on the usage of these three programming languages for the creation of the site.
 
 - ### Content & Media
