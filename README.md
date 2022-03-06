@@ -11,8 +11,9 @@
 #### Good luck, enjoy the questions and might the force be with you! 
 
 
-<a href="https://ccrocilla.github.io/quiz-for-fun/" target="_blank" rel="noopener noreferrer"><img src="Here will be inserted the image" alt="Home Page" width="800px"/></a>
-Click in the image above to access the Live Website or [click here!](https://ccrocilla.github.io/quiz-for-fun/ "Quiz For Fun")
+<a href="https://ccrocilla.github.io/quiz-for-fun/" target="_blank" rel="noopener noreferrer"><img src="assets/images-readme/amiresponsive.webp" alt="Home Page" width="800px"/></a>
+
+#### Click in the image above to access the Live Website or [click here!](https://ccrocilla.github.io/quiz-for-fun/ "Quiz For Fun")
 
 ## **Project** 
 
