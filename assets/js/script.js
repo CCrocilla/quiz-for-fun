@@ -6,8 +6,7 @@ let footer = document.getElementById('footer');
 let anchorInstruction = document.getElementById('anchor-instruction');
 let modalInstruction = document.getElementById('modal-instruction');
 //  Variables Close Functionality
-let close = document.getElementsByClassName('close')[0];
-
+let closeX = document.getElementsByClassName('close')[0];
 
 // Wait for the DOM to finish loading before running the game
 // Get the Button Elements and add event listeners to them
@@ -16,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let startBtn = document.getElementById("start-btn");
     startBtn.addEventListener('click', () => {
         startGameBtn();
-    })
-})
+    });
+});
 
 function startGameBtn() {
     let startView = document.getElementById('start-games');
@@ -43,7 +42,7 @@ function openInstruction(event) {
 }
 
 // When the user clicks on x, close the modal
-close.onclick = function() {
+closeX.onclick = function() {
     let startView = document.getElementById('start-games');
     modalInstruction.style.display = "none";
     startView.classList.remove("hide");
@@ -202,7 +201,7 @@ const getQuestion = () => {
 
     // Display the possible answers
     answersElement.forEach(answer => {
-        let number = answer.dataset['number'];
+        let number = answer.dataset.number;
         answer.innerText = currentQuestion.answers[number - 1]; 
     })
     // Remove the Questions answered
@@ -215,7 +214,7 @@ function checkAnswer() {
     answersElement.forEach(answer => {
         answer.addEventListener('click', event => {
             let selectedChoice = event.target;
-            let selectedAnswer = selectedChoice.dataset['number'];
+            let selectedAnswer = selectedChoice.dataset.number;
             let answerColorChange = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
             if(answerColorChange === 'correct-answer') {
                 incrementScore(POINTS);
@@ -244,13 +243,13 @@ function startTimer() {
     let timerSec = 0;
     if (elementTimerSec.value === 'easy'){
         // Set Timer Easy
-        timerSec = 200;
+        timerSec = 60;
     } else if (elementTimerSec.value === 'medium'){
         // Set Timer Medium
-        timerSec = 40;
+        timerSec = 30;
     } else if (elementTimerSec.value === 'hard'){
         // Set Timer Hard
-        timerSec = 20;
+        timerSec = 15;
     } else {
         timerSec = 0;
         console.error('No difficulty has been selected');
@@ -261,9 +260,7 @@ function startTimer() {
         timerSec--;
         if (timerSec === -1) {
             clearInterval(countDown);
-            localStorage.setItem('recentScore', score);
-        
-            return window.location.replace('quiz-score.html?open=endgame');
+            getQuestion();
         }
     }, 1000);
 }

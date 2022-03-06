@@ -28,6 +28,11 @@ body {
     align-items: center;
 }
 
+.flex-containers-columns {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 .text-big {
     font-size: 2rem;
 }
@@ -52,7 +57,15 @@ body {
     margin-bottom: 20px;
 }
 
-/* Headers - Logo & Navbar */
+/* Headers - Logo & Navbar */  
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
 h1 {
     font-family: 'Press Start 2P', cursive, sans-serif;
     color: #C84B31; 
@@ -65,6 +78,14 @@ h1 {
     flex: 33%;
     margin-left: 40px;
     padding: 15px;
+}
+
+.position-absolute {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #070707;
+    height: 80px;
 }
 
 .navbar-container {
@@ -107,12 +128,8 @@ h1 {
     max-width: 100%;
     height: 100vh;
     background: url('../images/background-homepage.jpg') no-repeat center center/cover;
-}
-
-.start-area {
-    font-size: 1.5rem;
-    margin: 10px;
-    padding: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 /* This is used for all the areas and Instructions */
@@ -125,13 +142,14 @@ h1 {
     color: #070707;
     display: flex;
     flex-flow: row wrap;
-    width: 30vw;
-    min-width: 360px;
-    height: 450px;
+    width: 35vw;
+    min-width: 350px;
+    max-width: 500px;
+    min-height: 400px;
     border-radius: 10px;
     box-shadow: 7px 7px #ECDBBA;
     position: relative;
-    padding: 15px;
+    padding: 10px;
 }
 
 .hide {
@@ -148,6 +166,10 @@ h1 {
 
 .text-right {
     text-align: right !important;
+}
+
+.flex {
+    display: flex;
 }
 
 .flex-inline {
@@ -193,7 +215,6 @@ h1 {
 
 /* The Close Button */
 .close {
-    font-size: 28px;
     text-decoration: none;
     list-style: none;
     color: #070707;
@@ -243,8 +264,8 @@ footer {
 
 .input-forms {
     display: block;
-    margin-top: 2px;
-    margin-bottom: 15px; 
+    margin-top: 3px;
+    margin-bottom: 5px; 
     font-size: 1.1rem;
     background-color: #ECDBBA;
     color: #070707;
@@ -256,7 +277,6 @@ footer {
 }
 
 .text-labels {
-    font-size: 1.2rem;
     margin-top: 10px;
     margin-bottom: 30px;    
 }
@@ -271,13 +291,18 @@ footer {
 }
 
 .pre-quiz h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin: 25px 0px 5px 0px;
 }
 
 .radio-btn-difficulty {
     width: 1.1rem;
     height: 1.1rem;
+    margin-left: 12px;
+}
+
+.radio-label-difficulty {
+    margin-right: 12px;
 }
 
 .btn-games {
@@ -329,13 +354,18 @@ footer {
     box-shadow: 2px 5px #ECDBBA;
 }
 
+.qa-view-container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 .btn-answers {
     display: flex;
     color: #070707;
     background-color: #ECDBBA;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     width: 260px;
-    height: 55px;
+    height: 50px;
     margin: 2px;
     padding: 10px;
     border-radius: 10px;
@@ -343,7 +373,9 @@ footer {
 
 .questions-text-view {
     font-size: 1.5rem;
-    margin-top: 40px;
+    width: 335px;
+    max-width: 450px;
+    margin-top: 25px;
 }
 
 .btn-answers:hover {
@@ -366,31 +398,35 @@ footer {
 /* End Questions Area */
 
 /* Instruction */
-.popup-instruction .content-popup, .quiz {
+.content-popup {
+    flex-flow: column nowrap;
     height: fit-content;
-    padding: 35px 40px;
+    padding: 35px 15px;
+    position: fixed;
+    top: 60px; 
 }
 
-.content-popup {
-    position: fixed;
-    top: 60px;
+.content-popup li {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 1.25rem;
 }
 
 /* ---------Score Page--------- */
 .final-text, .final-score {
     color: #070707;
     font-size: 1.5rem;
+    margin: 15px 5px;
 }
 
 .table-container {
     width: 95%;
-    font-size: 1.5rem;
-    border: 3px solid #070707;
+    font-size: 1.4rem;
+    border: 2px solid #070707;
     box-shadow: 5px 10px #070707;
     border-radius: 10px;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 60px;
+    margin-bottom: 15px;
     background-color: #ECDBBA;
 }
 
@@ -486,29 +522,34 @@ textarea:hover {
 
 /* ---------- Media Query ---------- */
 @media screen and (max-width: 1220px) {
-    header {
-        display: flex;
-        flex-flow: row nowrap;
-    }
 
     .logo-qff { 
         font-size: 100%;
         margin-left: 0px;
     }
 
+    .position-absolute {
+        position: static;
+    }
+
     .icon-mobile {
         font-size: 2.5rem;
         display: flex;
         margin-right: 0px;
+        margin-bottom: 3px;
         padding: 15px;
         z-index: 99;
+        transform: rotate(0deg);
     }
 
     .icon-mobile-rotate {
-        -webkit-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
         transform: rotate(90deg);
+    }
+
+    .icon-mobile-transition {
+        -webkit-transition: transform 0.3s ease-in-out;
+        -o-transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
     }
 
     .hide-mobile {
@@ -518,40 +559,24 @@ textarea:hover {
     .navbar-container {
         font-size: 100%;
         margin-right: 0px;
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 55px;
         left: 0;
         right: 0;
         z-index: 5;
         background-color: #070707;
-        width: 92%;
-        justify-content: flex-start;
+        width: 100%;
+        justify-content: center;
         height: 75px;
-        top: 0px;
-        -webkit-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
     }
 }
 
 
 @media screen and (max-width: 768px) {
-    
-    .position-fixed {
-        position: fixed;
-        left: 0;
-        right: 0;
-        background-color: #070707;
-        height: 80px;
-    }
 
-    header {
-        top: 0;
-    }
-
-    footer {
-        bottom: 0;
-    }
     
     .logo-qff { 
         font-size: 100%;
@@ -563,15 +588,14 @@ textarea:hover {
         margin-right: 0px;
     }
 
-    .icon-mobile {
-        font-size: 2rem;
-    }
+
+
 }
 
 
 @media screen and (max-width: 500px) {
     .logo-qff { 
-        font-size: 70%;
+        font-size: 0.7rem;
         margin-left: 0px;
     }
     
@@ -584,11 +608,15 @@ textarea:hover {
         font-size: 1.5rem;
     }
     
-    .btn-answers:hover {
-        background-color: #ECDBBA;
-    }
-
     .social-network li i {
         font-size: 45px;
+    }
+
+    .questions-text-view {
+        font-size: 1.25rem;
+    }
+
+    .btn-answers:hover {
+        background-color: #ECDBBA;
     }
 }

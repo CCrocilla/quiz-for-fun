@@ -13,20 +13,20 @@
         <title>Quiz For Fun</title>
     </head>
     <body>
-        <header id="header" class="flex-containers flex-center flex-column flex-row position-fixed">
+        <header id="header" class="flex-containers flex-center flex-row position-absolute">
             <a href="index.html" id="logo" class="logo-qff flex-items" aria-label="Open the Home Page">
                 <h1>Quiz For Fun</h1>
             </a>
-
-            <div id="menu-mobile" class="flex-center icon-mobile hide">
-                <i class="fas fa-bars"></i>         
-            </div>
 
             <nav id="menu" class="navbar-container hide-mobile flex-items flex-center">
                 <a href="index.html" id="anchor-home" class="nav-anchor" aria-label="Open the Home Page">Home</a>  
                 <a href="quiz-score.html?open=score" id="anchor-score" class="nav-anchor" aria-label="Open the Score Page">Scores</a>
                 <a href="contact-us.html" id="anchor-contact" class="nav-anchor active" aria-label="Open the Contact Us Page">Contact Us</a>
             </nav>
+
+            <div id="menu-mobile" class="flex-center icon-mobile hide">
+                <i id="icon-mobile-animation" class="fas fa-bars icon-mobile-transition"></i>         
+            </div>
         </header>
 
         <section id="game-area-section" class="flex-containers flex-center game-img">
@@ -61,7 +61,7 @@
                             <label for="feedback" class="radio-label-nfrb">Feedback</label>
                             
                             <input type="radio" id="report" class="radio-btn-nfrb" value="report" name="form_nfrb" required>        
-                            <label for="report" class="radio-label-nfrb">Report bug</label>
+                            <label for="report" class="radio-label-nfrb">Report bugs</label>
                         </div>
 
                         <div id="user-comment" class="textarea-area hide">
@@ -78,7 +78,7 @@
             </div>   
         </section>
 
-        <footer id="footer" class="flex-containers flex-center position-fixed">
+        <footer id="footer" class="flex-containers flex-center position-absolute">
             <ul id="social" class="social-network text-center">
                 <li>
                     <a href="https://facebook.com" target="_blank" rel="noopener" 

@@ -13,7 +13,7 @@
         <title>Quiz For Fun</title>
     </head>
     <body>
-        <header id="header" class="flex-containers flex-center flex-row position-fixed">
+        <header id="header" class="flex-containers flex-center flex-row position-absolute">
             <a href="index.html" id="logo" class="logo-qff flex-items" aria-label="Open the Home Page">
                 <h1>Quiz For Fun</h1>
             </a>
@@ -25,17 +25,17 @@
             </nav>
 
             <div id="menu-mobile" class="flex-center icon-mobile hide">
-                <i id="icon-mobile-animation" class="fas fa-bars"></i>         
+                <i id="icon-mobile-animation" class="fas fa-bars icon-mobile-transition"></i>         
             </div>
         </header>
 
         <section id="game-area-section" class="flex-containers flex-center game-img">
             <!-- Start -->
-            <div id="start-games" class="flex-containers flex-center game-area">
-                <div id="start-view" class="start-area text-center">
-                    <h2 class="text-center">Welcome to Quiz For Fun!</h2>
-                    <p class="text-center">Amazing challenges are waiting for you!</p>
-                    <p class="text-center">What are you waiting for? Start the quiz, have fun and enjoy!</p>
+            <div id="start-games" class="flex-containers flex-center game-area text-medium">
+                <div id="start-view" class="text-center space-margin-bottom">
+                    <h2>Welcome to Quiz For Fun!</h2>
+                    <p>Amazing challenges are ready for you!</p>
+                    <p>What are you waiting for? Start the quiz, have fun and enjoy!</p>
                 </div>
                 
                 <div class="btns-container flex-inline flex-center">
@@ -46,22 +46,22 @@
 
             <!-- Login Quiz -->
             <div id="pre-quiz-view" class="flex-containers flex-center pre-quiz fit-content hide">
-                <form method="GET" action="">
+                <form>
                     <div id="pre-quiz" class="pre-quiz-content">   
-                        <div class="text-center">
+                        <div class="text-center text-medium">
                             <h2>Hi! Let's start choosing the username!</h2>
                         </div>
                         <!-- Username Section -->
-                        <div class="text-labels">
+                        <div class="text-labels text-small">
                             <label for="username">Username *</label>
                             <input type="text" id="username" class="input-forms" name="user_name" maxlength="8" required placeholder="Insert your username here!">
                             <h3 class="username-info">Username: max 8 characters.</h3>
                         </div>
                         <!-- Difficulty Selection -->
                         <div class="text-center">
-                            <h2>Select the difficulty speed here!</h2>
+                            <h2>Select the difficulty speed!</h2>
                             <!-- Radio Button Difficulty Section -->
-                            <div class="text-labels">
+                            <div class="text-labels text-small">
                                 <input type="radio" id="easy" class="radio-btn-difficulty" value="easy" name="level_speed" required>
                                 <label for="easy" class="radio-label-difficulty">Easy</label>
                                 
@@ -74,7 +74,7 @@
                         </div>
 
                         <!-- Category Selection -->    
-                        <div class="text-center">
+                        <div class="text-center space-margin-bottom">
                             <h2>Select the category!</h2>
                             <button id="movies-btn" class="btn btn-games" type="submit" data-type="data-movies">Movies</button>
                             <button id="videogames-btn" class="btn btn-games" type="submit" data-type="data-videogames">Videogames</button>
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                     <!--Here will be displayed the questions and anserws -->
-                    <div id="questions-area">
+                    <div id="questions-area" class="qa-view-container flex-center">
                         <h2 id="question-text" class="questions-text-view flex-center">Question?</h2>
                         <div class="answer-container flex-center">
                                 <p class="answer-index">A.</p>
@@ -131,24 +131,25 @@
             </div>
 
             <!-- Instruction Modal -->
-            <div id="modal-instruction" class="flex-containers flex-center popup-instruction start-area">
+            <div id="modal-instruction" class="flex-containers flex-center popup-instruction">
                 <!-- Instruction Content -->
-                <div class="content-popup text-left text-small">
-                    <h2 class="text-center space-margin-bottom">Instructions</h2>
+                <div class="flex-containers-columns content-popup text-left text-small">
+                    <h2 class="text-center space-margin-bottom">Rules</h2>
                     <a href="#modal-instruction" class="close">X</a>
-                    <p>There is only one rule... Have Fun!</p>
-                    <p>Click on the Start Button, enter your username, select the 
-                        difficulty, choose which category you'd like to play and then? Play!
-                    </p>
-                    <p>Enjoy and have fun with our quiz!</p>
-                    <p>The Fun never ends because you can always score more! Play your match,
-                        the Score System will take your best result!
-                    </p>
+                    <p>There is only one rule... <strong>Have Fun!!!</strong></p>
+                    <p><strong>Instructions:</strong></p>
+                    <ol>
+                        <li>Click on the Start Button!</li>
+                        <li>Enter your Username (Max 8 characters)!</li>
+                        <li>Select the difficulty (Easy: 60 secs, Medium: 30 secs, Hard: 15 secs)!</li>
+                        <li>Choose which category you'd like to play...and then?...Play!</li>
+                    </ol>
+                    <p>Enjoy our quiz and the fun never ends as you can always score better!</p>
                 </div>
             </div>
         </section>
 
-        <footer id="footer" class="flex-containers flex-center position-fixed">
+        <footer id="footer" class="flex-containers flex-center position-absolute">
             <ul id="social" class="social-network">
                 <li>
                     <a href="https://facebook.com" target="_blank" rel="noopener" 
