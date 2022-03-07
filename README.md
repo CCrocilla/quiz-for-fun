@@ -515,28 +515,51 @@ List of Test Cases performed. These Tests were executed for all available Device
 
 | Page | Feature | Expected Result | Status | 
 | --- | --- | --- | --- |
-| Home | Header | Make sure that the Logo and the nav bar are displayed on the top part of the Home Page. | Pass |
-| Home | Header | Make sure that by clicking on the Logo the user is redirected to the Home Page. |  |
-| Home | Header | Make sure that the Background Image is displayed with no overlap with the Logo and Nav Bar. |  |
-| Home | Video | Make sure that the video apppears and that the autoplay works. |  |
-| Home | Video | Make sure that video is muted when the homepage is opened. |  |
-| Home | Recipe of the Day | Make sure that the section is aligned and Image, Details, Ingredients and the Read More Button are correctly displayed. |  |
-| Home | Recipe of the Day | Make sure that, when clicking on the Read More Button a Popup is opened displaying the Preparation steps. |  |
-| Contact Us | Images | Make sure that the background image is displayed correcly. |  |
-| Contact Us | Form | Make sure all the fields (Username and Email) are editable. |  |
-| Contact Us | Form | Make sure all the fields (Username and Email) are mandatory. |  |
-| Contact Us | Form | Make sure all the checkbox/radio buttons are editable. |  |
-| Contact Us | Form | Make sure all the Text Area field appear only if the user flags the checkboxes (Quiz, Feedback, Report Issues). |  |
-| Contact Us | Form | Make sure that the Reset Form Button works and that deletes all the information entered in the form. |  |
-| Contact Us | Form | Make sure that the Sign In Button works and that opens the thank you page. |  |
-| 404 Error Page | Image | Make sure that the background image is displayed correctly when the user is automatically redirected to the 404 Error Page if trying to displaying a page that does not exist in the website. |  |
-| 404 Error Page | Text | Make sure that the text is displayed in the center of the page. |  |
-| 404 Error Page | Text | Make sure that the user can be redirected back to the Home Page using the Home anchor element present in the text. |  |
-| Thank you Page | Image | Make sure that the page opens when the user clicks on the Submit Button in Share |  |
-| Thank you Page | Image | Make sure that the page opens when the user clicks on the Sign In Button in the Contact Us Page |  |
-| Thank you Page | Image | Make sure that the background image is displayed. |  |
-| Thank you Page | Text | Make sure that the text is displayed in the center of the page. |  |
-| Thank you Page | Text | Make sure that the user can be redirected back to the Home Page using the Home anchor element present in the text. |  |
+| Home | Header | Make sure that the Logo and the Navigation Bar are displayed on the top part of the Home Page. | Pass |
+| Home | Header | Make sure that by clicking on the Logo the user is redirected to the Home Page. | Pass |
+| Home | Header | Make sure that the Background Image does no overlap with the Logo and Nav Bar. | Pass |
+| Home | Header | Make sure that the Hamburger Menu is displayed in mobile. | Pass |
+| Home | Header | Make sure that the Navigation Bar Menu is displayed only after clicking on the Hamburger icon in mobile | Pass |
+| Home | Application | Make sure that the Welcome Text is displayed and does not overlap nor it is cut-off. |  |
+| Home | Application | Make sure that the Start and Rules Buttons are displayed. | Pass |
+| Home | Application | Make sure that the Rules Button can be clicked and that open the Modal with the rules/instructions for the user. | Pass |
+| Home | Application | Make sure that the Start Button open the Pre-Quiz Area. | Pass |
+| Pre-Quiz | Images | Make sure that the background image is displayed correcly. | Pass |
+| Pre-Quiz | Form | Make sure that the field Username is editable and that the max character available is 8. | Pass |
+| Pre-Quiz | Form | Make sure that the field Username is mandatory. | Pass |
+| Pre-Quiz | Form | Make sure that all the radio buttons are selectable and mandatory. | Pass |
+| Pre-Quiz | Form | Make sure that when the Movies and Videogames buttons are clicked, if the Username or the Checkbox are not filled it is not possible to start the quiz. | Pass |
+| Pre-Quiz | Form | Make sure that when the Movies and Videogames buttons are clicked, if the Username or the Checkbox are filled the game starts. | Pass |
+| Pre-Quiz | Form | Make sure that when the Movies and Videogames button the Username and Difficulty are saved in the Local Storage. | Pass |
+| Quiz | Application | Make sure that the Question counter is displayed on top left of the game area and that starts from the first question. | Pass |
+| Quiz | Application | Make sure that the Score counter is displayed on top center of the game area and that starts from 0. | Pass |
+| Quiz | Application | Make sure that the Countdown Timer is displayed on top right of the game area and that display the time based on the difficulty selected. | Pass |
+| Quiz | Application | Make sure that the correct category questions are displayed (Movies or Videogames) upon the selection made. | Pass |
+| Quiz | Application | Make sure that each button is clickable once. | Pass |
+| Quiz | Application | Make sure that once one of the buttons is clicked the color of the Answer changes color. | Pass |
+| Quiz | Application | Make sure that once one of the buttons is clicked the next question is automatically displayed and the color is reset to the original ones. | Pass |
+| Quiz | Application | Make sure that if the Timer runs out the next question is automatically displayed. | Pass |
+| Quiz | Application | Make sure that the user select the correct answer the score increase by 100 Points. | Pass |
+| Quiz | Application | Make sure that the user select the incorrect answer the score does not increase. | Pass |
+| Quiz | Application | Make sure that for each new question displayed the timer is reset (based on the difficulty selected). | Pass |
+| Quiz | Application | Make sure that when all the 10 questions have been answered (or Not) the user is redirected to the Scores Page. | Pass |
+| Scores | Application | Make sure that when redirected from a game played the user see the the thanks for Playing message and the score made. | Pass |
+| Scores | Application | Make sure that when redirected from a game played the user after seeing the score, can decide to save or not the Score. | Pass |
+| Scores | Application | Make sure that by clicking on the No Button, the score is not saved in the Database and that the Leaderboard is displayed. | Pass |
+| Scores | Application | Make sure that by clicking on the Yes Button, the score is saved in the Database and that the Leaderboard is displayed. | Pass |
+| Scores | Application | Make sure that by clicking on Scores anchor element just the Leaderboard is displayed. | Pass |
+| Contact Us | Form | Make sure that all the fields (Username and Email) are mandatory. | Pass |
+| Contact Us | Form | Make sure that all the radio buttons are clickable. | Pass |
+| Contact Us | Form | Make sure that all the Text Area field appear only if the user flags the checkboxes (Quiz, Feedback, Report Issues). | Pass |
+| Contact Us | Form | Make sure that the Reset Form Button works and that deletes all the information entered in the form. | Pass |
+| Contact Us | Form | Make sure that the Submit Button works and that opens the thank you page. | Pass |
+| 404 Error Page | Image | Make sure that the background image is displayed correctly when the user is automatically redirected to the 404 Error Page if trying to displaying a page that does not exist in the website. | Pass |
+| 404 Error Page | Text | Make sure that the text is displayed in the center of the page. | Pass |
+| 404 Error Page | Text | Make sure that the user can be redirected back to the Home Page using the Home button. | Pass |
+| Thank you Page | Image | Make sure that the page opens when the user clicks on the Submit Button in Contact Us Page | Pass |
+| Thank you Page | Image | Make sure that the background image is displayed. | Pass |
+| Thank you Page | Text | Make sure that the text is displayed in the center of the page. | Pass |
+| Thank you Page | Text | Make sure that the user can be redirected back to the Home Page using the Home button present. | Pass |
 
 
 
@@ -552,7 +575,7 @@ Additional tests include checks on different devices using the Toggle Device Emu
 * Surface Duo
 
 ### **Bugs**
-- No other bugs could be found in the website during the test phase.
+- No bugs have been found in the website during the test phase.
 
 ### Future Implementation
 - Difficulty Points: In future implementation different point scores will be assigned depending on the difficulty level selected by the user. 
@@ -566,8 +589,6 @@ If the user is a guest, he/she will also be able to play the game by inserting o
  
 - Newsletter, Report and feedback: future implementations will include the creation of a form. Once the user compile this, he/she will receive a weekly/monthly email with website news. Thanks to this form, it will be possible to send a real notification helping the developer implementing suggested features or fixing any issues reported by the users.
 It would be also important to implement a captcha in the form before the submission to avoid spam. 
-
-
 
 
 ---
@@ -616,8 +637,8 @@ In order to create a Local Clone follow the steps below:
 5.	Change the current working directory to the location where you want the cloned directory to be made
 6.	Type git clone as shown in the example below and then paste the URL copied in Step 3
 >$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-1. Press Enter 
-2. Your local clone will be created
+7. Press Enter 
+8. Your local clone will be created
 
 
 ---
@@ -628,29 +649,41 @@ Thanks to the useful reference and suggestions derived from sources listed below
 
 - ### Content & Media
 All of the contents on the website are customised and no design frameworks have been used for the realization of the site.
-The idea of the Logo, the Navbar and the Footer were taken from the Love Running Project analysing and customizing their implementation for the created website.
-I explored the writing part of the code and the best practices associated to this using the two sites listed below. Consulting those allowed me to further cement the learning gained during the Code Institute Course.
+The idea of the Logo, the Navbar and the Footer were taken from the Love Running Project analysing and customizing their implementation for the created website and implementing an additional feature for the mobile version(Hamburger Menu).
+In order to consolidate the knowledge acquired during the Code Institute Course dedicated to the javascript part (as well as the HTML and CSS) I have also studied and explored the writing part of the code and the best practices using the sites listed below. 
 - [Medium.com](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
 - [Learn.shayhowe.com](https://learn.shayhowe.com/html-css/writing-your-best-code/)
+- [W3schools.com](https://www.w3schools.com/js/js_best_practices.asp)
+- [Deepsource.io](https://deepsource.io/blog/javascript-code-quality-best-practices/)
+- [Developer.mozilla.com](https://developer.mozilla.org/en-US/docs/Web/Events)
 
-
-Listed here the Source of the studies: 
+Listed here the Source of the studies for the Flexbox: 
 - [Flexbox - W3School.com](https://www.w3schools.com/css/css3_flexbox.asp)
 - [Css-tricks.com](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [Developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
 - [Flex properties - W3School.com](https://www.w3schools.com/cssref/css3_pr_flex.asp)
 - [Web Dev Simplified - Youtube Video](https://www.youtube.com/watch?v=fYq5PXgSsbE)
 
-One of the most complex pages for the implementation of the website was the Recipes Page. My mentor Narender Singh (Mentor) provided some materials where I could observe and study the implementation of sliders using only css with no JavaScript, generally used for these types of tasks. 
+One of the most complex part to develop for the website was the Quiz and the logic to apply. 
+The following websites were inspirational and helped me understanding how to sctructure the logic on how to take the questions/answers and how to display them and let them be the element to click. Then I have customized and created the code for my needs:
+- [Thanks to Brian Design for the video of How to make a Quiz](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=1874s)
+- [Thanks to Web Dev Simplfied for the video of How to build a Quiz](https://www.youtube.com/watch?v=riDzcEQbX6k&t=904s)
+- [Thanks to Simple Step Code for the inspiration](https://simplestepscode.com/javascript-quiz-tutorial/)
 
-The following websites were inspirational for customizing the code of the slider to my needs:
-- [Thanks to Chris Coyier for the Slider](https://codepen.io/chriscoyier/pen/XwbNwX)
+Thanks to Narender Singh, who direct me toward the right path pushing and , I have also studied the Local Storage, that I have then used to store information such us Username, Difficulty selected and Score, and the possibility to use an Online NoSQL database backend (RestDB.io is one of the suggested ones) that I have studied and implemented in the website and it is used to save the Username, the Difficulty and the Score as well as display the leaderboard.
+This was another of the most complex part to develop but thanks to the Code Institute Course (Introduction to APIs) and the following website/Youtube Videos I was able to understand, customized and create the code for my needs:
+- [Local Storage - W3School.com](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
+- [Thanks to dcode for the Video on How to use Local Storage](https://www.youtube.com/watch?v=k8yJCeuP6I8)
 
-- [Thanks to Anna Blok for the Popup](https://codepen.io/anna_blok/pen/KKpwRVe)
+- [Thanks to the Documentation in the RestDB.io](https://restdb.io/docs/querying-with-the-api#sortXoperator)
+- [How to use an API - RapidAPI.com](https://rapidapi.com/blog/how-to-use-an-api-with-javascript/)
+- [Developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)
+- [JS Web APIs - W3School.com](https://www.w3schools.com/js/js_api_intro.asp)
+- [JS JSON - W3School.com](https://www.w3schools.com/js/js_json_intro.asp)
 
-- [Favicon.io](https://favicon.io/) was used to include the favicon in the website.
-- [Cooks.com](https://www.cooks.com/) was used as reference for the creation of the recipes. 
 
+To implement the favicon in the website was used the following resource:
+- [Favicon.io](https://favicon.io/) 
 
 For the realization of the 404 error page I found a guide on how to create the file here: 
 - [Docs Github](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site)
@@ -659,6 +692,6 @@ Thanks to Kasia Bogucka and Narender Singh for suggesting the use of github wiki
 - [Sample Readme File - Code Institute](https://github.com/Code-Institute-Solutions/SampleREADME)
 - [Markdown - Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
-All the Images as well as the Video included in the Home Page have been taken from [Pexels.com](https://www.pexels.com/)
+All the Images included in the Home Page have been taken from [Pexels.com](https://www.pexels.com/)
 
 Thank you to the entire Code Institute Team and the Slack Community for their feedback, help and support. 
