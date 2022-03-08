@@ -39,8 +39,8 @@
                 </div>
                 
                 <div class="btns-container flex-inline flex-center">
-                    <button id="start-btn" class="btn btn-start text-center" data-type="start">Start</button>
-                    <a href="#modal-instruction" id="anchor-instruction" class="btn btn-start decorations-none text-center" aria-label="Open the Rules Popup">Rules</a>
+                    <button id="start-btn" class="btn btn-start text-center text-small" data-type="start">Start</button>
+                    <a href="#modal-instruction" id="anchor-instruction" class="btn btn-start decorations-none text-center text-small" aria-label="Open the Rules Popup">Rules</a>
                 </div>
             </div>
 
@@ -54,7 +54,7 @@
                         <!-- Username Section -->
                         <div class="text-labels text-small">
                             <label for="username">Username *</label>
-                            <input type="text" id="username" class="input-forms" name="user_name" maxlength="8" required placeholder="Insert your username here!">
+                            <input type="text" id="username" class="input-forms text-small" name="user_name" maxlength="8" required placeholder="Insert your username here!">
                             <h3 class="username-info">Username: max 8 characters.</h3>
                         </div>
                         <!-- Difficulty Selection -->
@@ -76,8 +76,8 @@
                         <!-- Category Selection -->    
                         <div class="text-center space-margin-bottom">
                             <h2>Select the category!</h2>
-                            <button id="movies-btn" class="btn btn-games" type="submit" data-type="data-movies">Movies</button>
-                            <button id="videogames-btn" class="btn btn-games" type="submit" data-type="data-videogames">Videogames</button>
+                            <button id="movies-btn" class="btn btn-games text-small" type="submit" data-type="data-movies">Movies</button>
+                            <button id="videogames-btn" class="btn btn-games text-small" type="submit" data-type="data-videogames">Videogames</button>
                         </div>
                     </div>
                 </form>
@@ -88,7 +88,7 @@
                 <div id="questions" class="text-center">
                     <!-- This Section is dedicated to the Information displayed -->
                     <!-- Used Brian Design for references but code adjusted by myself-->
-                    <div id="info-questions-area" class="info-quiz">
+                    <div id="info-questions-area" class="info-quiz text-small">
                         <!-- Progress Bar -->
                         <div id="questions-progress">
                             <p class="questions-score-text">Question:</p>
@@ -108,23 +108,23 @@
                         </div>
                     </div>
                     <!--Here will be displayed the questions and anserws -->
-                    <div id="questions-area" class="qa-view-container flex-center">
-                        <h2 id="question-text" class="questions-text-view flex-center">Question?</h2>
-                        <div class="answer-container flex-center">
+                    <div id="questions-area" class="qa-view-container flex-center space-margin-bottom">
+                        <h2 id="question-text" class="questions-text-view flex-center text-medium">Question?</h2>
+                        <div class="answer-container flex-center text-medium">
                                 <p class="answer-index">A.</p>
-                                <button class="answer-text btn-answers flex-center" data-number="1">Answer 1</button>
+                                <button class="answer-text btn-answers flex-center text-small" data-number="1">Answer 1</button>
                         </div>
-                        <div class="answer-container flex-center">
+                        <div class="answer-container flex-center text-medium">
                                 <p class="answer-index">B.</p>
-                                <button class="answer-text btn-answers flex-center" data-number="2">Answer 2</button>
+                                <button class="answer-text btn-answers flex-center text-small" data-number="2">Answer 2</button>
                         </div>
-                        <div class="answer-container flex-center">
+                        <div class="answer-container flex-center text-medium">
                                 <p class="answer-index">C.</p>
-                                <button class="answer-text btn-answers flex-center" data-number="3">Answer 3</button>
+                                <button class="answer-text btn-answers flex-center text-small" data-number="3">Answer 3</button>
                         </div>
-                        <div class="answer-container flex-center">
+                        <div class="answer-container flex-center text-medium">
                                 <p class="answer-index">D.</p>
-                                <button class="answer-text btn-answers flex-center" data-number="4">Answer 4</button>
+                                <button class="answer-text btn-answers flex-center text-small" data-number="4">Answer 4</button>
                         </div>
                     </div>
                 </div>
@@ -133,12 +133,12 @@
             <!-- Instruction Modal -->
             <div id="modal-instruction" class="flex-containers flex-center popup-instruction">
                 <!-- Instruction Content -->
-                <div class="flex-containers-columns content-popup text-left text-small">
-                    <h2 class="text-center space-margin-bottom">Rules</h2>
+                <div class="flex-containers-columns content-popup text-center text-small">
+                    <h2 class="space-margin-bottom">Rules</h2>
                     <a href="#modal-instruction" class="close">X</a>
                     <p>There is only one rule... <strong>Have Fun!!!</strong></p>
                     <p><strong>Instructions:</strong></p>
-                    <ol>
+                    <ol class="text-left">
                         <li>Click on the Start Button!</li>
                         <li>Enter your Username (Max 8 characters)!</li>
                         <li>Select the difficulty (Easy: 60 secs, Medium: 30 secs, Hard: 15 secs)!</li>

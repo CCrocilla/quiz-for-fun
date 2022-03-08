@@ -33,10 +33,6 @@ body {
     flex-flow: column nowrap;
 }
 
-.text-big {
-    font-size: 2rem;
-}
-
 .text-medium {
     font-size: 1.5rem;
 }
@@ -105,7 +101,7 @@ h1 {
     padding: 5px;
     color: #C84B31;
     border: 2px solid #C84B31;
-    box-shadow: 2px 5px #C84B31;
+    box-shadow: 2px 5px 3px #C84B31;
     border-radius: 5px;
     text-transform: uppercase;
     cursor: pointer;
@@ -114,13 +110,13 @@ h1 {
 .nav-anchor:hover {
     color: #ECDBBA;
     border-color: #ECDBBA;
-    box-shadow: 2px 5px #ECDBBA;
+    box-shadow: 2px 5px 3px #ECDBBA;
 }
 
 .active {
     color: #ECDBBA;
     border-color: #ECDBBA;
-    box-shadow: 2px 5px #ECDBBA;
+    box-shadow: 2px 5px 3px #ECDBBA;
 }
 
 .game-img {
@@ -147,7 +143,7 @@ h1 {
     max-width: 520px;
     min-height: 400px;
     border-radius: 10px;
-    box-shadow: 7px 7px #ECDBBA;
+    box-shadow: 7px 7px 3px #ECDBBA;
     position: relative;
     padding: 10px;
 }
@@ -168,10 +164,6 @@ h1 {
     text-align: right !important;
 }
 
-.flex {
-    display: flex;
-}
-
 .flex-inline {
     display: inline-flex;
 }
@@ -185,11 +177,10 @@ h1 {
     font-family: 'Press Start 2P', cursive, sans-serif;
     background-color: #ECDBBA;
     color: #070707;
-    font-size: 1.25rem;
     margin: 5px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 5px 10px #070707;
+    box-shadow: 5px 10px 3px #070707;
     cursor: pointer;
 }
 
@@ -198,10 +189,12 @@ h1 {
     margin: 10px;
 }
 
-.btn-start:hover, .btn-games:hover {
+.btn-start:hover, 
+.btn-games:hover, 
+.btn-forms:hover {
     color:#ECDBBA;
     background-color: #070707;
-    box-shadow: 5px 10px #ECDBBA;
+    box-shadow: 5px 10px 3px #ECDBBA;
 }
 
 /* Modal Instructions */
@@ -222,10 +215,10 @@ h1 {
     color: #070707;
     border: 2px solid #070707;
     border-radius: 50%;
-    padding: 3px 10px;
+    padding: 3px 8px;
     position: absolute;
-    top: 34px;
-    right: 20px;
+    top: 25px;
+    right: 15px;
 }
 
 .close:hover,
@@ -268,7 +261,6 @@ footer {
     display: block;
     margin-top: 5px;
     margin-bottom: 12px; 
-    font-size: 1.1rem;
     background-color: #ECDBBA;
     color: #070707;
     border: 2px solid #ECDBBA;
@@ -328,13 +320,12 @@ footer {
     display: flex;
     margin: 10px;
     padding: 7.5px;
-    font-size: 1.5rem;
     width: fit-content;
     height: fit-content;
     background-color: #070707;
     border-radius: 15px;
     color: #ECDBBA;
-    box-shadow: 5px 5px #070707;
+    box-shadow: 5px 5px 3px #070707;
 }
 
 .answer-index {
@@ -344,7 +335,6 @@ footer {
 .info-quiz {
     display: flex;
     justify-content: space-between;
-    font-size: 1.25rem;
     padding: 10px;
 }
 
@@ -355,7 +345,7 @@ footer {
     width: 95px;
     color: #ECDBBA;
     background-color: #070707;
-    box-shadow: 2px 5px #ECDBBA;
+    box-shadow: 2px 5px 3px #ECDBBA;
 }
 
 .qa-view-container {
@@ -367,7 +357,6 @@ footer {
     display: flex;
     color: #070707;
     background-color: #ECDBBA;
-    font-size: 1.25rem;
     width: 260px;
     height: 50px;
     margin: 2px;
@@ -377,14 +366,13 @@ footer {
 }
 
 .questions-text-view {
-    font-size: 1.5rem;
     width: 95%;
     max-width: 450px;
     margin-top: 25px;
     border: 3px solid #070707;
     border-radius: 10px;
     background-color: #ECDBBA;
-    box-shadow: 5px 5px #070707;
+    box-shadow: 5px 5px 3px #070707;
     padding: 5px;
 }
 
@@ -413,13 +401,11 @@ footer {
     height: fit-content;
     padding: 25px 15px;
     position: fixed;
-    top: 60px; 
+    top: 50px; 
 }
 
 .content-popup li {
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 1.25rem;
+    margin: 5px 20px 5px 50px;
 }
 
 /* ---------Score Page--------- */
@@ -431,9 +417,8 @@ footer {
 
 .table-container {
     width: 95%;
-    font-size: 1.25rem;
     border: 3px solid #070707;
-    box-shadow: 5px 10px #070707;
+    box-shadow: 5px 10px 3px #070707;
     border-radius: 10px;
     text-align: center;
     margin-bottom: 15px;
@@ -444,7 +429,7 @@ footer {
     padding: 5px;
     background-color: #C84B31;
     border-radius: 7px;
-    box-shadow: 4px 5px #070707;
+    box-shadow: 4px 5px 3px #070707;
 }
 
 .table-container td {
@@ -452,7 +437,13 @@ footer {
 }
 
 .loading {
-    padding: 50px;
+    padding-top: 50px;
+    /*margin: 50px auto;*/
+}
+
+.leader, .loading {
+    font-family: 'Press Start 2P', cursive, sans-serif;
+
 }
 
 /* ---------Contact Us--------- */
@@ -467,9 +458,10 @@ footer {
     flex-flow: column wrap;
     width: 35vw;
     min-width: 360px;
+    max-width: 520px;
     height: fit-content;
     border-radius: 10px;
-    box-shadow: 7px 7px #ECDBBA;
+    box-shadow: 7px 7px 3px #ECDBBA;
     padding: 10px;
 }
 
@@ -517,28 +509,25 @@ textarea:hover {
     margin-left: 6px;
 }
 
-
-/* Error Page */
+/* Error 404 & Thanks you Pages */
 .te-content {
     display: flex;
     flex-flow: column nowrap;
-    width: 50%;
-    min-width: 350px;
+    width: 45vw;
+    max-width: 520px;
+    min-width: 300px;
     height: fit-content;
-    min-height: 300px;
-    font-size: 1.3rem;
     padding: 35px;
-    margin: 35px;
     background-color: #C84B31;
     color: #070707;
     border-radius: 10px;
-    box-shadow: 7px 7px #ECDBBA;
+    box-shadow: 7px 7px 3px #ECDBBA;
 }
 
 .te-content .anchor-text {
     text-decoration: none;
     cursor: pointer;
-    margin: 40px auto;
+    margin: 30px auto;
 }
 
 /* ---------- Media Query ---------- */
@@ -549,9 +538,7 @@ textarea:hover {
 }
 
 
-
 @media screen and (max-width: 1220px) {
-
     .logo-qff { 
         font-size: 100%;
         margin-left: 0px;
@@ -597,16 +584,15 @@ textarea:hover {
         width: 100%;
         justify-content: center;
         height: 75px;
-        -webkit-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 }
 
 
 @media screen and (max-width: 768px) {
 
-    
     .logo-qff { 
         font-size: 100%;
         margin-left: 0px;
@@ -617,8 +603,15 @@ textarea:hover {
         margin-right: 0px;
     }
 
+    .radio-label-nfrb {
+        margin-right: 0px;
+    }
 
-
+    .radio-btn-nfrb {
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-left: 5px;
+      }
 }
 
 
@@ -651,5 +644,58 @@ textarea:hover {
 
     .content-popup {
         top: 10px;
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .logo-qff {
+        font-size: 0.5rem;
+    }
+
+    .nav-anchor {
+        margin: 2px;
+    }
+
+    .game-area,
+    .content-popup,
+    .pre-quiz,
+    .quiz,
+    .end-game {
+        min-width: 300px;
+    }
+
+    .btn-start {
+        width: 125px;
+    }
+
+    .btn-forms {
+        width: 135px;
+    }
+
+    .text-medium {
+        font-size: 1.25rem;
+    }
+
+    .text-small {
+        font-size: 1rem;
+    }
+
+    .flex-cu {
+        min-width: 300px;
+        display: block;
+    }
+
+    .answer-container {
+        width: 285px;
+        margin: 7px;
+    }
+
+    .btn-answers {
+        height: 45px;
+    }
+
+    .form-users, .textarea-area {
+        margin: 20px 5px;
     }
 }

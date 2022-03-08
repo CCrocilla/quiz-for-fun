@@ -420,7 +420,7 @@ The users also have the possibility to click on the Home button to navigate back
 
 ---
 ## **Testing**
-The testing phases have been carried out using the **W3C Javascript Validator**, **W3C CSS Validator** and **W3C Markup Validator**(for all pages). No errors have been identified from the Validators as can be seen in the screenshot below: 
+The testing phases have been carried out using the **W3C Javascript Validator**, **W3C CSS Validator** and **W3C Markup Validator** (for all pages). No errors have been identified from the Validators as can be seen in the screenshot below: 
 
 - **JavaScript**
 
@@ -680,7 +680,7 @@ This was another of the most complex part to develop but thanks to the Code Inst
 - [Developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)
 - [JS Web APIs - W3School.com](https://www.w3schools.com/js/js_api_intro.asp)
 - [JS JSON - W3School.com](https://www.w3schools.com/js/js_json_intro.asp)
-
+- [Thanks to Taniarascia.com for the API example](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/)
 
 To implement the favicon in the website was used the following resource:
 - [Favicon.io](https://favicon.io/) 

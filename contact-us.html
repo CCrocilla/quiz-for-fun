@@ -48,12 +48,13 @@
                     <div id="form-contact-us" class="flex-center form">    
                         <div id="form-user-contact-us" class="form-users text-labels text-small">
                             <label for="username-cu">Username *</label>
-                            <input type="text" id="username-cu" class="input-forms" name="user_name_cu" required placeholder="Insert your Username here!">
+                            <input type="text" id="username-cu" class="input-forms text-small" name="user_name_cu" required placeholder="Insert your Username here!">
                                                                 
                             <label for="email">Email Address *</label>
-                            <input type="email" id="email" class="input-forms" name="email_address" required placeholder="Insert your email address here!">
-                    
+                            <input type="email" id="email" class="input-forms text-small" name="email_address" required placeholder="Insert your email address here!">
+                        </div>
                             <!-- Radio Button selection Newsletter/Feedback/Report -->
+                        <div class="form-users text-center text-labels text-small">
                             <input type="radio" id="newsletter" class="radio-btn-nfrb" value="newsletter" name="form_nfrb" required>
                             <label for="newsletter" class="radio-label-nfrb">Newsletter</label>
                             
@@ -69,9 +70,9 @@
                             <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Insert your Feedback or Report a Bug here!"></textarea>
                         </div>
                                 
-                        <div id="btn-nfb" class="btn-container flex-center">
-                            <input type="reset" value="Reset" class="btn btn-forms">
-                            <input type="submit" value="Submit!" class="btn btn-forms">
+                        <div id="btn-nfb" class="btn-container flex-center text-center text-small space-margin-bottom">
+                            <button id="btn-reset" class="btn btn-forms" type="reset">Reset</button>
+                            <button id="btn-submit-form" class="btn btn-forms" type="submit">Submit</button>
                         </div>         
                     </div>
                 </form>

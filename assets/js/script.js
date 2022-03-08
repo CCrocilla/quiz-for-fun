@@ -214,19 +214,17 @@ function checkAnswer() {
         answer.addEventListener('click', event => {
             let selectedChoice = event.target;
             let selectedAnswer = selectedChoice.dataset.number;
-            
+            console.log('answerElement', 'answer', answer, answersElement)
 
             let answerColorChange = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
             if(answerColorChange === 'correct-answer') {
-                incrementScore(POINTS);
-                selectedChoice.disabled = true;
-            } else {
-                selectedChoice.disabled = true;
-            }
-            
+                incrementScore(POINTS);     
+            } 
+            disableAnswersBtns(true);
+
             selectedChoice.parentElement.classList.add(answerColorChange);
             setTimeout(() => {
-                selectedChoice.disabled = false;
+                disableAnswersBtns(false);
                 selectedChoice.parentElement.classList.remove(answerColorChange);
                 getQuestion();
             }, 1500);
@@ -277,3 +275,9 @@ function stopTimer() {
 }
 // ------------- End Timer ------------- //
 
+// ------------- Function Disable Buttons -------------- //
+function disableAnswersBtns(isDisabled) {
+    answersElement.forEach(answer => {
+        answer.disabled = isDisabled;
+    });
+}
