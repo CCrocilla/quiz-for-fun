@@ -295,20 +295,36 @@ The users also have the possibility to click on the Home button to navigate back
 <img src="" alt="Smartphone View Homepage" width="400px"/>
 </details>
 
-- ## Select Game Area
+- ## Rules Modal 
 <details>
-    <summary>Click here for Desktop View</summary>
-<img src="" alt="Desktop View Recipes Page" width="800px"/>
+    <summary>Click here for Desktop View</summary>  
+<img src="assets/images-readme/rules-modal-desktop.webp" alt="Desktop View Rules Modal" width="800px"/>
 </details>
 
 <details>
     <summary>Click here for Tablet View</summary>
-<img src="" alt="Tablet View Recipes Page" width="600px"/>
+<img src="assets/images-readme/rules-modal-tablet.webp" alt="Tablet View Rules Modal" width="600px"/>
 </details>
 
 <details>
     <summary>Click here for Smartphone View</summary>
-<img src="" alt="Smartphone View Recipes Page" width="400px"/>
+<img src="assets/images-readme/rules-modal-smartphone.webp" alt="Smartphone View Rules Modal" width="400px"/>
+</details>
+
+- ## Pre-Quiz Area
+<details>
+    <summary>Click here for Desktop View</summary>
+<img src="assets/images-readme/prequiz-desktop.webp" alt="Desktop View Pre-Quiz" width="800px"/>
+</details>
+
+<details>
+    <summary>Click here for Tablet View</summary>
+<img src="assets/images-readme/prequiz-tablet.webp" alt="Tablet View Pre-Quiz" width="600px"/>
+</details>
+
+<details>
+    <summary>Click here for Smartphone View</summary>
+<img src="assets/images-readme/prequiz-smartphone.webp" alt="Smartphone View Pre-Quiz" width="400px"/>
 </details>
 
 - ## Quiz Area
