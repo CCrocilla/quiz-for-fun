@@ -8,9 +8,11 @@ let modalInstruction = document.getElementById('modal-instruction');
 //  Variables Close Functionality
 let closeX = document.getElementsByClassName('close')[0];
 
-// Wait for the DOM to finish loading before running the game
-// Get the Button Elements and add event listeners to them
-// DOMContentLoaded taken from Love-Math Project
+/**
+ * Wait for the DOM to finish loading before running the game
+ * Get the Button Elements and add event listeners to them
+ * DOMContentLoaded taken from Love-Math Project
+ */
 document.addEventListener("DOMContentLoaded", function() {
     let startBtn = document.getElementById("start-btn");
     startBtn.addEventListener('click', () => {
@@ -25,8 +27,9 @@ function startGameBtn() {
     preQuizView.classList.remove("hide");
 }
 
-// ----------- Modal Instruction (Studied on W3 School) ----------- //
-//When the user clicks on the button, open the modal
+// ----------- Modal Instruction ----------- //
+// Studied on W3 School I have customized and created my own code for my needs
+// When the user clicks on the button, open the modal
 if (anchorInstruction != null){
     anchorInstruction.addEventListener('click', openInstruction);
 }
@@ -65,8 +68,7 @@ window.onclick = function(event) {
 
 
 // ----------- Quiz Engine ----------- //
-//  Variables Quiz
-// Declared globaly the questions variable
+// Variables Quiz
 window.availableQuestion = [];
 
 const POINTS = 100;
@@ -86,13 +88,14 @@ let countDown = null;
 let score = 0;
 let questionCounter = 0;
 
+/**
+ * Local Storage Setup for Username, Score and Difficulty
+ * Content Studied on W3 School and code custom by me for my needs
+ */
 // Local Storage Setup for recentScore
 let recentScore = localStorage.getItem('recentScore');
 
-/**
- * Local Storage Setup for Username
- * Content Studied on W3 School
- */
+// Local Storage Setup for Username
 const storedUsername = localStorage.getItem('inputUsername');
 let playerName = storedUsername || "";
 
@@ -107,14 +110,13 @@ username.addEventListener('change', user => {
 const saveLocalUsername = () => {
     localStorage.setItem('inputUsername', playerName);
 };
-// End Local Storage Setup for Username 
 
 // Local Storage Setup Difficulty Radio Buttons
 const saveLocalDifficulty = () => {
     let inputRadio = document.querySelector('input[name="level_speed"]:checked');
     localStorage.setItem('inputDifficulty', inputRadio.value);
 };
-// End Local Storage Setup for Difficulty Radio Buttons
+// End Local Storage Setup
 
 // Check Validation Form
 function checkValidationForm() {
@@ -179,9 +181,9 @@ const startGame = (game) => {
     checkAnswer();
 };
 
-// Function to get new questions using callback => arrow function
+// Function to get new questions using => arrow function
+// Inspiration on how to create a Quiz from Brian Design and Web Dev Simplfied
 const getQuestion = () => {
-    console.log(recentScore, score);
     if(window.availableQuestion.length === 0 || questionCounter === MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
     
@@ -214,16 +216,18 @@ function checkAnswer() {
         answer.addEventListener('click', event => {
             let selectedChoice = event.target;
             let selectedAnswer = selectedChoice.dataset.number;
-            console.log('answerElement', 'answer', answer, answersElement)
-
+            
+            // Condition to check if the answer is correct, apply the colour and increment the score if it is correct
             let answerColorChange = selectedAnswer == currentQuestion.correctAnswer ? 'correct-answer' : 'wrong-answer';
             if(answerColorChange === 'correct-answer') {
                 incrementScore(POINTS);     
             } 
+            // Function to disable clicks on the buttons
             disableAnswersBtns(true);
 
             selectedChoice.parentElement.classList.add(answerColorChange);
             setTimeout(() => {
+                // Fuction to restore the functionality of the buttons
                 disableAnswersBtns(false);
                 selectedChoice.parentElement.classList.remove(answerColorChange);
                 getQuestion();
@@ -281,3 +285,4 @@ function disableAnswersBtns(isDisabled) {
         answer.disabled = isDisabled;
     });
 }
+// ------------- End Function Disable Buttons -------------- //

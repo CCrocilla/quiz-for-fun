@@ -7,12 +7,12 @@ let inputDifficulty = localStorage.getItem('inputDifficulty');
 let scoresView = document.getElementById('high-scores');
 let textEndGame = document.getElementById('end-game-text');
 
-
+// ------------- Display Score & Text ------------- //
 const btnYesNo = `
     <div class="flex-containers flex-center space-margin-bottom">
         <h2 class="final-text text-center">Do you want to save your Score?</h2>
-        <button id="save-score-btn-yes" class="btn btn-games" type="submit">Yes</button>
-        <button id="save-score-btn-no" class="btn btn-games" type="submit">No</button>
+        <button id="save-score-btn-yes" class="btn btn-games text-center text-small" type="submit">Yes</button>
+        <button id="save-score-btn-no" class="btn btn-games text-center text-small" type="submit">No</button>
     </div>
     `; 
 
@@ -48,6 +48,8 @@ if (recentScore <= 300) {
 // ------------- End Display Score & Text ------------- //
 
 // ------------- API LeaderBoard ------------- //
+// Studied on Code Institute Course (Introduction to APIs)
+// Integration Documentation RestDB.io
 const API_URL = "https://quizforfundb-d21e.restdb.io/rest/quiz-for-fun";
 const API_KEY = "621d964834fd621565858a7b";
 const LIMIT_SCORES = 10;
@@ -55,7 +57,7 @@ const LIMIT_SCORES = 10;
 const urlParams = new URLSearchParams(window.location.search);
 const requestOpenScore = urlParams.get('open');
 
-console.log('request', requestOpenScore);
+console.log('Type of request:', requestOpenScore);
 
 // Check if "open" has been requested and will start the function
 if (requestOpenScore == 'score') {
@@ -98,7 +100,7 @@ async function getStatus() {
     const response = await fetch(API_URL+`?max=${LIMIT_SCORES}&h={"$orderby": {"score": -1}}`, requestOptions);
 
     const data = await response.json();
-    console.log(data);
+    
     if (response.ok) {
         displayScore(data);
     } else {

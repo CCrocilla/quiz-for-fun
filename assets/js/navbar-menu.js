@@ -3,6 +3,7 @@ let mobileMenu = document.getElementById('menu-mobile');
 let iconMobile = document.getElementById('icon-mobile-animation');
 
 // ----------- Hamburger Menu ----------- //
+// Content Studied on W3School and I have created custom code for my needs 
 mobileMenu.addEventListener('click', openNavBar);
 
 function openNavBar() {
