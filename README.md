@@ -468,42 +468,52 @@ Below it is possible to see the result obtained in Lighthouse:
 
 <details>
     <summary>Click here for Lighthouse Desktop - Homepage</summary>
-<img src="" alt="Lighthouse Desktop Homepage" width="800px"/>
+<img src="assets/images-readme/lh-desktop-homepage.webp" alt="Lighthouse Desktop Homepage" width="500px"/>
 </details>
 
 <details>
     <summary>Click here for Lighthouse Mobile - Homepage</summary>
-<img src="" alt="Lighthouse Mobile Homepage" width="800px"/>
+<img src="assets/images-readme/lh-mobile-homepage.webp" alt="Lighthouse Mobile Homepage" width="500px"/>
+</details>
+
+<details>
+    <summary>Click here for Lighthouse Desktop - Scores</summary>
+<img src="assets/images-readme/lh-desktop-scores.webp" alt="Lighthouse Desktop Contact Us" width="500px"/>
+</details>
+
+<details>
+    <summary>Click here for Lighthouse Mobile - Scores</summary>
+<img src="assets/images-readme/lh-mobile-scores.webp" alt="Lighthouse Mobile Contact Us" width="500px"/>
 </details>
 
 <details>
     <summary>Click here for Lighthouse Desktop - Contact Us</summary>
-<img src="" alt="Lighthouse Desktop Contact Us" width="800px"/>
+<img src="assets/images-readme/lh-desktop-contact-us.webp" alt="Lighthouse Desktop Contact Us" width="500px"/>
 </details>
 
 <details>
     <summary>Click here for Lighthouse Mobile - Contact Us</summary>
-<img src="" alt="Lighthouse Mobile Contact Us" width="800px"/>
+<img src="assets/images-readme/lh-mobile-contact-us.webp" alt="Lighthouse Mobile Contact Us" width="500px"/>
 </details>
 
 <details>
     <summary>Click here for Lighthouse Desktop - Thanks you</summary>
-<img src="" alt="Lighthouse Desktop Thank you" width="800px"/>
+<img src="assets/images-readme/lh-desktop-thank-you.webp" alt="Lighthouse Desktop Thank you" width="500px"/>
 </details>
 
 <details>
     <summary>Click here for Lighthouse Mobile - Thanks you</summary>
-<img src="" alt="Lighthouse Mobile Thank You" width="800px"/>
+<img src="assets/images-readme/lh-mobile-thank-you.webp" alt="Lighthouse Mobile Thank You" width="500px"/>
 </details>
 
 <details>
     <summary>Click here for Lighthouse Desktop - Error 404</summary>
-<img src="" alt="Lighthouse Desktop Error 404" width="800px"/>
+<img src="assets/images-readme/lh-desktop-error.webp" alt="Lighthouse Desktop Error 404" width="500px"/>
 </details>
 
 <details>
     <summary>Click here for Lighthouse Mobile - Error 404</summary>
-<img src="" alt="Lighthouse Mobile Error 404" width="800px"/>
+<img src="assets/images-readme/lh-mobile-error.webp" alt="Lighthouse Mobile Error 404" width="500px"/>
 </details>
 
 
