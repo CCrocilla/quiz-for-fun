@@ -1,4 +1,3 @@
-
 // Videogames quiz questions
 const questionsVideogames = [
     {

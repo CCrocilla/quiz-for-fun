@@ -6,7 +6,6 @@ const LIMIT_SCORES = 10;
 const urlParams = new URLSearchParams(window.location.search);
 const requestOpenScore = urlParams.get('open');
 // ------------- Variables Display Score & Text ------------- //
-let finalScore = document.getElementById('quiz-final-score-value');
 let recentScore = localStorage.getItem('recentScore');
 let inputUsername = localStorage.getItem('inputUsername');
 let inputDifficulty = localStorage.getItem('inputDifficulty');
@@ -62,7 +61,7 @@ function displayUserFinalScore() {
     document.getElementById("save-score-btn-no").addEventListener("click", () => getStatus());
     document.getElementById("save-score-btn-yes").addEventListener("click", () => saveAndGetStatus());
 }
-// ------------- End Display Score & Text ------------- //
+
 
 // ------------- API LeaderBoard ------------- //
 // Check if "open" has been requested and will start the function

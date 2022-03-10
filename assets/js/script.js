@@ -138,7 +138,7 @@ function getQuestion() {
     });
     // Remove the Questions answered
     window.availableQuestion.splice(questionsIndex, 1);
-};
+}
 
 // ------------- Check Correct Answer -------------- //
 // Run Event for each answer clicked to check the match with the correct answer.
@@ -171,7 +171,7 @@ function checkAnswer() {
 function incrementScore(num) {
     score += num;
     scoreText.innerText = score;
-};
+}
 
 // ------------- Timer ------------- //
 function startTimer() { 

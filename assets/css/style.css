@@ -16,44 +16,6 @@ body {
     font-weight: 500;
 }
 
-.flex-containers {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-}
-
-.flex-center {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-}
-
-.flex-containers-columns {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-.text-medium {
-    font-size: 1.5rem;
-}
-
-.text-small {
-    font-size: 1.25rem;
-}
-
-.text-capitalize {
-    text-transform: capitalize;
-}
-
-.space-margin-top {
-    margin-top: 20px;
-}
-
-.space-margin-bottom {
-    margin-bottom: 20px;
-}
-
-
 /* Headers - Logo & Navbar */  
 h1 {
     font-family: 'Press Start 2P', cursive, sans-serif;
@@ -131,6 +93,42 @@ h1 {
     padding: 10px;
 }
 
+.flex-containers {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.flex-center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.flex-containers-columns {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.text-medium {
+    font-size: 1.5rem;
+}
+
+.text-small {
+    font-size: 1.25rem;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.space-margin-top {
+    margin-top: 20px;
+}
+
+.space-margin-bottom {
+    margin-bottom: 20px;
+}
 
 .hide {
     display: none;
@@ -192,7 +190,7 @@ h1 {
     background-color: rgba(7, 7, 7, 0.8);
 }
 
-/* The Close Button */
+/* Modal Close Button */
 .close {
     text-decoration: none;
     list-style: none;
@@ -520,10 +518,6 @@ textarea:hover {
         font-size: 100%;
         margin-left: 0px;
     }
-
-    /*.position-absolute {
-        position: static;
-    }*/
 
     .icon-mobile {
         font-size: 2.5rem;

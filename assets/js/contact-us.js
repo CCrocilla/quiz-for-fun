@@ -26,10 +26,9 @@ function showTextArea() {
 function hideTextArea() {
     resetBtn.addEventListener('click', function () {
         userComment.classList.add('hide');
-    })
+    });
 }
 
 // Bind the page load event
 document.addEventListener('DOMContentLoaded', showTextArea);
 document.addEventListener('DOMContentLoaded', hideTextArea);
-
