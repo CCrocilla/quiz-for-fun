@@ -16,43 +16,6 @@ body {
     font-weight: 500;
 }
 
-.flex-containers {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-}
-
-.flex-center {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-}
-
-.flex-containers-columns {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-.text-medium {
-    font-size: 1.5rem;
-}
-
-.text-small {
-    font-size: 1.25rem;
-}
-
-.text-capitalize {
-    text-transform: capitalize;
-}
-
-.space-margin-top {
-    margin-top: 20px;
-}
-
-.space-margin-bottom {
-    margin-bottom: 20px;
-}
-
 /* Headers - Logo & Navbar */  
 h1 {
     font-family: 'Press Start 2P', cursive, sans-serif;
@@ -128,6 +91,43 @@ h1 {
     box-shadow: 7px 7px 3px #ECDBBA;
     position: relative;
     padding: 10px;
+}
+
+.flex-containers {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.flex-center {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.flex-containers-columns {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.text-medium {
+    font-size: 1.5rem;
+}
+
+.text-small {
+    font-size: 1.25rem;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.space-margin-top {
+    margin-top: 20px;
+}
+
+.space-margin-bottom {
+    margin-bottom: 20px;
 }
 
 .hide {
@@ -362,12 +362,6 @@ footer {
     background-color: #C84B31;
 }
 
-.progress-bar-full {
-    width: 0%;
-    height: 100%;
-    background: #ECDBBA;
-}
-
 .correct-answer {
     background-color: #357C3C;
 }
@@ -540,7 +534,7 @@ textarea:hover {
     }
 
     .icon-mobile-rotate {
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
     }
 
     .icon-mobile-transition {

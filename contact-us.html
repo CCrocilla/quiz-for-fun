@@ -1,107 +1,108 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play with us! Amazing quiz are waiting for you!">
-    <meta name="keywords" content="quiz for fun, online quiz, competitive quiz, speed quiz, quiz free, quiz">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Play with us! Amazing quiz are waiting for you!">
+        <meta name="keywords" content="quiz for fun, online quiz, competitive quiz, speed quiz, quiz free, quiz">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 
-    <title>Quiz For Fun</title>
-</head>
+        <title>Quiz For Fun</title>
 
-<body>
-    <header id="header" class="flex-containers flex-center flex-row position-absolute">
-        <a href="index.html" id="logo" class="logo-qff flex-items" aria-label="Open the Home Page">
-            <h1>Quiz For Fun</h1>
-        </a>
+        <!-- Javascript Core Files -->
+        <script src="assets/js/contact-us.js" defer></script>
+        <script src="assets/js/navbar-menu.js" defer></script>
+        <!-- Font Awesome Script -->
+        <script src="https://kit.fontawesome.com/0644654b1f.js" crossorigin="anonymous" defer></script>
+    </head>
 
-        <nav id="menu" class="navbar-container hide-mobile flex-items flex-center">
-            <a href="index.html" id="anchor-home" class="nav-anchor" aria-label="Open the Home Page">Home</a>
-            <a href="quiz-score.html?open=score" id="anchor-score" class="nav-anchor" aria-label="Open the Score Page">Scores</a>
-            <a href="contact-us.html" id="anchor-contact" class="nav-anchor active" aria-label="Open the Contact Us Page">Contact Us</a>
-        </nav>
+    <body>
+        <header id="header" class="flex-containers flex-center flex-row position-absolute">
+            <a href="index.html" id="logo" class="logo-qff flex-items" aria-label="Open the Home Page">
+                <h1>Quiz For Fun</h1>
+            </a>
 
-        <div id="menu-mobile" class="flex-center icon-mobile hide">
-            <i id="icon-mobile-animation" class="fas fa-bars icon-mobile-transition"></i>
-        </div>
-    </header>
+            <nav id="menu" class="navbar-container hide-mobile flex-items flex-center">
+                <a href="index.html" id="anchor-home" class="nav-anchor" aria-label="Open the Home Page">Home</a>
+                <a href="quiz-score.html?open=score" id="anchor-score" class="nav-anchor" aria-label="Open the Score Page">Scores</a>
+                <a href="contact-us.html" id="anchor-contact" class="nav-anchor active" aria-label="Open the Contact Us Page">Contact Us</a>
+            </nav>
 
-    <section id="game-area-section" class="flex-containers flex-center game-img">
+            <div id="menu-mobile" class="flex-center icon-mobile hide">
+                <i id="icon-mobile-animation" class="fas fa-bars icon-mobile-transition"></i>
+            </div>
+        </header>
 
-        <!-- Contact Us Page -->
-        <div id="contact-us" class="flex-cu flex-center">
-            <!-- Contact Us Content -->
-            <form method="GET" action="https://ccrocilla.github.io/quiz-for-fun/thank-you.html">
-                <div id="text-contact-us" class="text-contact">
-                    <h2 class="text-center text-medium">
-                        Daily amazing quiz just a click away in your email address?!
-                    </h2>
-                    <p class="text-center text-small">
-                        Sign in here for our newsletter and more!!!
-                    </p>
-                </div>
+        <section id="game-area-section" class="flex-containers flex-center game-img">
 
-                <!-- Form Area for the User -->
-                <div id="form-contact-us" class="flex-center form">
-                    <div id="form-user-contact-us" class="form-users text-labels text-small">
-                        <label for="username-cu">Username *</label>
-                        <input type="text" id="username-cu" class="input-forms text-small" name="user_name_cu" required placeholder="Insert your Username here!">
-
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" class="input-forms text-small" name="email_address" required placeholder="Insert your email address here!">
-                    </div>
-                    <!-- Radio Button selection Newsletter/Feedback/Report -->
-                    <div class="form-users text-center text-labels text-small">
-                        <input type="radio" id="newsletter" class="radio-btn-nfrb" value="newsletter" name="form_nfrb" required>
-                        <label for="newsletter" class="radio-label-nfrb">Newsletter</label>
-
-                        <input type="radio" id="feedback" class="radio-btn-nfrb" value="feedback" name="form_nfrb" required>
-                        <label for="feedback" class="radio-label-nfrb">Feedback</label>
-
-                        <input type="radio" id="report" class="radio-btn-nfrb" value="report" name="form_nfrb" required>
-                        <label for="report" class="radio-label-nfrb">Bugs</label>
+            <!-- Contact Us Page -->
+            <div id="contact-us" class="flex-cu flex-center">
+                <!-- Contact Us Content -->
+                <form method="GET" action="https://ccrocilla.github.io/quiz-for-fun/thank-you.html">
+                    <div id="text-contact-us" class="text-contact">
+                        <h2 class="text-center text-medium">
+                            Daily amazing quiz just a click away in your email address?!
+                        </h2>
+                        <p class="text-center text-small">
+                            Sign in here for our newsletter and more!!!
+                        </p>
                     </div>
 
-                    <div id="user-comment" class="textarea-area hide text-labels text-small">
-                        <label for="comments">Comments</label>
-                        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Insert your Feedback or Report a Bug here!"></textarea>
-                    </div>
+                    <!-- Form Area for the User -->
+                    <div id="form-contact-us" class="flex-center form">
+                        <div id="form-user-contact-us" class="form-users text-labels text-small">
+                            <label for="username-cu">Username *</label>
+                            <input type="text" id="username-cu" class="input-forms text-small" name="user_name_cu" required placeholder="Insert your Username here!">
 
-                    <div id="btn-nfb" class="btn-container flex-center space-margin-bottom">
-                        <button id="btn-reset" class="btn btn-forms text-center text-small" type="reset">Reset</button>
-                        <button id="btn-submit-form" class="btn btn-forms text-center text-small" type="submit">Submit</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="input-forms text-small" name="email_address" required placeholder="Insert your email address here!">
+                        </div>
+                        <!-- Radio Button selection Newsletter/Feedback/Report -->
+                        <div class="form-users text-center text-labels text-small">
+                            <input type="radio" id="newsletter" class="radio-btn-nfrb" value="newsletter" name="form_nfrb" required>
+                            <label for="newsletter" class="radio-label-nfrb">Newsletter</label>
 
-    <footer id="footer" class="flex-containers flex-center position-absolute">
-        <ul id="social" class="social-network text-center">
-            <li>
-                <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook Page (This link opens in a new tab)">
-                <i class="fab fa-facebook-square"></i></a>
-            </li>
-            <li>
-                <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram Page (This link opens in a new tab)">
-                <i class="fab fa-instagram-square"></i></a>
-            </li>
-            <li>
-                <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter Page (This link opens in a new tab)">
-                <i class="fab fa-twitter-square"></i></a>
-            </li>
-        </ul>
-    </footer>
-    <!-- Javascript Core Files -->
-    <script src="assets/js/contact-us.js"></script>
-    <script src="assets/js/navbar-menu.js"></script>
-    <!-- Font Awesome Script -->
-    <script src="https://kit.fontawesome.com/0644654b1f.js" crossorigin="anonymous"></script>
-</body>
+                            <input type="radio" id="feedback" class="radio-btn-nfrb" value="feedback" name="form_nfrb" required>
+                            <label for="feedback" class="radio-label-nfrb">Feedback</label>
+
+                            <input type="radio" id="report" class="radio-btn-nfrb" value="report" name="form_nfrb" required>
+                            <label for="report" class="radio-label-nfrb">Bugs</label>
+                        </div>
+
+                        <div id="user-comment" class="textarea-area hide text-labels text-small">
+                            <label for="comments">Comments</label>
+                            <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Insert your Feedback or Report a Bug here!"></textarea>
+                        </div>
+
+                        <div id="btn-nfb" class="btn-container flex-center space-margin-bottom">
+                            <button id="btn-reset" class="btn btn-forms text-center text-small" type="reset">Reset</button>
+                            <button id="btn-submit-form" class="btn btn-forms text-center text-small" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <footer id="footer" class="flex-containers flex-center position-absolute">
+            <ul id="social" class="social-network text-center">
+                <li>
+                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook Page (This link opens in a new tab)">
+                    <i class="fab fa-facebook-square"></i></a>
+                </li>
+                <li>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram Page (This link opens in a new tab)">
+                    <i class="fab fa-instagram-square"></i></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter Page (This link opens in a new tab)">
+                    <i class="fab fa-twitter-square"></i></a>
+                </li>
+            </ul>
+        </footer>
+    </body>
 
 </html>

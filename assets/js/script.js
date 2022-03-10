@@ -1,12 +1,31 @@
 // ------------- Home ------------- //
+// Variables Questions
+window.availableQuestion = [];
+// Variable Quiz Selection
+const POINTS = 100;
+const MAX_QUESTIONS = 10;
+const moviesQuestions = document.getElementById('movies-btn');
+const videogamesQuestions = document.getElementById('videogames-btn');
 //  Variables Header and Footer
-let header = document.getElementById('header');
-let footer = document.getElementById('footer');
-//  Variables Instruction
+const header = document.getElementById('header');
+const footer = document.getElementById('footer');
+//  Variables Rules/Instructions Modal
 let anchorInstruction = document.getElementById('anchor-instruction');
 let modalInstruction = document.getElementById('modal-instruction');
 //  Variables Close Functionality
 let closeX = document.getElementsByClassName('close')[0];
+//  Variable Quiz
+let questionElement = document.getElementById('question-text');
+let answersElement = Array.from(document.querySelectorAll('.answer-text'));
+let progress = document.getElementById('progress');
+let scoreText = document.getElementById('score');
+let username = document.getElementById('username');
+
+let currentQuestion = {};
+let countDown = null;
+let score = 0;
+let questionCounter = 0;
+
 
 /**
  * Wait for the DOM to finish loading before running the game
@@ -28,7 +47,7 @@ function startGameBtn() {
 }
 
 // ----------- Modal Instruction ----------- //
-// Studied on W3 School I have customized and created my own code for my needs
+// Studied on W3 School, customized and created the code for my needs
 // When the user clicks on the button, open the modal
 if (anchorInstruction != null){
     anchorInstruction.addEventListener('click', openInstruction);
@@ -68,26 +87,6 @@ window.onclick = function(event) {
 
 
 // ----------- Quiz Engine ----------- //
-// Variables Quiz
-window.availableQuestion = [];
-
-const POINTS = 100;
-const MAX_QUESTIONS = 10;
-const moviesQuestions = document.getElementById('movies-btn');
-const videogamesQuestions = document.getElementById('videogames-btn');
-
-let questionElement = document.getElementById('question-text');
-let answersElement = Array.from(document.querySelectorAll('.answer-text'));
-let progress = document.getElementById('progress');
-let progressFull = document.getElementById('progress-full');
-let scoreText = document.getElementById('score');
-let username = document.getElementById('username');
-
-let currentQuestion = {};
-let countDown = null;
-let score = 0;
-let questionCounter = 0;
-
 /**
  * Local Storage Setup for Username, Score and Difficulty
  * Content Studied on W3 School and code custom by me for my needs
@@ -193,8 +192,7 @@ const getQuestion = () => {
     startTimer();
     questionCounter++;
     progress.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
-    progressFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
-
+    
     // Generate a random value from the questions variable
     let questionsIndex = Math.floor(Math.random() * window.availableQuestion.length);
     currentQuestion = window.availableQuestion[questionsIndex];
@@ -231,7 +229,7 @@ function checkAnswer() {
                 disableAnswersBtns(false);
                 selectedChoice.parentElement.classList.remove(answerColorChange);
                 getQuestion();
-            }, 1500);
+            }, 1600);
         });
     });
 }
@@ -256,7 +254,7 @@ function startTimer() {
         timerSec = 30;
     } else if (elementTimerSec.value === 'hard'){
         // Set Timer Hard
-        timerSec = 15;
+        timerSec = 3;
     } else {
         timerSec = 0;
         console.error('No difficulty has been selected');
