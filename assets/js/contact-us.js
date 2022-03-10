@@ -7,15 +7,17 @@ let resetBtn = document.getElementById('btn-reset');
 // ------------- Show Textarea Functionality ------------- //
 function showTextArea() {
     for (let radio of radioTextArea) {
-        radio.addEventListener("change", function () {
-            if (this.value === "newsletter") {
-                userComment.classList.add('hide');
-            } else if (this.value === 'feedback') {
-                userComment.classList.remove('hide');
-            } else if (this.value === 'report') {
-                userComment.classList.remove('hide');
-            } else {
-                userComment.classList.remove('hide');
+        radio.addEventListener('change', function () {
+            switch (this.value) {
+                case 'newsletter':
+                    userComment.classList.add('hide');
+                    break;
+                case 'feedback':
+                case 'report':
+                    userComment.classList.remove('hide');
+                    break;
+                default:
+                    userComment.classList.remove('hide');
             }
         });
     }  

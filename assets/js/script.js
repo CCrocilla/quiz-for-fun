@@ -20,25 +20,19 @@ let answersElement = Array.from(document.querySelectorAll('.answer-text'));
 let progress = document.getElementById('progress');
 let scoreText = document.getElementById('score');
 let username = document.getElementById('username');
-
 let currentQuestion = {};
 let countDown = null;
 let score = 0;
 let questionCounter = 0;
+// Variable Local Storage
+// Local Storage Setup for Username
+const storedUsername = localStorage.getItem('inputUsername');
+let playerName = storedUsername || "";
+// Local Storage Setup for recentScore
+let recentScore = localStorage.getItem('recentScore');
 
 
-/**
- * Wait for the DOM to finish loading before running the game
- * Get the Start Button Elements and add event listeners to them
- * DOMContentLoaded taken from Love-Math Project
- */
-document.addEventListener("DOMContentLoaded", function() {
-    let startBtn = document.getElementById("start-btn");
-    startBtn.addEventListener('click', () => {
-        startGameBtn();
-    });
-});
-
+// ----------- Function Start button ----------- //
 function startGameBtn() {
     let startView = document.getElementById('start-games');
     let preQuizView = document.getElementById('pre-quiz-view');
@@ -46,13 +40,7 @@ function startGameBtn() {
     preQuizView.classList.remove("hide");
 }
 
-// ----------- Modal Instruction ----------- //
-// Studied on W3 School, customized and created the code for my needs
-// When the user clicks on the button, open the modal
-if (anchorInstruction != null){
-    anchorInstruction.addEventListener('click', openInstruction);
-}
-
+// ----------- Modal Rules/Instructions ----------- //
 function openInstruction(event) {
     event.preventDefault();
     let startView = document.getElementById('start-games');
@@ -63,48 +51,16 @@ function openInstruction(event) {
     footer.classList.add("hide");
 }
 
-// When the user clicks on x, close the modal
-closeX.onclick = function() {
-    let startView = document.getElementById('start-games');
-    modalInstruction.style.display = "none";
-    startView.classList.remove("hide");
-    header.classList.remove("hide");
-    footer.classList.remove("hide");
-};
-  
-// When the user clicks outside of the modal, close the modal
-window.onclick = function(event) {
-    let startView = document.getElementById('start-games');
-    
-    if (event.target == modalInstruction) {
-        modalInstruction.style.display = "none";
-        startView.classList.remove("hide");
-        header.classList.remove("hide");
-        footer.classList.remove("hide");
-    }
-};
-// ----------- End Modal ----------- //
-
-
 // ----------- Quiz Engine ----------- //
 /**
  * Local Storage Setup for Username, Score and Difficulty
  * Content Studied on W3 School and code custom by me for my needs
  */
-// Local Storage Setup for recentScore
-let recentScore = localStorage.getItem('recentScore');
-
-// Local Storage Setup for Username
-const storedUsername = localStorage.getItem('inputUsername');
-let playerName = storedUsername || "";
-
-if (username) {
-    username.value = storedUsername;
+function setValueUsername(value) {
+    if (username) {
+        username.value = value;
+    }  
 }
-
-username.addEventListener('change', user => {
-    playerName = user.target.value;
-});
 
 const saveLocalUsername = () => {
     localStorage.setItem('inputUsername', playerName);
@@ -115,9 +71,11 @@ const saveLocalDifficulty = () => {
     let inputRadio = document.querySelector('input[name="level_speed"]:checked');
     localStorage.setItem('inputDifficulty', inputRadio.value);
 };
-// End Local Storage Setup
 
-// Check Validation Form
+// ------------- Set Username -------------- //
+setValueUsername(storedUsername);
+
+// ------------- Check Validation Form -------------- //
 function checkValidationForm() {
     let inputRadio = document.querySelector('input[name="level_speed"]:checked');
     let inputUsername = document.getElementById('username');
@@ -125,7 +83,7 @@ function checkValidationForm() {
     return isValid;
 }
 
-// Function created to visualize the Quiz Area
+// ------------- Function to display Quiz Area -------------- //
 function modeQuiz() {
     let startView = document.getElementById('start-games');
     let preQuizView = document.getElementById('pre-quiz-view');
@@ -134,31 +92,6 @@ function modeQuiz() {
     preQuizView.classList.add('hide');
     questionView.classList.remove('hide');
 }
-
-// Check if username as been filled in before to start the Movies quiz
-moviesQuestions.addEventListener('click', (event) => {
-    if (checkValidationForm()) {
-        event.preventDefault();
-        saveLocalUsername();
-        saveLocalDifficulty();
-        modeQuiz();
-        startGame('movies');
-    } else {
-        console.error('Form not valid!');
-    }
-});
-
-// Check if username as been filled in before to start the Videogames quiz
-videogamesQuestions.addEventListener('click', (event) => {
-    if (checkValidationForm()) {
-        event.preventDefault();
-        saveLocalUsername();
-        modeQuiz();
-        startGame('videogames');
-    } else {
-        console.error('Form not valid!');
-    }
-});
 
 // Function to start the quiz
 const startGame = (game) => {
@@ -180,9 +113,9 @@ const startGame = (game) => {
     checkAnswer();
 };
 
-// Function to get new questions using => arrow function
+// ------------- Display Questions -------------- //
 // Inspiration on how to create a Quiz from Brian Design and Web Dev Simplfied
-const getQuestion = () => {
+function getQuestion() {
     if(window.availableQuestion.length === 0 || questionCounter === MAX_QUESTIONS) {
         localStorage.setItem('recentScore', score);
     
@@ -207,7 +140,7 @@ const getQuestion = () => {
     window.availableQuestion.splice(questionsIndex, 1);
 };
 
-
+// ------------- Check Correct Answer -------------- //
 // Run Event for each answer clicked to check the match with the correct answer.
 function checkAnswer() { 
     answersElement.forEach(answer => {
@@ -235,11 +168,10 @@ function checkAnswer() {
 }
 
 // ------------- Increment Score ------------- //
-let incrementScore = num => {
+function incrementScore(num) {
     score += num;
     scoreText.innerText = score;
 };
-// ------------- End Increment Score ------------- //
 
 // ------------- Timer ------------- //
 function startTimer() { 
@@ -254,7 +186,7 @@ function startTimer() {
         timerSec = 30;
     } else if (elementTimerSec.value === 'hard'){
         // Set Timer Hard
-        timerSec = 3;
+        timerSec = 15;
     } else {
         timerSec = 0;
         console.error('No difficulty has been selected');
@@ -269,13 +201,12 @@ function startTimer() {
         }
     }, 1000);
 }
-
+// Function to Stop Timer
 function stopTimer() {
     if (countDown !== null) {
         clearInterval(countDown);
     }
 }
-// ------------- End Timer ------------- //
 
 // ------------- Function Disable Buttons -------------- //
 function disableAnswersBtns(isDisabled) {
@@ -283,4 +214,71 @@ function disableAnswersBtns(isDisabled) {
         answer.disabled = isDisabled;
     });
 }
-// ------------- End Function Disable Buttons -------------- //
+
+/**
+ * Wait for the DOM to finish loading before running the game
+ * Get the Start Button Elements and add event listeners to them
+ * DOMContentLoaded taken from Love-Math Project
+ */
+ document.addEventListener("DOMContentLoaded", function() {
+    let startBtn = document.getElementById("start-btn");
+    startBtn.addEventListener('click', () => {
+        startGameBtn();
+    });
+});
+
+// Listen changes in Username
+username.addEventListener('change', user => {
+    playerName = user.target.value;
+});
+
+// Check if username as been filled in before to start the Movies quiz then start quiz movies
+moviesQuestions.addEventListener('click', (event) => {
+    if (checkValidationForm()) {
+        event.preventDefault();
+        saveLocalUsername();
+        saveLocalDifficulty();
+        modeQuiz();
+        startGame('movies');
+    } else {
+        console.error('Form not valid!');
+    }
+});
+
+// Check if username as been filled in before to start the Videogames quiz then start quiz videogames
+videogamesQuestions.addEventListener('click', (event) => {
+    if (checkValidationForm()) {
+        event.preventDefault();
+        saveLocalUsername();
+        modeQuiz();
+        startGame('videogames');
+    } else {
+        console.error('Form not valid!');
+    }
+});
+
+// ------------- Event Close Modal -------------- //
+// Studied on W3 School, customized and created the code for my needs
+// When the user clicks on the button, open the modal
+anchorInstruction.addEventListener('click', openInstruction);
+
+// When the user clicks on x, close the modal
+closeX.onclick = function() {
+    let startView = document.getElementById('start-games');
+    modalInstruction.style.display = "none";
+    startView.classList.remove("hide");
+    header.classList.remove("hide");
+    footer.classList.remove("hide");
+};
+  
+// When the user clicks outside of the modal, close the modal
+window.onclick = function(event) {
+    let startView = document.getElementById('start-games');
+    
+    if (event.target == modalInstruction) {
+        modalInstruction.style.display = "none";
+        startView.classList.remove("hide");
+        header.classList.remove("hide");
+        footer.classList.remove("hide");
+    }
+};

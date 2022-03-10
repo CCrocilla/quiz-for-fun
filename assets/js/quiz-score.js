@@ -1,8 +1,8 @@
-// Variable for the API and the Score Limit 
+// ------------- Variable for the API and the Score Limit ------------- //
 const API_URL = "https://quizforfundb-d21e.restdb.io/rest/quiz-for-fun";
 const API_KEY = "621d964834fd621565858a7b";
 const LIMIT_SCORES = 10;
-// Reference Code from Stackoverflow modified by me for my needs
+// ------------- Variable for query parameter ------------- //
 const urlParams = new URLSearchParams(window.location.search);
 const requestOpenScore = urlParams.get('open');
 // ------------- Variables Display Score & Text ------------- //
@@ -58,22 +58,27 @@ function displayUserFinalScore() {
             <p class="final-text text-center space-margin-bottom">Play again!</p>
             ${btnYesNo}`;
     }
+
+    document.getElementById("save-score-btn-no").addEventListener("click", () => getStatus());
+    document.getElementById("save-score-btn-yes").addEventListener("click", () => saveAndGetStatus());
 }
 // ------------- End Display Score & Text ------------- //
 
 // ------------- API LeaderBoard ------------- //
 // Check if "open" has been requested and will start the function
-switch (requestOpenScore) {
-    case 'score':
-        displayScoreView();
-        getStatus();
-        break;
-    case 'endgame':
-        displayUserFinalScore();
-        displayEndGameText();
-        break;
-    default:
-        console.error('No data available');
+function displayInfo() {
+    switch (requestOpenScore) {
+        case 'score':
+            displayScoreView();
+            getStatus();
+            break;
+        case 'endgame':
+            displayUserFinalScore();
+            displayEndGameText();
+            break;
+        default:
+            console.error('No data available');
+    }
 }
 
 // Function to display the Result to the User
@@ -177,7 +182,8 @@ function displayScore(data) {
     });  
 }
 
-document.getElementById("anchor-score").addEventListener("click", () => getStatus());
-document.getElementById("save-score-btn-no").addEventListener("click", () => getStatus());
-document.getElementById("save-score-btn-yes").addEventListener("click", () => saveAndGetStatus());
+displayInfo();
 
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("anchor-score").addEventListener("click", () => getStatus()); 
+});
