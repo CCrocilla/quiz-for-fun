@@ -1,3 +1,5 @@
+/*jshint esversion: 8 */
+
 // ------------- Variable for the API and the Score Limit ------------- //
 const API_URL = "https://quizforfundb-d21e.restdb.io/rest/quiz-for-fun";
 const API_KEY = "621d964834fd621565858a7b";

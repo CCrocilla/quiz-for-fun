@@ -1,6 +1,5 @@
 // ------------- Contact Us ------------- //
 // ------------- Variables ------------- //
-let userComment = document.getElementById('user-comment');
 let radioTextArea = document.querySelectorAll('input[type=radio][name="form_nfrb"]');
 let resetBtn = document.getElementById('btn-reset');
 
@@ -8,6 +7,7 @@ let resetBtn = document.getElementById('btn-reset');
 function showTextArea() {
     for (let radio of radioTextArea) {
         radio.addEventListener('change', function () {
+            let userComment = document.getElementById('user-comment');
             switch (this.value) {
                 case 'newsletter':
                     userComment.classList.add('hide');
@@ -24,6 +24,7 @@ function showTextArea() {
 }
 
 function hideTextArea() {
+    let userComment = document.getElementById('user-comment');
     resetBtn.addEventListener('click', function () {
         userComment.classList.add('hide');
     });

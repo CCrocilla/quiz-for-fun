@@ -25,11 +25,9 @@ let countDown = null;
 let score = 0;
 let questionCounter = 0;
 // Variable Local Storage
-// Local Storage Setup for Username
+// Username
 const storedUsername = localStorage.getItem('inputUsername');
 let playerName = storedUsername || "";
-// Local Storage Setup for recentScore
-let recentScore = localStorage.getItem('recentScore');
 
 
 // ----------- Function Start button ----------- //

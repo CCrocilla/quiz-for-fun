@@ -11,7 +11,7 @@
 #### Good luck, enjoy the questions and might the force be with you! 
 
 
-<a href="https://ccrocilla.github.io/quiz-for-fun/" target="_blank" rel="noopener noreferrer"><img src="assets/images-readme/amiresponsive.webp" alt="Home Page" width="800px"/></a>
+<a href="https://ccrocilla.github.io/quiz-for-fun/" target="_blank" rel="noopener noreferrer"><img src="assets/images-readme/amiresponsive.webp" alt="Home Page" width="1000px"/></a>
 
 #### Click in the image above to access the Live Website or [click here!](https://ccrocilla.github.io/quiz-for-fun/ "Quiz For Fun")
 
@@ -220,8 +220,8 @@ Sources:
 
 ## **Features**
 - ### *__Structure__*:
-The Website is composed of 5 different pages. Each of these pages has been structured in a simple, easy and user-friendly way. 
-The Structure of the website and the components used are listed below:
+#### The Website is composed of 5 different pages. Each of these pages has been structured in a simple, easy and user-friendly way. 
+#### The Structure of the website and the components used are listed below:
 
 
 - ### *__Home Page__*:
@@ -263,14 +263,14 @@ The Structure of the website and the components used are listed below:
 
 
 - ### *__Thank you page__*:
-This page will be triggered when the user clicks on the Submit Button in Contact Us Page. 
-The page is characterized by an image extended as background overlaid by a clear message for the user.
-This page is used to let the user know that the feedback or the issue/bug has been reported correctly.
-The users also have the possibility to click on the Home button to navigate back to the Home Page. 
+#### This page will be triggered when the user clicks on the Submit Button in Contact Us Page. 
+#### The page is characterized by an image extended as background overlaid by a clear message for the user.
+#### This page is used to let the user know that the feedback or the issue/bug has been reported correctly.
+#### The users also have the possibility to click on the Home button to navigate back to the Home Page. 
 
 - ### *__404 Error Page__*:
-For any broken or incorrect links, the 404 Error page will be triggered. Here the user will have an image displayed in the background and above a text box that will inform the users that the page is not correct. 
-The users also have the possibility to click on the Home button to navigate back to the Home Page. 
+#### For any broken or incorrect links, the 404 Error page will be triggered. Here the user will have an image displayed in the background and above a text box that will inform the users that the page is not correct. 
+#### The users also have the possibility to click on the Home button to navigate back to the Home Page. 
  
 ---
 
@@ -282,7 +282,7 @@ The users also have the possibility to click on the Home button to navigate back
 - ## Home Page 
 <details>
     <summary>Click here for Desktop View</summary>  
-<img src="assets/images-readme/homepage-desktop.webp" alt="Desktop View Homepage" width="800px"/>
+<img src="assets/images-readme/homepage-desktop.webp" alt="Desktop View Homepage" width="1000px"/>
 </details>
 
 <details>
@@ -298,7 +298,7 @@ The users also have the possibility to click on the Home button to navigate back
 - ## Rules Modal 
 <details>
     <summary>Click here for Desktop View</summary>  
-<img src="assets/images-readme/rules-modal-desktop.webp" alt="Desktop View Rules Modal" width="800px"/>
+<img src="assets/images-readme/rules-modal-desktop.webp" alt="Desktop View Rules Modal" width="1000px"/>
 </details>
 
 <details>
@@ -314,7 +314,7 @@ The users also have the possibility to click on the Home button to navigate back
 - ## Pre-Quiz Area
 <details>
     <summary>Click here for Desktop View</summary>
-<img src="assets/images-readme/prequiz-desktop.webp" alt="Desktop View Pre-Quiz" width="800px"/>
+<img src="assets/images-readme/prequiz-desktop.webp" alt="Desktop View Pre-Quiz" width="1000px"/>
 </details>
 
 <details>
@@ -330,7 +330,7 @@ The users also have the possibility to click on the Home button to navigate back
 - ## Quiz Area
 <details>
     <summary>Click here for Desktop View</summary>
-<img src="assets/images-readme/quiz-desktop.webp" alt="Desktop View Share Page" width="800px"/>
+<img src="assets/images-readme/quiz-desktop.webp" alt="Desktop View Share Page" width="1000px"/>
 </details>
 
 <details>
@@ -343,10 +343,26 @@ The users also have the possibility to click on the Home button to navigate back
 <img src="assets/images-readme/quiz-smartphone.webp" alt="Smartphone View Share Page" width="400px"/>
 </details>
 
+- ## Scores
+<details>
+    <summary>Click here for Desktop View</summary>
+<img src="assets/images-readme/scores-desktop.webp" alt="Desktop View Share Page" width="1000px"/>
+</details>
+
+<details>
+    <summary>Click here for Tablet View</summary>
+<img src="assets/images-readme/scores-tablet.webp" alt="Tablet View Share Page" width="600px"/>
+</details>
+
+<details>
+    <summary>Click here for Smartphone View</summary>
+<img src="assets/images-readme/scores-smartphone.webp" alt="Smartphone View Share Page" width="400px"/>
+</details>
+
 - ## Contact Us Page
 <details>
     <summary>Click here for Desktop View</summary>
-<img src="assets/images-readme/contactus-desktop.webp" alt="Desktop View Contact Us Page" width="800px"/>
+<img src="assets/images-readme/contactus-desktop.webp" alt="Desktop View Contact Us Page" width="1000px"/>
 </details>
 
 <details>
@@ -362,33 +378,33 @@ The users also have the possibility to click on the Home button to navigate back
 - ## Thanks You Page
 <details>
     <summary>Click here for Desktop View</summary>
-<img src="" alt="Desktop View Thank You Page" width="800px"/>
+<img src="assets/images-readme/thankyou-desktop.webp" alt="Desktop View Thank You Page" width="1000px"/>
 </details>
 
 <details>
     <summary>Click here for Tablet View</summary>
-<img src="" alt="Tablet View Thank You Page" width="600px"/>
+<img src="assets/images-readme/thankyou-tablet.webp" alt="Tablet View Thank You Page" width="600px"/>
 </details>
 
 <details>
     <summary>Click here for Smartphone View</summary>
-<img src="" alt="Smartphone View Thank You Page" width="400px"/>
+<img src="assets/images-readme/thankyou-smartphone.webp" alt="Smartphone View Thank You Page" width="400px"/>
 </details>
 
 - ## 404 Error Page
 <details>
     <summary>Click here for Desktop View</summary>
-<img src="" alt="Desktop View Error 404 Page" width="800px"/>
+<img src="assets/images-readme/404error-desktop.webp" alt="Desktop View Error 404 Page" width="1000px"/>
 </details>
 
 <details>
     <summary>Click here for Tablet View</summary>
-<img src="" alt="Tablet View  Error 404 Page" width="600px"/>
+<img src="assets/images-readme/404error-tablet.webp" alt="Tablet View  Error 404 Page" width="600px"/>
 </details>
 
 <details>
     <summary>Click here for Smartphone View</summary>
-<img src="" alt="Smartphone View Error 404 Page" width="400px"/>
+<img src="assets/images-readme/404error-smartphone.webp" alt="Smartphone View Error 404 Page" width="400px"/>
 </details>
 
 ---
@@ -437,50 +453,70 @@ The users also have the possibility to click on the Home button to navigate back
 ## **Testing**
 The testing phases have been carried out using the **W3C Javascript Validator**, **W3C CSS Validator** and **W3C Markup Validator** (for all pages). No errors have been identified from the Validators as can be seen in the screenshot below: 
 
-- **JavaScript**
 
+- **JavaScript**
 <details>
-    <summary>Click here for W3C Javascript Validator</summary>
-<img src="" alt="W3C Javascript Validator - Home Page" width="800"/>
+    <summary>Click here for W3C Javascript Validator - Script </summary>
+<img src="assets/images-readme/jshint-script.webp" alt="W3C Javascript Validator - Home Page" width="1000px"/>
 </details>
 
-- **CSS**
+<details>
+    <summary>Click here for W3C Javascript Validator - Questions </summary>
+<img src="assets/images-readme/jshint-questions.webp" alt="W3C Javascript Validator - Home Page" width="1000px"/>
+</details>
 
 <details>
+    <summary>Click here for W3C Javascript Validator - Quiz Score</summary>
+<img src="assets/images-readme/jshint-quiz-score.webp" alt="W3C Javascript Validator - Home Page" width="1000px"/>
+</details>
+
+<details>
+    <summary>Click here for W3C Javascript Validator - Contact Us</summary>
+<img src="assets/images-readme/jshint-contactus.webp" alt="W3C Javascript Validator - Home Page" width="1000px"/>
+</details>
+
+<details>
+    <summary>Click here for W3C Javascript Validator - Navigation Bar Menu</summary>
+<img src="assets/images-readme/jshint-navbar-menu.webp" alt="W3C Javascript Validator - Home Page" width="1000px"/>
+</details>
+
+
+- **CSS**
+<details>
     <summary>Click here for W3C CSS Validator</summary>
-<img src="" alt="W3C Markup Validator - Home Page" width="800"/>
+<img src="assets/images-readme/w3c-css.webp" alt="W3C Markup Validator - Home Page" width="1000px"/>
 </details>
 
 <details>
     <summary>Click here for W3C CSS Validator - Warning</summary>
-<img src="" alt="W3C Markup Validator - Home Page" width="800"/>
+<img src="assets/images-readme/w3c-css-warning.webp" alt="W3C Markup Validator - Home Page" width="1000px"/>
 </details>
 
-- **HTML**
 
+- **HTML**
 <details>
     <summary>Click here for W3C Markup Validator - Home Page</summary>
-<img src="" alt="W3C Markup Validator - Home Page" width="800px"/>
+<img src="assets/images-readme/w3c-html-homepage.webp" alt="W3C Markup Validator - Home Page" width="1000px"/>
 </details>
 
 <details>
     <summary>Click here for W3C Markup Validator - Scores</summary>
-<img src="" alt="W3C Markup Validator - Home Page" width="800px"/>
+<img src="assets/images-readme/w3c-html-scorespage.webp" alt="W3C Markup Validator - Home Page" width="1000px"/>
 </details>
 
 <details>
     <summary>Click here for W3C Markup Validator - Contact Us</summary>
-<img src="" alt="W3C Markup Validator - Contact Us" width="800px"/>
+<img src="assets/images-readme/w3c-html-contactuspage.webp" alt="W3C Markup Validator - Contact Us" width="1000px"/>
 </details>
 
 <details>
     <summary>Click here for W3C Markup Validator - Thank You</summary>
-<img src="" alt="W3C Markup Validator - Thank You" width="800px"/>
+<img src="assets/images-readme/w3c-html-thankyoupage.webp" alt="W3C Markup Validator - Thank You" width="1000px"/>
 </details>
 
 <details>
     <summary>Click here for W3C Markup Validator - Error 404</summary>
-<img src="" alt="W3C Markup Validator - Error 404" width="800px"/>
+<img src="assets/images-readme/w3c-html-404errorpage.webp" alt="W3C Markup Validator - Error 404" width="1000px"/>
 </details>
 
 
@@ -607,7 +643,7 @@ Additional tests include checks on different devices using the Toggle Device Emu
 ### **Bugs**
 - No bugs have been found in the website during the test phase.
 
-### Future Implementation
+### **Future Implementation**
 - Difficulty Points: In future implementations different point scores will be assigned depending on the difficulty level selected by the user. 
 This will also be reflected in the Leaderboard visualization with 3 different associated Leaderboards. The user will have the possibility to switch using an Easy, Medium or Hard button located below the Leaderboard title. 
  
@@ -676,7 +712,7 @@ In order to create a Local Clone follow the steps below:
 Thanks to my Mentor, Narender Singh, for his guide and support for the realization of this project.
 Thanks to the useful references and suggestions derived from the sources listed below, I manage to gain a deeper understanding of how the various elements/components of HTML, CSS and Javascript are used. In addition, continuous trial and error tests provided a useful means to further experiment on the usage of these three programming languages for the creation of the site.
 
-- ### Content & Media
+- ### **Content & Media**
 All of the contents on the website are customised and no design frameworks have been used for the realization of the site.
 The idea of the Logo, the nav bar and the Footer were taken from the Love Running Project analysing and customizing their implementation for the created website and implementing an additional feature for the mobile version(Hamburger Menu).
 In order to consolidate the knowledge acquired during the Code Institute Course dedicated to the javascript part (as well as the HTML and CSS), I have also studied and explored the writing part of the code and the best practices using the sites listed below. 
