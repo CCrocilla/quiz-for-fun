@@ -147,7 +147,7 @@ async function saveStatus(username, score, difficulty, category) {
     }
 }
 
-async function displayScore(data) {
+function displayScore(data) {
     let rowsLeaderboard = document.getElementById('rows-leaderboard');
     // Required to clean and then print table again
     rowsLeaderboard.innerHTML = "";

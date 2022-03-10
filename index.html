@@ -1,175 +1,180 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Play with us! Amazing quiz are waiting for you!">
-        <meta name="keywords" content="quiz for fun, online quiz, competitive quiz, speed quiz, quiz free, quiz">
 
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play with us! Amazing quiz are waiting for you!">
+    <meta name="keywords" content="quiz for fun, online quiz, competitive quiz, speed quiz, quiz free, quiz">
 
-        <title>Quiz For Fun</title>
-    </head>
-    <body>
-        <header id="header" class="flex-containers flex-center flex-row position-absolute">
-            <a href="index.html" id="logo" class="logo-qff flex-items" aria-label="Open the Home Page">
-                <h1>Quiz For Fun</h1>
-            </a>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 
-            <nav id="menu" class="navbar-container hide-mobile flex-items flex-center">
-                <a href="index.html" id="anchor-home" class="nav-anchor active" aria-label="Open the Home Page">Home</a>  
-                <a href="quiz-score.html?open=score" id="anchor-score" class="nav-anchor" aria-label="Open the Score Page">Scores</a>
-                <a href="contact-us.html" id="anchor-contact" class="nav-anchor" aria-label="Open the Contact Us Page">Contact Us</a>
-            </nav>
+    <title>Quiz For Fun</title>
+    
+    <!-- Javascript Core Files -->
+    <script src="assets/js/questions.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/navbar-menu.js" defer></script>
+    <!-- Font Awesome Script -->
+    <script src="https://kit.fontawesome.com/0644654b1f.js" crossorigin="anonymous" defer></script>
 
-            <div id="menu-mobile" class="flex-center icon-mobile hide">
-                <i id="icon-mobile-animation" class="fas fa-bars icon-mobile-transition"></i>         
+</head>
+
+<body>
+    <header id="header" class="flex-containers flex-center flex-row position-absolute">
+        <a href="index.html" id="logo" class="logo-qff flex-items" aria-label="Open the Home Page">
+            <h1>Quiz For Fun</h1>
+        </a>
+
+        <nav id="menu" class="navbar-container hide-mobile flex-items flex-center">
+            <a href="index.html" id="anchor-home" class="nav-anchor active" aria-label="Open the Home Page">Home</a>
+            <a href="quiz-score.html?open=score" id="anchor-score" class="nav-anchor" aria-label="Open the Score Page">Scores</a>
+            <a href="contact-us.html" id="anchor-contact" class="nav-anchor" aria-label="Open the Contact Us Page">Contact Us</a>
+        </nav>
+
+        <div id="menu-mobile" class="flex-center icon-mobile hide">
+            <i id="icon-mobile-animation" class="fas fa-bars icon-mobile-transition"></i>
+        </div>
+    </header>
+
+    <section id="game-area-section" class="flex-containers flex-center game-img">
+        <!-- Start -->
+        <div id="start-games" class="flex-containers flex-center game-area text-medium">
+            <div id="start-view" class="text-center space-margin-bottom">
+                <h2>Welcome to Quiz For Fun!</h2>
+                <p>Amazing challenges are ready for you!</p>
+                <p>What are you waiting for? Start the quiz, have fun and enjoy!</p>
             </div>
-        </header>
 
-        <section id="game-area-section" class="flex-containers flex-center game-img">
-            <!-- Start -->
-            <div id="start-games" class="flex-containers flex-center game-area text-medium">
-                <div id="start-view" class="text-center space-margin-bottom">
-                    <h2>Welcome to Quiz For Fun!</h2>
-                    <p>Amazing challenges are ready for you!</p>
-                    <p>What are you waiting for? Start the quiz, have fun and enjoy!</p>
-                </div>
-                
-                <div class="btns-container flex-inline flex-center">
-                    <button id="start-btn" class="btn btn-start text-center text-small" data-type="start">Start</button>
-                    <a href="#modal-instruction" id="anchor-instruction" class="btn btn-start decorations-none text-center text-small" aria-label="Open the Rules Popup">Rules</a>
-                </div>
+            <div class="btns-container flex-inline flex-center">
+                <button id="start-btn" class="btn btn-start text-center text-small" data-type="start">Start</button>
+                <a href="#modal-instruction" id="anchor-instruction" class="btn btn-start decorations-none text-center text-small" aria-label="Open the Rules Popup">Rules</a>
             </div>
+        </div>
 
-            <!-- Login Quiz -->
-            <div id="pre-quiz-view" class="flex-containers flex-center pre-quiz fit-content hide">
-                <form>
-                    <div id="pre-quiz" class="pre-quiz-content">   
-                        <div class="text-center text-medium">
-                            <h2>Hi! Let's start choosing the username!</h2>
-                        </div>
-                        <!-- Username Section -->
+        <!-- Login Quiz -->
+        <div id="pre-quiz-view" class="flex-containers flex-center pre-quiz fit-content hide">
+            <form>
+                <div id="pre-quiz" class="pre-quiz-content">
+                    <div class="text-center text-medium">
+                        <h2>Hi! Let's start choosing the username!</h2>
+                    </div>
+                    <!-- Username Section -->
+                    <div class="text-labels text-small">
+                        <label for="username">Username *</label>
+                        <input type="text" id="username" class="input-forms text-small" name="user_name" maxlength="8" required placeholder="Insert your username here!">
+                        <h3 class="username-info">Username: max 8 characters.</h3>
+                    </div>
+                    <!-- Difficulty Selection -->
+                    <div class="text-center">
+                        <h2>Select the difficulty speed!</h2>
+                        <!-- Radio Button Difficulty Section -->
                         <div class="text-labels text-small">
-                            <label for="username">Username *</label>
-                            <input type="text" id="username" class="input-forms text-small" name="user_name" maxlength="8" required placeholder="Insert your username here!">
-                            <h3 class="username-info">Username: max 8 characters.</h3>
-                        </div>
-                        <!-- Difficulty Selection -->
-                        <div class="text-center">
-                            <h2>Select the difficulty speed!</h2>
-                            <!-- Radio Button Difficulty Section -->
-                            <div class="text-labels text-small">
-                                <input type="radio" id="easy" class="radio-btn-difficulty" value="easy" name="level_speed" required>
-                                <label for="easy" class="radio-label-difficulty">Easy</label>
-                                
-                                <input type="radio" id="medium" class="radio-btn-difficulty" value="medium" name="level_speed" required>
-                                <label for="medium" class="radio-label-difficulty">Medium</label>
+                            <input type="radio" id="easy" class="radio-btn-difficulty" value="easy" name="level_speed" required>
+                            <label for="easy" class="radio-label-difficulty">Easy</label>
 
-                                <input type="radio" id="hard" class="radio-btn-difficulty" value="hard" name="level_speed" required>
-                                <label for="hard" class="radio-label-difficulty">Hard</label>
-                            </div>
-                        </div>
+                            <input type="radio" id="medium" class="radio-btn-difficulty" value="medium" name="level_speed" required>
+                            <label for="medium" class="radio-label-difficulty">Medium</label>
 
-                        <!-- Category Selection -->    
-                        <div class="text-center space-margin-bottom">
-                            <h2>Select the category!</h2>
-                            <button id="movies-btn" class="btn btn-games text-small" type="submit" data-type="data-movies">Movies</button>
-                            <button id="videogames-btn" class="btn btn-games text-small" type="submit" data-type="data-videogames">Videogames</button>
+                            <input type="radio" id="hard" class="radio-btn-difficulty" value="hard" name="level_speed" required>
+                            <label for="hard" class="radio-label-difficulty">Hard</label>
                         </div>
                     </div>
-                </form>
-            </div>
 
-            <!-- Question Quiz Area -->
-            <div id="quiz-view" class="flex-containers flex-center quiz hide">
-                <div id="questions" class="text-center">
-                    <!-- This Section is dedicated to the Information displayed -->
-                    <!-- Used Brian Design for references but code adjusted by myself-->
-                    <div id="info-questions-area" class="info-quiz text-small">
-                        <!-- Progress Bar -->
-                        <div id="questions-progress">
-                            <p class="questions-score-text">Question:</p>
-                            <div id="progress" class="progress-bar">
-                                <span id="progress-full" class="progress-bar-full"></span>
-                            </div>
-                        </div>
-                        <!-- Score -->
-                        <div id="questions-score">
-                            <p class="questions-score-text">Score:</p>
-                            <p id="score" class="score-number progress-bar">0</p>
-                        </div>
-                        <!-- Timer -->
-                        <div id="timer" class="timer-container">
-                            <p class="timer-text">Time:</p>
-                            <p id="quiz-time" class="timer-sec progress-bar">0</p>
+                    <!-- Category Selection -->
+                    <div class="text-center space-margin-bottom">
+                        <h2>Select the category!</h2>
+                        <button id="movies-btn" class="btn btn-games text-small" type="submit" data-type="data-movies">Movies</button>
+                        <button id="videogames-btn" class="btn btn-games text-small" type="submit" data-type="data-videogames">Videogames</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Question Quiz Area -->
+        <div id="quiz-view" class="flex-containers flex-center quiz hide">
+            <div id="questions" class="text-center">
+                <!-- This Section is dedicated to the Information displayed -->
+                <!-- Used Brian Design for references but code adjusted by myself-->
+                <div id="info-questions-area" class="info-quiz text-small">
+                    <!-- Progress Bar -->
+                    <div id="questions-progress">
+                        <p class="questions-score-text">Question:</p>
+                        <div id="progress" class="progress-bar">
+                            <span id="progress-full" class="progress-bar-full"></span>
                         </div>
                     </div>
-                    <!--Here will be displayed the questions and anserws -->
-                    <div id="questions-area" class="qa-view-container flex-center space-margin-bottom">
-                        <h2 id="question-text" class="questions-text-view flex-center text-medium">Question?</h2>
-                        <div class="answer-container flex-center text-medium">
-                                <p class="answer-index">A.</p>
-                                <button class="answer-text btn-answers flex-center text-small" data-number="1">Answer 1</button>
-                        </div>
-                        <div class="answer-container flex-center text-medium">
-                                <p class="answer-index">B.</p>
-                                <button class="answer-text btn-answers flex-center text-small" data-number="2">Answer 2</button>
-                        </div>
-                        <div class="answer-container flex-center text-medium">
-                                <p class="answer-index">C.</p>
-                                <button class="answer-text btn-answers flex-center text-small" data-number="3">Answer 3</button>
-                        </div>
-                        <div class="answer-container flex-center text-medium">
-                                <p class="answer-index">D.</p>
-                                <button class="answer-text btn-answers flex-center text-small" data-number="4">Answer 4</button>
-                        </div>
+                    <!-- Score -->
+                    <div id="questions-score">
+                        <p class="questions-score-text">Score:</p>
+                        <p id="score" class="score-number progress-bar">0</p>
+                    </div>
+                    <!-- Timer -->
+                    <div id="timer" class="timer-container">
+                        <p class="timer-text">Time:</p>
+                        <p id="quiz-time" class="timer-sec progress-bar">0</p>
+                    </div>
+                </div>
+                <!--Here will be displayed the questions and anserws -->
+                <div id="questions-area" class="qa-view-container flex-center space-margin-bottom">
+                    <h2 id="question-text" class="questions-text-view flex-center text-medium">Question?</h2>
+                    <div class="answer-container flex-center text-medium">
+                        <p class="answer-index">A.</p>
+                        <button class="answer-text btn-answers flex-center text-small" data-number="1">Answer 1</button>
+                    </div>
+                    <div class="answer-container flex-center text-medium">
+                        <p class="answer-index">B.</p>
+                        <button class="answer-text btn-answers flex-center text-small" data-number="2">Answer 2</button>
+                    </div>
+                    <div class="answer-container flex-center text-medium">
+                        <p class="answer-index">C.</p>
+                        <button class="answer-text btn-answers flex-center text-small" data-number="3">Answer 3</button>
+                    </div>
+                    <div class="answer-container flex-center text-medium">
+                        <p class="answer-index">D.</p>
+                        <button class="answer-text btn-answers flex-center text-small" data-number="4">Answer 4</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Instruction Modal -->
-            <div id="modal-instruction" class="flex-containers flex-center popup-instruction">
-                <!-- Instruction Content -->
-                <div class="flex-containers-columns content-popup text-center text-small">
-                    <h2 class="space-margin-bottom">Rules</h2>
-                    <a href="#modal-instruction" class="close">X</a>
-                    <p>There is only one rule... <strong>Have Fun!!!</strong></p>
-                    <p><strong>Instructions:</strong></p>
-                    <ol class="text-left">
-                        <li>Click on the Start Button!</li>
-                        <li>Enter your Username (Max 8 characters)!</li>
-                        <li>Select the difficulty (Easy: 60 secs, Medium: 30 secs, Hard: 15 secs)!</li>
-                        <li>Choose which category you'd like to play...and then?...Play!</li>
-                    </ol>
-                    <p>Enjoy our quiz and the fun never ends as you can always score better!</p>
-                </div>
+        <!-- Instruction Modal -->
+        <div id="modal-instruction" class="flex-containers flex-center popup-instruction">
+            <!-- Instruction Content -->
+            <div class="flex-containers-columns content-popup text-center text-small">
+                <h2 class="space-margin-bottom">Rules</h2>
+                <a href="#modal-instruction" class="close">X</a>
+                <p>There is only one rule... <strong>Have Fun!!!</strong></p>
+                <p><strong>Instructions:</strong></p>
+                <ol class="text-left">
+                    <li>Click on the Start Button!</li>
+                    <li>Enter your Username (Max 8 characters)!</li>
+                    <li>Select the difficulty (Easy: 60 secs, Medium: 30 secs, Hard: 15 secs)!</li>
+                    <li>Choose which category you'd like to play...and then?...Play!</li>
+                </ol>
+                <p>Enjoy our quiz and the fun never ends as you can always score better!</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer id="footer" class="flex-containers flex-center position-absolute">
-            <ul id="social" class="social-network">
-                <li>
-                    <a href="https://facebook.com" target="_blank" rel="noopener" 
-                    aria-label="Visit our Facebook Page (This link opens in a new tab)" ><i class="fab fa-facebook-square"></i></a>
-                </li>
-                <li>
-                    <a href="https://instagram.com" target="_blank" rel="noopener" 
-                    aria-label="Visit our Instagram Page (This link opens in a new tab)" ><i class="fab fa-instagram-square"></i></a>
-                </li>
-                <li>
-                    <a href="https://twitter.com" target="_blank" rel="noopener" 
-                    aria-label="Visit our Twitter Page (This link opens in a new tab)" ><i class="fab fa-twitter-square"></i></a>
-                </li>
-            </ul>
-        </footer>
-        <!-- Javascript Core Files -->
-        <script src="assets/js/questions.js"></script>
-        <script src="assets/js/script.js"></script>
-        <script src="assets/js/navbar-menu.js"></script>
-        <!-- Font Awesome Script -->
-        <script src="https://kit.fontawesome.com/0644654b1f.js" crossorigin="anonymous"></script>
-    </body>
+    <footer id="footer" class="flex-containers flex-center position-absolute">
+        <ul id="social" class="social-network text-center">
+            <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook Page (This link opens in a new tab)">
+                <i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram Page (This link opens in a new tab)">
+                <i class="fab fa-instagram-square"></i></a>
+            </li>
+            <li>
+                <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter Page (This link opens in a new tab)">
+                <i class="fab fa-twitter-square"></i></a>
+            </li>
+        </ul>
+    </footer>
+</body>
+
 </html>

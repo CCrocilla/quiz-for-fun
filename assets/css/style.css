@@ -544,8 +544,6 @@ textarea:hover {
     }
 
     .icon-mobile-transition {
-        -webkit-transition: transform 0.3s ease-in-out;
-        -o-transition: transform 0.3s ease-in-out;
         transition: transform 0.3s ease-in-out;
     }
 
@@ -565,9 +563,7 @@ textarea:hover {
         width: 100%;
         justify-content: center;
         height: 75px;
-        -webkit-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
     }
 }
 

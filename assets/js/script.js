@@ -10,7 +10,7 @@ let closeX = document.getElementsByClassName('close')[0];
 
 /**
  * Wait for the DOM to finish loading before running the game
- * Get the Button Elements and add event listeners to them
+ * Get the Start Button Elements and add event listeners to them
  * DOMContentLoaded taken from Love-Math Project
  */
 document.addEventListener("DOMContentLoaded", function() {

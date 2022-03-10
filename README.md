@@ -282,17 +282,17 @@ The users also have the possibility to click on the Home button to navigate back
 - ## Home Page 
 <details>
     <summary>Click here for Desktop View</summary>  
-<img src="" alt="Desktop View Homepage" width="800px"/>
+<img src="assets/images-readme/homepage-desktop.webp" alt="Desktop View Homepage" width="800px"/>
 </details>
 
 <details>
     <summary>Click here for Tablet View</summary>
-<img src="" alt="Tablet View Homepage" width="600px"/>
+<img src="assets/images-readme/homepage-tablet.webp" alt="Tablet View Homepage" width="600px"/>
 </details>
 
 <details>
     <summary>Click here for Smartphone View</summary>
-<img src="" alt="Smartphone View Homepage" width="400px"/>
+<img src="assets/images-readme/homepage-smartphone.webp" alt="Smartphone View Homepage" width="400px"/>
 </details>
 
 - ## Rules Modal 
@@ -330,33 +330,33 @@ The users also have the possibility to click on the Home button to navigate back
 - ## Quiz Area
 <details>
     <summary>Click here for Desktop View</summary>
-<img src="" alt="Desktop View Share Page" width="800px"/>
+<img src="assets/images-readme/quiz-desktop.webp" alt="Desktop View Share Page" width="800px"/>
 </details>
 
 <details>
     <summary>Click here for Tablet View</summary>
-<img src="" alt="Tablet View Share Page" width="600px"/>
+<img src="assets/images-readme/quiz-tablet.webp" alt="Tablet View Share Page" width="600px"/>
 </details>
 
 <details>
     <summary>Click here for Smartphone View</summary>
-<img src="" alt="Smartphone View Share Page" width="400px"/>
+<img src="assets/images-readme/quiz-smartphone.webp" alt="Smartphone View Share Page" width="400px"/>
 </details>
 
 - ## Contact Us Page
 <details>
     <summary>Click here for Desktop View</summary>
-<img src="" alt="Desktop View Contact Us Page" width="800px"/>
+<img src="assets/images-readme/contactus-desktop.webp" alt="Desktop View Contact Us Page" width="800px"/>
 </details>
 
 <details>
     <summary>Click here for Tablet View</summary>
-<img src="" alt="Tablet View Contact Us Page" width="600px"/>
+<img src="assets/images-readme/contactus-tablet.webp" alt="Tablet View Contact Us Page" width="600px"/>
 </details>
 
 <details>
     <summary>Click here for Smartphone View</summary>
-<img src="" alt="Smartphone View Contact Us Page" width="400px"/>
+<img src="assets/images-readme/contactus-smartphone.webp" alt="Smartphone View Contact Us Page" width="400px"/>
 </details>
 
 - ## Thanks You Page
@@ -460,6 +460,11 @@ The testing phases have been carried out using the **W3C Javascript Validator**,
 
 <details>
     <summary>Click here for W3C Markup Validator - Home Page</summary>
+<img src="" alt="W3C Markup Validator - Home Page" width="800px"/>
+</details>
+
+<details>
+    <summary>Click here for W3C Markup Validator - Scores</summary>
 <img src="" alt="W3C Markup Validator - Home Page" width="800px"/>
 </details>
 
