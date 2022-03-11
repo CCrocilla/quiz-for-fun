@@ -26,7 +26,6 @@ h1 {
     font-size: 150%;
     text-transform: uppercase;
     text-decoration: none;
-    flex: 33%;
     margin-left: 40px;
     padding: 15px;
 }
@@ -96,7 +95,6 @@ h1 {
 .flex-containers {
     display: flex;
     flex-flow: row wrap;
-    width: 100%;
 }
 
 .flex-center {
@@ -128,6 +126,10 @@ h1 {
 
 .space-margin-bottom {
     margin-bottom: 20px;
+}
+
+.space-content {
+    justify-content: space-between;
 }
 
 .hide {
@@ -211,8 +213,8 @@ h1 {
 }
 
 /* Footer Section */
-footer {
-    height: 100px;
+footer, header {
+    height: 80px;
 }
 
 .social-network li {
@@ -250,6 +252,8 @@ footer {
     width: 100%;
     height: 30px;
     padding: 18px 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
 }
 
 .text-labels {
@@ -512,7 +516,6 @@ textarea:hover {
     }
 }
 
-
 @media screen and (max-width: 1220px) {
     .logo-qff { 
         font-size: 100%;
@@ -583,6 +586,10 @@ textarea:hover {
 
 
 @media screen and (max-width: 500px) {
+    header, footer {
+        height: 60px;
+    }
+
     .logo-qff { 
         font-size: 0.6rem;
         margin-left: 0px;
@@ -598,8 +605,12 @@ textarea:hover {
     }
     
     .social-network li i {
-        font-size: 45px;
+        font-size: 40px;
     }
+
+    .pre-quiz h2 {
+        margin: 12px 0px 5px 0px;
+      }
 
     .questions-text-view {
         font-size: 1.25rem;
@@ -612,10 +623,14 @@ textarea:hover {
     .content-popup {
         top: 10px;
     }
+
+    .form-users, .textarea-area {
+        margin: 12px 5px;
+    }
 }
 
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 375px) {
     .logo-qff {
         font-size: 0.5rem;
     }
@@ -662,7 +677,7 @@ textarea:hover {
         height: 45px;
     }
 
-    .form-users, .textarea-area {
+/*.form-users, .textarea-area {
         margin: 20px 5px;
-    }
+    }*/
 }
