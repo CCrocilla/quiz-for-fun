@@ -82,10 +82,10 @@ h1 {
     color: #070707;
     display: flex;
     flex-flow: row wrap;
-    width: 35vw;
-    min-width: 350px;
+    width: 90vw;
+    min-width: 360px;
     max-width: 520px;
-    min-height: 400px;
+    min-height: 375px;
     border-radius: 10px;
     box-shadow: 7px 7px 3px #ECDBBA;
     position: relative;
@@ -257,8 +257,7 @@ footer, header {
 }
 
 .text-labels {
-    margin-top: 10px;
-    margin-bottom: 30px;    
+    margin: 25px 10px;  
 }
 
 .input-forms:hover {
@@ -352,7 +351,7 @@ footer, header {
 }
 
 .questions-text-view {
-    width: 95%;
+    width: 96%;
     max-width: 450px;
     margin-top: 25px;
     border: 3px solid #070707;
@@ -425,6 +424,14 @@ footer, header {
 
 }
 
+.username-score-view {
+    border: 3px solid #070707;
+    background-color: #ECDBBA;
+    box-shadow: 5px 10px 3px #070707;
+    width: 80%;
+    border-radius: 15px;
+}
+
 /* ---------Contact Us--------- */
 .form-users, .textarea-area {
     margin: 25px 10px;
@@ -435,13 +442,13 @@ footer, header {
     color: #070707;
     display: flex;
     flex-flow: column wrap;
-    width: 35vw;
+    width: 90vw;
     min-width: 360px;
     max-width: 520px;
     height: fit-content;
     border-radius: 10px;
     box-shadow: 7px 7px 3px #ECDBBA;
-    padding: 10px;
+    padding: 20px;
 }
 
 textarea {
@@ -492,7 +499,7 @@ textarea:hover {
 .te-content {
     display: flex;
     flex-flow: column nowrap;
-    width: 45vw;
+    width: 90vw;
     max-width: 520px;
     min-width: 300px;
     height: fit-content;
@@ -511,9 +518,7 @@ textarea:hover {
 
 /* ---------- Media Query ---------- */
 @media screen and (max-width: 1420px) {
-    .btn {
-        margin: 12px;
-    }
+    
 }
 
 @media screen and (max-width: 1220px) {
@@ -581,7 +586,11 @@ textarea:hover {
         width: 0.9rem;
         height: 0.9rem;
         margin-left: 5px;
-      }
+    }
+
+    .btn {
+        margin: 12px;
+    }
 }
 
 
@@ -625,7 +634,7 @@ textarea:hover {
     }
 
     .form-users, .textarea-area {
-        margin: 12px 5px;
+        margin: 12px 10px;
     }
 }
 
@@ -647,6 +656,7 @@ textarea:hover {
         min-width: 300px;
     }
 
+
     .btn-start {
         width: 125px;
     }
@@ -666,6 +676,7 @@ textarea:hover {
     .flex-cu {
         min-width: 300px;
         display: block;
+        padding: 10px;
     }
 
     .answer-container {
@@ -677,7 +688,4 @@ textarea:hover {
         height: 45px;
     }
 
-/*.form-users, .textarea-area {
-        margin: 20px 5px;
-    }*/
 }

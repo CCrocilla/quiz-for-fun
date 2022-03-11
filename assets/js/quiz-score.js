@@ -27,10 +27,12 @@ function displayUserFinalScore() {
     `;
 
     const textScore = `
-    <h2 class="final-text text-center">Hi ${inputUsername}!</h2>
-    <div class="flex-containers flex-center">
-        <p class="final-text text-center">Your Score: 
-        <span id="quiz-final-score-value" class="final-score text-center"> ${recentScore}</span></p>
+    <div class="username-score-view">
+        <h2 class="final-text text-center">Hi ${inputUsername}!</h2>
+        <div class="flex-containers flex-center">
+            <p class="final-text text-center">Your Score: 
+            <span id="quiz-final-score-value" class="final-score text-center"> ${recentScore}</span></p>
+        </div>
     </div>
     `;
 
